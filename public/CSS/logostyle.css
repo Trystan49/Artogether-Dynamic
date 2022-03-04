@@ -1,0 +1,544 @@
+/* Arrière plan */
+body
+{
+  background-image: url(../Medias/crayon-background.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+/* Scroll Bar */
+::-webkit-scrollbar{
+  width: 6px;
+  display: none;
+  }
+  ::-webkit-scrollbar-thumb{
+  background: linear-gradient(40deg, #FF8A8A 20%,#F771D1 40%,#A18AFF 60%,#4CD2FF 80%,#6AFC82 100%);
+  border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(40deg, #FF5757 20%,#FF61D0 40%,#9278FA 60%,#24C5FF 80%,#43F761 100%);
+  }
+  ::-webkit-scrollbar-track{
+  background: #FFFFFF;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  }
+  /* Scroll bar smooth */
+  html
+  {
+    scroll-behavior: smooth;
+  }
+/* Header */
+.navbar-global {
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar-global .navbar-title {
+  color: rgb(0, 0, 0);
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 50px;
+  margin-left: 20px;
+}
+a, a:hover
+{
+  color: #000000;
+  text-decoration: none;
+}
+/* Bienvenue */
+.discover
+{
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 17px;
+  margin-left: 70px;
+  background-color: rgb(255, 254, 213);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+/* Accueil */
+.home
+{
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 17px;
+  margin-left: 120px;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background: linear-gradient(45deg,#e52d27, #b31217);
+    background-size: 600% 100%;
+    animation: gradient 5s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+/* Aide et coordonnées */
+.help
+{
+  text-align: center;
+  margin: 20px ;
+  color: black;
+}
+.helpClick, .helpClick:hover
+{
+  color: black;
+  text-decoration: none;
+}
+.help-icon
+{
+  padding-top: 30px;
+}
+
+.glyphicon-question-sign
+{
+  font-size: 20px;
+}
+/* Menu */
+.navbar-global .navbar-user > li > a
+{
+  color: rgb(0, 0, 0);
+}
+
+.navbar-primary {
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: rgb(255, 255, 255);
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+  top: 81px;
+  width: 180px;
+  overflow: hidden;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-width: 0px 1px 1px 0px;
+  border-style: dashed solid solid solid;
+  border-color: rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0);
+  font-size: 12px;
+}
+/* Barre verticale */
+.verticalBarre
+{
+  border-left: 2px solid black;
+  height: 60px;
+  display: inline-block;
+  margin-top: 10px;
+  padding-right: 30px;
+}
+/* Logo */
+.logo
+{
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+/* Menu */
+.navbar-primary.collapsed {
+  width: 60px;
+}
+
+.navbar-primary.collapsed .glyphicon {
+  font-size: 22px;
+}
+
+.navbar-primary.collapsed .nav-label {
+  display: none;
+}
+
+.btn-expand-collapse {
+    position: absolute;
+    display: block;
+    left: 0px;
+    bottom:0;
+    width: 100%;
+    padding: 8px 0;
+    border-top:solid 1px rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn-expand-collapse:hover,
+.btn-expand-collapse:focus {
+    background-color: rgb(255, 255, 255);
+    color: #e52d27;
+}
+
+.btn-expand-collapse:active {
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar-primary-menu,
+.navbar-primary-menu li {
+  margin:0; padding:0;
+  list-style: none;
+}
+
+.navbar-primary-menu li a {
+  display: block;
+  padding: 25px 18px;
+  text-align: left;
+  border-bottom:solid 1px rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navbar-primary-menu li a:hover {
+  background-color: #000;
+  text-decoration: none;
+  color: white;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.navbar-primary-menu li a .glyphicon {
+  margin-right: 6px;
+}
+
+.navbar-primary-menu li a:hover .glyphicon {
+  color: #e52d27;
+}
+/* Bannière */
+.driver
+{
+  width: 100%;
+  height: 365px;
+  border-bottom: 5px solid black;
+}
+/* Contenu */
+.main-content {
+  margin-top: 60px;
+  margin-left: 180px;
+  margin-bottom: 300px;
+  /* position: absolute;
+  z-index: -1; */
+}
+
+.collapsed + .main-content {
+  margin-left: 60px;
+}
+/* Dessins */
+.container-gallery
+{
+  margin-left: 60px;
+  position: relative;
+}
+.row
+{
+  margin-right: 30px;
+  position: relative;
+}
+.dessin1, .dessin2, .dessin3, .dessin4
+{
+  margin-top: 20px;
+  position: absolute;
+  width: 225px;
+  height: 225px;
+  border: 5px solid black;
+  transition: transform ease-in-out 0.3s;
+}
+.dessin1:hover, .dessin2:hover, .dessin3:hover, .dessin4:hover
+{
+  transform: scale(1.1);
+}
+/*  Description oeuvres */
+.description1, .description2, .description3, .description4
+{
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 12px;
+  margin-top: 265px;
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-right: 35px;
+  padding-left: 35px;
+}
+.description1
+{
+  margin-left: 18px;
+}
+.description2
+{
+  margin-left: 14px;
+}
+.description3
+{
+  margin-left: 22px;
+}
+.description4
+{
+  margin-left: 30px;
+}
+
+/* Bouton commentaire */
+.comment1
+{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+figure {
+  margin: 15px 0;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.grayscale {
+  filter: grayscale(0);
+}
+
+.grayscale:hover {
+  filter: grayscale(50%)
+}
+/* Proposition Logo */
+.explication
+{
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: white;
+  margin-top: 515px;
+  left: 55%;
+  position: absolute;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+/* Bas de page */
+.backgroundFooter
+{
+  background-color: rgb(0, 0, 0);
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: black;
+  padding: 10px;
+  margin-top: 700px;
+}
+.copyright, .conditions, .mentionsLégales, .version, .cookies, .donnéesPerso
+{
+  margin: 20px;
+  color: white;
+}
+/* Connexion */
+.popup-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+}
+.popup-container .button {
+  height: 40px;
+  line-height: 40px;
+  background: #000000;
+  padding: 0 40px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+.button:hover
+{
+  background: #39fad7;
+  background: -webkit-linear-gradient(to right,#44ea76, #39fad7);
+  background: linear-gradient(to right, #44ea76, #39fad7);
+  color: white;
+}
+.popup-container .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms all;
+}
+.popup-container .popup > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.popup-container .popup .inner {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  min-width: 300px;
+  box-sizing: border-box;
+  transition: 400ms all;
+  z-index: 10;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 10px;
+}
+.popup-container .popup .inner .title {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+.popup-container .popup .inner .title h6 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 82px;
+  padding-top: 20px;
+}
+.popup-container .popup .inner .title label {
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+}
+.popup-container .popup .inner .title label:hover {
+  color: rgb(0, 0, 0);
+}
+.popup-container .popup .inner .content {
+  padding: 5px 10px 10px;
+}
+.popup-container .popup .inner .content ul li input:focus {
+  outline: 0;
+  border-color: #272643;
+}
+.popup-container .popup .inner .content ul li button {
+  width: 100%;
+  height: 30px;
+  border-radius: 25px;
+  border: none;
+  background: #272643;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+.popup-container .popup .inner .content p {
+  font-size: 13px;
+  line-height: 130%;
+  margin-bottom: 15px;
+}
+.popup-container .popup .inner .content p:last-child {
+  margin-bottom: 0;
+}
+.popup-container .popup .inner .content .close-btn {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+.popup-container .popup .inner .content .close-btn label {
+  background: rgba(0, 0, 0, 0.05);
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #444;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.popup-container .popup .inner .content .close-btn label:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.popup-container > input {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+.popup-container > input:checked + .popup {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-container > input:checked + .popup .inner {
+  top: 50%;
+}
+/* Formulaire */
+.champ
+{
+  margin-bottom: 15px;
+  text-align: center;
+}
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
+.pseudo
+{
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: rgb(230, 230, 230);
+  padding-right: 60px;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+.motdepasse
+{
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding-bottom: 8px;
+  padding-right: 60px;
+  padding-top: 8px;
+  padding-left: 10px;
+  margin-left: -16px;
+}
+::placeholder
+{
+  color: black;
+}
+.send
+{
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: black;
+  color: white;
+  padding-left: 55px;
+  padding-right: 55px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.forget, .account
+{
+  color: blue;
+  text-align: center;
+}
