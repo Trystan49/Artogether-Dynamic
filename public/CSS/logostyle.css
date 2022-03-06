@@ -359,7 +359,7 @@ figcaption {
   align-items: center;
   height: 12vh;
 }
-.popup-container .button {
+.popup-container .buttonC {
   height: 40px;
   line-height: 40px;
   background: #000000;
@@ -370,12 +370,32 @@ figcaption {
   color: #fff;
   cursor: pointer;
 }
-.button:hover
+.buttonD {
+  height: 40px;
+  line-height: 40px;
+  background: #000000;
+  padding: 0 40px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.textbuttonD{
+  color: white
+}
+.buttonC:hover
 {
   background: #39fad7;
   background: -webkit-linear-gradient(to right,#44ea76, #39fad7);
   background: linear-gradient(to right, #44ea76, #39fad7);
   color: white;
+}
+.buttonD:hover
+{
+  background: #e52d27;
+  background: -webkit-linear-gradient(to right, #b31217, #e52d27);
+  background: linear-gradient(to right, #b31217, #e52d27);
+  color: rgb(255, 255, 255);
 }
 .popup-container .popup {
   position: fixed;
