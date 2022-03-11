@@ -141,7 +141,7 @@ a, a:hover
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5px;
+    margin-top: 60px;
 }
 /* Menu */
 .navbar-primary.collapsed {
@@ -598,4 +598,18 @@ a, a:hover
 {
   color: blue;
   text-align: center;
+}
+
+/* PARTIE FOOTER */
+.cgu{
+  background-color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.aCgu, .aDonneesPerso, .aMentionsLegales, .aCookies{
+  text-decoration: none;
+  color: white;
+}
+.aCgu:hover, .aDonneesPerso:hover, .aMentionsLegales:hover, .aCookies:hover{
+  color: lightgreen
 }

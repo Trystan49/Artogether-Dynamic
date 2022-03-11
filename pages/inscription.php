@@ -57,10 +57,8 @@
                     placeholder="Mot de passe">
                 <i class="bi bi-eye-slash" id="toggleMotDePasse"></i>
             </div>
-            <div class="champ form-group d-flex">
-                <input type="password" required name="motdepasse" id="motdepasse" tabindex="1" class="motdepasse"
-                    placeholder="Confirmer mot de passe">
-                <i class="bi bi-eye-slash" id="toggleMotDePasse"></i>
+            <div class="securitypwd">
+                Votre mot de passe doit contenir au moins 8 caractères <br> ainsi qu'un mélange de lettres, chiffres et symboles.
             </div>
             <!--bouton d'envoi du formulaire-->
             <div class="champ">

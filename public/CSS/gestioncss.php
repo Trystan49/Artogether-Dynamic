@@ -16,6 +16,11 @@
     "commentaire"=>"commentairestyle",
     "envoifichier"=>"fichierstyle",
     "admin"=>"adminstyle",
-    "game"=>"gamestyle"
+    "game"=>"gamestyle",
+    "profilUtilisateur"=>"profilUtilisateur",
+    "cgu"=>"lienfooterstyle",
+    "mentionslegales"=>"lienfooterstyle",
+    "cookies"=>"lienfooterstyle",
+    "donneespersonnelles"=>"lienfooterstyle"
 ];
 ?>

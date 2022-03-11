@@ -51,7 +51,7 @@ a, a:hover
 {
   font-family: 'Reem Kufi', sans-serif;
   font-size: 17px;
-  margin-left: 70px;
+  margin-left: 30px;
   background-color: rgb(255, 254, 213);
   border-radius: 5px;
   padding-top: 10px;
@@ -141,7 +141,7 @@ a, a:hover
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5px;
+    margin-top: 60px;
 }
 /* Menu */
 .navbar-primary.collapsed {
@@ -561,4 +561,18 @@ form i {
 {
   color: blue;
   text-align: center;
+}
+
+/* PARTIE FOOTER */
+.cgu{
+  background-color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.aCgu, .aDonneesPerso, .aMentionsLegales, .aCookies{
+  text-decoration: none;
+  color: white;
+}
+.aCgu:hover, .aDonneesPerso:hover, .aMentionsLegales:hover, .aCookies:hover{
+  color: lightgreen
 }

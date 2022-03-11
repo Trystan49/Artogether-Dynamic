@@ -52,13 +52,24 @@ a, a:hover
 {
   font-family: 'Reem Kufi', cursive;
   font-size: 17px;
-  margin-left: 100px;
+  margin-left: 50px;
   background-color: lightgreen;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 150px;
   padding-left: 150px;
+}
+.pseudoConnect{
+  font-family: 'Reem Kufi', cursive;
+  font-size: 15px;
+  margin-left: 50px;
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 /* Accueil */
 .home
@@ -143,7 +154,7 @@ a, a:hover
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 /* Menu */
 .navbar-primary.collapsed {
@@ -523,6 +534,60 @@ form i {
 .popup-container > input:checked + .popup .inner {
   top: 50%;
 }
+.imageProfil{
+  width: 50px;
+  height: 50px;
+}
+.principal_petit
+{
+  display: block;
+  margin-left: 65px;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50px;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_petit:hover
+{
+  -webkit-transform: scale(1.1);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(1.1);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(1.1);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(1.1);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(1.1);
+  transition:all 0.2s ease-in;
+}
+.principal_img
+{
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_img:hover
+{
+  -webkit-transform: scale(0.7);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(0.7);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(0.7);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(0.7);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(0.7);
+  transition:all 0.2s ease-in;
+}
 /* Formulaire */
 .champ
 {
@@ -569,4 +634,18 @@ form i {
 {
   color: blue;
   text-align: center;
+}
+
+/* PARTIE FOOTER */
+.cgu{
+  background-color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.aCgu, .aDonneesPerso, .aMentionsLegales, .aCookies{
+  text-decoration: none;
+  color: white;
+}
+.aCgu:hover, .aDonneesPerso:hover, .aMentionsLegales:hover, .aCookies:hover{
+  color: lightgreen
 }

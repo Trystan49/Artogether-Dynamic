@@ -1,11 +1,14 @@
-/* Arrière plan */
-body
-{
-  background-image: url(../Medias/crayon-background.jpg);
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100%;
+*{
+  -moz-box-sizing: border-box; box-sizing: border-box;
+}
+html{
+  height:100%
+}
+body{
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 /* Scroll Bar */
 ::-webkit-scrollbar{
@@ -32,8 +35,9 @@ body
 /* Header */
 .navbar-global {
   background-color: rgb(255, 255, 255);
+  z-index: 20;
+  position: fixed;
 }
-
 .navbar-global .navbar-title {
   color: rgb(0, 0, 0);
   font-family: 'Oswald', sans-serif;
@@ -47,24 +51,35 @@ a, a:hover
   text-decoration: none;
 }
 /* Bienvenue */
-.discover
+.welcome
 {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   font-size: 17px;
-  margin-left: 30px;
-  background-color: rgb(255, 254, 213);
+  margin-left: 50px;
+  background-color: lightgreen;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding-right: 150px;
+  padding-left: 150px;
+}
+.pseudoConnect{
+  font-family: 'Reem Kufi', cursive;
+  font-size: 15px;
+  margin-left: 50px;
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 /* Accueil */
-.artgraphique
+.home
 {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   font-size: 17px;
-  margin-left: 30px;
+  margin-left: 125px;
   color: white;
   border-radius: 5px;
   border: 1px solid black;
@@ -72,7 +87,7 @@ a, a:hover
   padding-bottom: 10px;
   padding-right: 50px;
   padding-left: 50px;
-  background: linear-gradient(45deg,#fceabb, #f8b500);
+  background: linear-gradient(45deg,#8c8cbb, #348ac7);
     background-size: 600% 100%;
     animation: gradient 5s linear infinite;
     animation-direction: alternate;
@@ -84,6 +99,7 @@ a, a:hover
 /* Aide et coordonnées */
 .help
 {
+  font-family: 'Reem Kufi', cursive;
   text-align: center;
   margin: 20px ;
   color: black;
@@ -109,11 +125,12 @@ a, a:hover
 }
 
 .navbar-primary {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   background-color: rgb(255, 255, 255);
   bottom: 0px;
   left: 0px;
   position: fixed;
+  z-index: 2;
   top: 81px;
   width: 180px;
   overflow: hidden;
@@ -141,7 +158,7 @@ a, a:hover
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 /* Menu */
 .navbar-primary.collapsed {
@@ -172,7 +189,7 @@ a, a:hover
 .btn-expand-collapse:hover,
 .btn-expand-collapse:focus {
     background-color: rgb(255, 255, 255);
-    color: #f8b500;
+    color: rgb(71, 129, 255);
 }
 
 .btn-expand-collapse:active {
@@ -213,206 +230,46 @@ a, a:hover
 }
 
 .navbar-primary-menu li a:hover .glyphicon {
-  color: #f8b500;
-}
-/* Bannière skyline */
-.skyline
-{
-  width: 100%;
-  height: 365px;
-  border-bottom: 5px solid black;
+  color: rgb(71, 129, 255);
 }
 /* Contenu */
 .main-content {
   margin-top: 60px;
   margin-left: 180px;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
 }
 
 .collapsed + .main-content {
   margin-left: 60px;
 }
-/* Dessins */
-.container-gallery
-{
-  margin-left: 60px;
-}
-.row
-{
-  margin-right: 30px;
-  position: relative;
-}
-.dessin1, .dessin2, .dessin3, .dessin4
-{
-  margin-top: 20px;
-  position: absolute;
-  width: 225px;
-  height: 300px;
-  border: 5px solid black;
-  transition: transform ease-in-out 0.3s;
-}
-.dessin1:hover, .dessin2:hover, .dessin3:hover, .dessin4:hover
-{
-  transform: scale(1.1);
-}
-.dessin5, .dessin6, .dessin7, .dessin8
-{
-  margin-top: 450px;
-  position: absolute;
-  width: 225px;
-  height: 300px;
-  border: 5px solid black;
-  transition: transform ease-in-out 0.3s;
-}
-.dessin5:hover, .dessin6:hover, .dessin7:hover, .dessin8:hover
-{
-  transform: scale(1.1);
-}
-/*  Description oeuvres */
-.description1, .description2, .description3, .description4
-{
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 12px;
-  margin-top: 340px;
-  position: absolute;
-  z-index: -1;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding-right: 35px;
-  padding-left: 35px;
-}
-.description1
-{
-  margin-left: 35px;
-}
-.description2
-{
-  margin-left: 20px;
-}
-.description3
-{
-  margin-left: 16px;
-}
-.description4
-{
-  margin-left: 34px;
-}
-.description5
-{
-  margin-left: 34px;
-}
-.description6
-{
-  margin-left: 27px;
-}
-.description7
-{
-  margin-left: 34px;
-}
-.description8
-{
-  margin-left: 25px;
-}
-.description5, .description6, .description7, .description8
-{
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 12px;
-  margin-top: 770px;
-  position: absolute;
-  z-index: -1;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding-right: 35px;
-  padding-left: 35px;
-}
-figure {
-  margin: 15px 0;
-}
-
-figcaption {
-  text-align: center;
-}
-
-.grayscale {
-  filter: grayscale(0);
-}
-
-.grayscale:hover {
-  filter: grayscale(50%)
-}
 /* Bas de page */
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 5em;
+}
 .backgroundFooter
 {
   background-color: rgb(0, 0, 0);
   border-width: 1px 0px 0px 0px;
   border-style: solid;
   border-color: black;
-  padding: 10px;
-  margin-top: 1050px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .copyright, .conditions, .mentionsLégales, .version, .cookies, .donnéesPerso
 {
+  font-family: 'Reem Kufi', cursive;
   margin: 20px;
   color: white;
 }
-/* Bouton commentaire */
-.comment {
-  background: #000000;
-  margin-top: 950px;
-  position: absolute;
-  left: 52%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width : 250px;
-  height : 50px;
-  overflow: hidden;
-  text-align : center;
-  transition : .2s;
-  cursor : pointer;
-  border-radius: 3px;
-  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
-  border: 1px solid black;
-}
-.commenTwo {
-  position : relative;
-  width : 200px;
-  height : 100px;
-  margin-top: -95px;
-  padding-top: 2px;
-  background: #FDFC47;
-  background: -webkit-linear-gradient(to right, #11998e, #38ef7d);
-  background: linear-gradient(to right, #11998e, #38ef7d);
-  left : -250px;
-  transition : .3s;
-}
-.commenText {
-  font-family: 'Reem Kufi', sans-serif;
-  margin-top: 15px;
-  color : rgb(255, 255, 255);
-  transition : .3s;
-}
-.commenText2 {
-  
-  margin-top : 63px;
-  margin-right : -130px;
-  color : #FFF;
-}
-.comment:hover .commenTwo{
-  left: -130px;
-}
-.comment:hover .commenText{
-  margin-left : 65px;
-}
-.comment:active {
-  box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
-}
 /* Connexion */
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
 .popup-container {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: flex;
@@ -464,7 +321,7 @@ figcaption {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.884);
   z-index: 10;
   opacity: 0;
   visibility: hidden;
@@ -472,6 +329,7 @@ figcaption {
 }
 .popup-container .popup > label {
   position: absolute;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
@@ -480,6 +338,7 @@ figcaption {
 }
 .popup-container .popup .inner {
   position: absolute;
+  z-index: 10;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -503,7 +362,7 @@ figcaption {
   background: #fff;
 }
 .popup-container .popup .inner .title h6 {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   font-size: 15px;
   font-weight: 600;
   margin-left: 82px;
@@ -572,19 +431,69 @@ figcaption {
 .popup-container > input:checked + .popup .inner {
   top: 50%;
 }
+.imageProfil{
+  width: 50px;
+  height: 50px;
+}
+.principal_petit
+{
+  display: block;
+  margin-left: 65px;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50px;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_petit:hover
+{
+  -webkit-transform: scale(1.1);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(1.1);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(1.1);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(1.1);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(1.1);
+  transition:all 0.2s ease-in;
+}
+.principal_img
+{
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_img:hover
+{
+  -webkit-transform: scale(0.7);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(0.7);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(0.7);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(0.7);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(0.7);
+  transition:all 0.2s ease-in;
+}
 /* Formulaire */
 .champ
 {
   margin-bottom: 15px;
   text-align: center;
 }
-form i {
-  margin-left: -30px;
-  cursor: pointer;
-}
 .pseudo
 {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   background-color: rgb(230, 230, 230);
   padding-right: 60px;
   border-radius: 5px;
@@ -594,14 +503,14 @@ form i {
 }
 .motdepasse
 {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   background-color: rgb(230, 230, 230);
   border-radius: 5px;
   padding-bottom: 8px;
   padding-right: 60px;
   padding-top: 8px;
   padding-left: 10px;
-  margin-left: -16px;
+  margin-left: -17px;
 }
 ::placeholder
 {
@@ -609,7 +518,7 @@ form i {
 }
 .send
 {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', cursive;
   background-color: black;
   color: white;
   padding-left: 55px;
@@ -624,11 +533,22 @@ form i {
   text-align: center;
 }
 
-/* PARTIE FOOTER */
-.cgu{
-  background-color: white;
+/* PARTIE CGU */
+h1{
+    font-family: 'Reem Kufi', cursive;
+}
+h2{
+    font-family: 'Reem Kufi', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+.cgu, .mentionsLegales, .cookies, .donneesPerso{
   font-size: 14px;
   margin-left: 10px;
+  color: black;
+}
+.cookiesText{
+  margin-bottom: 480px;
 }
 .aCgu, .aDonneesPerso, .aMentionsLegales, .aCookies{
   text-decoration: none;
@@ -636,4 +556,20 @@ form i {
 }
 .aCgu:hover, .aDonneesPerso:hover, .aMentionsLegales:hover, .aCookies:hover{
   color: lightgreen
+}
+.article{
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-family: 'Reem Kufi', cursive;
+}
+.logoCookies
+{
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+p, ul, li, ol{
+  font-family: Arial, Helvetica, sans-serif;
 }

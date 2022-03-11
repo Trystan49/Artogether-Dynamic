@@ -15,17 +15,19 @@ ob_start();
                     class="nav-label">Art graphique</span></a>
             <a href="index.php?page=logo"><span class="glyphicon glyphicon-record"></span><span
                     class="nav-label">Logo</span></a>
-            <a href="index.php?page=forum"><span class="glyphicon glyphicon-comment"></span><span
-                    class="nav-label">Forum de discussion</span></a>
+            <!-- <a href="index.php?page=forum"><span class="glyphicon glyphicon-comment"></span><span
+                    class="nav-label">Forum de discussion</span></a> -->
         </li>
     </ul>
     <!-- Bouton de connexion avec popup -->
     <div class="popup-container">
         <?php
         if (@$_SESSION["etatConnexion"] == "1"){
+            //Bouton déconnexion qui apparaît quand on est connecté
             echo('<label class="buttonD"><a class="textbuttonD" href="index.php?page=deconnexion">Deconnexion</a></label>');
         }
         else {
+            //Bouton connexion par défaut sur le site si on n'est pas connecté ou si on a pas de compte.
             echo('<label class="buttonC" for="login-popup">Connexion</label>
             <input type="checkbox" id="login-popup">');
         }
@@ -69,6 +71,16 @@ ob_start();
                 </form>
             </div>
         </div>
+    </div>
+    <!-- Profil -->
+    <div class="fond">
+        <a href="index.php?page=profilUtilisateur">
+            <div class="principal_petit">
+                <div class="principal_img">
+                    <img class="imageProfil" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/img_scale_sociaux.png"/>
+                </div>
+            </div>
+        </a>
     </div>
     <!-- Logo barre de navigation -->
     <a href="index.php?page=admin"><img class="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png"></a>

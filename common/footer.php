@@ -6,13 +6,17 @@ if (isset($_COOKIE['accept_cookie'])) {
 }
 if ($showcookie) { ?>
   <div class="cookie-alert">
-    En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts.<br/><a href="donnees/accept_cookie.php">OK</a>
+    En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts. &nbsp;<img class="logoCookie" src="public/Medias/cookie.png"><br/><a href="donnees/accept_cookie.php">OK</a>
   </div>
 <?php }
 ?>
 
 <style>
   /* Cookies */
+.logoCookie
+{
+    width: 20px;
+}
 .cookie-alert {
     position: fixed;
     bottom: 45px;
@@ -54,10 +58,10 @@ if ($showcookie) { ?>
 <footer class="bg-light text-right text-white">
   <div class="text-right p-3 backgroundFooter">
     <span class="copyright">© 2021 Copyright: Artogether</span>
-    <span class="conditions">Conditions générales d'utilisation</span>
-    <span class="donnéesPerso">Données Personnelles</span>
-    <span class="mentionsLégales">Mentions Légales</span>
-    <span class="cookies">Cookies</span>
+    <span class="conditions"><a class="aCgu" href="index.php?page=cgu">Conditions générales d'utilisation</span></a>
+    <span class="donnéesPerso"><a class="aDonneesPerso" href="index.php?page=donneespersonnelles">Données Personnelles</span></a>
+    <span class="mentionsLégales"><a class="aMentionsLegales" href="index.php?page=mentionslegales">Mentions Légales</span></a>
+    <span class="cookies"><a class="aCookies" href="index.php?page=cookies">Cookies</span></a>
     <span class="version">V1.0</span>
   </div>
 </footer>

@@ -41,6 +41,7 @@ if ($result) {
 
             $_SESSION["etatConnexion"] = "1";
             //toutes les informations concernant l'utilisateur pourront être accessible durant la session
+            $_SESSION["pseudo"] = $result['PSEUDO_UTILISATEUR'];
             $_SESSION["prenom"] = $result['PRENOM_UTILISATEUR'];
             $_SESSION["nom"] = $result['NOM_UTILISATEUR'];
             $_SESSION["motdepasse"] = $result['MOT_DE_PASSE_UTILISATEUR'];

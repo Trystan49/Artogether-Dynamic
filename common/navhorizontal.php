@@ -10,7 +10,18 @@
             <!-- Contenu du haut de page -->
             <a href="index.php?page=accueil">
                 <div class="navbar-title">ARTOGETHER
-            </a><span class="welcome">Bienvenue</span><span class="home">Accueil</span>
+            </a>
+            <?php
+                if (@$_SESSION["etatConnexion"] == "1"){
+                    //Affichage pseudo si connecté
+                    echo ('<span class="pseudoConnect">Bonjour&nbsp<strong>'. $_SESSION['pseudo'].  '</strong> !</span>');
+                }
+                else {
+                    //Affichage message "Bienvenue" si pas connecté
+                    echo('<span class="welcome">Bienvenue</span>');
+                }
+            ?>
+            <span class="home">Accueil</span>
         </div>
     </div>
     <div id="navbar" class="collapse navbar-collapse">

@@ -1,8 +1,12 @@
 <?php
-    $_SESSION['pseudo'];
-    $_SESSION['motdepasse'];
-    $_SESSION['is_administrateur']
+    //if((!isset($_SESSION['IS_ADMINISTRATEUR']) && $_SESSION['IS_ADMINISTRATEUR'] == "Yes" )){
+        //header("Location: admin.php");
+    //}
+    //else {
+        //header("Location: accueil.php");
+    //}
 ?>
+
 <!-- Contenu -->
 <div class="main-content">
     <div class="admin">
