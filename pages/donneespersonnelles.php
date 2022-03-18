@@ -37,13 +37,10 @@
             vous :</p>
         <ul>
             <li>
-                naviguez sur le Site
-            </li>
-            <li>
                 créez un profil utilisateur
             </li>
             <li>
-                nous contactez.
+                nous contacter.
             </li>
         </ul>
         <p>Nous utilisons vos données à caractère personnel pour permettre la mise en œuvre et la gestion des Services
@@ -77,7 +74,7 @@
                 cadre, nous pouvons avoir recours à l’utilisation de Cookies tel que précisé au paragraphe 6 ci-dessous.
             </li>
         </ul>
-        <strong class="article"><u>Article 3 :</u> &nbsp;Création d’un Compte ou d’un profil d’Artiste</strong>
+        <strong class="article"><u>Article 3 :</u> &nbsp;Création d’un Compte</strong>
         <br>
         <p>L’accès à certain de nos Services nécessite la création préalable d’un Compte. Conformément aux Conditions
             Générales d’Utilisation, il vous sera demandé de renseigner un certain nombre de données à caractère
@@ -85,27 +82,6 @@
 
         <p>Lors de la création d’un profil personnalisé sur le Site, chaque utilisateur communique son nom, prénom, nom
             pseudo et son adresse email.</p>
-
-        <strong class="article"><u>Article 4 :</u> &nbsp;Mise en vente d’oeuvres</strong>
-        <br>
-        <p>Dans le cadre de la mise en vente d’oeuvre (et l’accomplissement éventuel de Formalités), il vous sera demandé
-            pour chaque œuvre des informations relatives à cette œuvre nécessaire à sa vente, notamment une ou plusieurs
-            photos de cette œuvre, son titre, sa date de création, sa technique, ses dimensions, et son prix de vente.</p>
-
-        <strong class="article"><u>Article 5 :</u> &nbsp;Inscription à notre Newsletter</strong>
-        <br>
-        <p>Lors de la création de votre Compte, vous pouvez donner votre consentement préalable à la réception de nos
-            lettres d’informations concernant de nouvelles oeuvres, services et promotions, dans le cadre des Services.</p>
-
-        <p>En tout état de cause, vous disposez du droit de retirer votre consentement à la réception de telles lettres
-            d’information à tout moment et sans frais dans les conditions prévues au paragraphe 6 de la Charte.</p>
-
-        <strong class="article"><u>Article 6 :</u> &nbsp;Contacts</strong>
-        <br>
-        <p>Afin de donner suite aux demandes que vous pourriez effectuer auprès de notre Service Client, de confirmer les
-            informations et toutes les transactions sur votre Compte et vous donner des informations concernant les Services
-            (par exemple, si vous perdez votre mot de passe ou si des changements sont effectués dans les Conditions
-            d’utilisation), nous utiliserons vos nom, prénom et adresse email.</p>
 
         <strong class="article"><u>Article 7 :</u> &nbsp;Comment protégeons-nous vos données à caractère personnel ?</strong>
         <br>
@@ -120,7 +96,7 @@
 
         <p>Par ailleurs, il vous incombe d’assurer la confidentialité du mot de passe vous permettant d’accéder à votre
             Compte. Ne communiquez cette information à personne. Si vous partagez votre ordinateur, n’oubliez pas de vous
-            déconnecter avant de quitter un Service.</p>
+            déconnecter avant de quitter le site.</p>
 
         <strong class="article"><u>Article 8 :</u> &nbsp;Dans quels cas partageons-nous vos données à caractère personnel ?</strong>
         <br>
@@ -130,8 +106,7 @@
             </li>
         </ul>
         <p>Lors de votre navigation sur le Site, vos données à caractère personnel peuvent être transmises à des
-            prestataires extérieurs. Ces tiers assurent un service pour notre compte et en notre nom dans le but de
-            permettre le bon fonctionnement des paiements par carte de crédit et autres Services.</p>
+            prestataires extérieurs.</p>
 
         <p>Les données à caractère personnel sont susceptibles d’être transférées vers des pays situés hors de l’Union
             Européenne (tels que les Etats-Unis, le Maroc et Madagascar) dans le but de traiter vos demandes, de saisir les
@@ -184,8 +159,6 @@
         <p>En outre, dans les limites posées par la loi, vous disposez également du droit de vous opposer au traitement, de le limiter, de décider du sort post-mortem de vos données, de retirer votre consentement à tout moment et du droit à la portabilité des données à caractère personnel fournies.</p>
         
         <p>Vous pouvez contactez nos Services afin d’exercer vos droits à l’adresse électronique suivante : contact.artogether@gmail.com ou à l’adresse postale suivante : 55 rue du Petit Parc 33200 Bordeaux, en joignant à votre demande une copie d’un titre d’identité.</p>
-        
-        <p>Par ailleurs, vous pouvez à tout moment vous désabonner de notre newsletter en cliquant sur le lien qui permet le désabonnement en bas de chaque email. Vous pouvez également vous désabonner en envoyant un message à l’adresse suivante : contact@kazoart.com.</p>
 
         <strong class="article"><u>Article 11 :</u> &nbsp;Pouvons-nous modifier la Charte ?</strong>
         <br>

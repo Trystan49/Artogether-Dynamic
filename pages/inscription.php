@@ -40,27 +40,28 @@
         <form action="index.php?page=register" method="post" role="form">
             <div class="champ">
                 <br>
-                <input class="prenom" type="text" id="prenom" name="prenom" tabindex="1" placeholder="Prénom" required>
+                <input class="prenom" type="text" id="prenom" name="prenom" size="30" maxlength="25" placeholder="Prénom" required>
             </div>
             <div class="champ">
-                <input class="nom" type="text" id="nom" name="nom" tabindex="1" placeholder="Nom" required>
+                <input class="nom" type="text" id="nom" name="nom" size="30" maxlength="25" placeholder="Nom" required>
             </div>
             <div class="champ">
-                <input class="pseudo" type="text" id="pseudo" name="pseudo" tabindex="1" placeholder="Pseudo" required>
+                <input class="pseudo" type="text" id="pseudo" name="pseudo" size="30" maxlength="25" placeholder="Pseudo" required>
             </div>
             <div class="champ">
-                <input class="mail" type="text" required size="20" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" id="mail"
-                    name="mail" tabindex="1" placeholder="Adresse mail">
+                <input class="mail" type="text" required maxlength="50" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" id="mail"
+                    name="mail" size="30" placeholder="Adresse mail">
             </div>
             <div class="champ form-group d-flex">
-                <input type="password" required name="motdepasse" id="motdepasse" tabindex="1" class="motdepasse"
-                    placeholder="Mot de passe">
+                <input type="password" required name="motdepasse" id="motdepasse" size="30" maxlength="25" class="motdepasse"
+                    placeholder="Mot de passe" onchange="controlPwd(this)">
                 <i class="bi bi-eye-slash" id="toggleMotDePasse"></i>
             </div>
-            <div class="securitypwd">
-                Votre mot de passe doit contenir au moins 8 caractères <br> ainsi qu'un mélange de lettres, chiffres et symboles.
+            <div class="champ form-group d-flex">
+                <input type="password" name="confirm-motdepasse" maxlength="25" size="30" onchange="confirmPwd()" id="confirm-motdepasse"
+                    tabindex="2" class="motdepasse" placeholder="Confirmer mot de passe" required>
+                <i class="bi bi-eye-slash" id="toggleMotDePasse"></i>
             </div>
-            <!--bouton d'envoi du formulaire-->
             <div class="champ">
                 <input class="send" type="submit" value="Créer un compte">
             </div>
@@ -72,19 +73,49 @@
 </div>
 
 <script>
-  const togglePassword = document.querySelector("#toggleMotDePasse");
-  const password = document.querySelector("#motdepasse");
+const togglePassword = document.querySelector("#toggleMotDePasse");
+const password = document.querySelector("#motdepasse");
 
-  togglePassword.addEventListener("click", function() {
+togglePassword.addEventListener("click", function() {
     // toggle the type attribute
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
 
     // toggle the icon
     this.classList.toggle("bi-eye");
-  });
+});
 
-  // prevent form submit
-  const form = document.querySelector("form");
-  form.addEventListener('submit');
+// prevent form submit
+const form = document.querySelector("form");
+form.addEventListener('submit');
+</script>
+<script>
+function confirmPwd() {
+    const pwd = document.getElementById('motdepasse');
+    const pwdConfirm = document.getElementById('confirm-motdepasse');
+    if (pwd.value != pwdConfirm.value) {
+        pwdConfirm.validity.valid = "false";
+        pwdConfirm.setCustomValidity("Saisir le même mot de passe");
+    } else {
+        pwdConfirm.validity.valid = "true";
+        pwdConfirm.setCustomValidity("");
+    }
+}
+
+function controlPwd(elemPwd) {
+    const pwd = String(elemPwd.value);
+    if (!pwd.match(/[0-9]/g) || !pwd.match(/[A-Z]/g) || !pwd.match(/[a-z]/g) || !pwd.match(/[^a-zA-Z\d]/g) || pwd
+        .length < 8) {
+        //mot de passe invalide
+        elemPwd.validity.valid = "false";
+        //info bulle sur le type d'erreur
+        elemPwd.setCustomValidity(
+            "Votre mot de passe doit comporter au moins 12 caractères avec au moins une majuscule, minuscule, chiffre et signe de ponctuation"
+            );
+    } else {
+        //nettoyage de l'invalidité de la zone
+        elemPwd.validity.valid = "true";
+        elemPwd.setCustomValidity("");
+    }
+}
 </script>

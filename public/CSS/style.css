@@ -368,7 +368,7 @@ a, a:hover
   margin: 20px;
   color: white;
 }
-/* Connexion */
+/* Connexion + Déconnexion*/
 form i {
   margin-left: -30px;
   cursor: pointer;
@@ -399,6 +399,7 @@ form i {
   border-radius: 25px;
   font-size: 14px;
   font-weight: 500;
+  color: #fff;
   cursor: pointer;
 }
 .textbuttonD{
@@ -534,6 +535,45 @@ form i {
 .popup-container > input:checked + .popup .inner {
   top: 50%;
 }
+/* Popup déconnexion */
+.areYouSure{
+  font-family: "Reem Kufi", sans-serif;
+  margin-top: 20px;
+  text-align: center;
+}
+.yes{
+  font-family: "Reem Kufi", sans-serif;
+  background-color: rgb(0, 129, 6);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 75px;
+}
+.no{
+  font-family: "Reem Kufi", sans-serif;
+  background-color: rgb(160, 1, 1);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+.logoGoodBye{
+  width: 120px;
+  margin-top: 30px;
+  margin-left: 90px;
+}
+.aYes, .aNo, .aYes:hover, .aNo:hover {
+  text-decoration: none;
+  color: white;
+}
+/* Bouton Profil */
 .imageProfil{
   width: 50px;
   height: 50px;

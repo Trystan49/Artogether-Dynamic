@@ -8,6 +8,3 @@
     </span>
   </div>
 </div>
-
-<!-- Script JS -->
-  <script  src="public/JS/previewscript.js"></script>

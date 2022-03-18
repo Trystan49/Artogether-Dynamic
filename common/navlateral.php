@@ -24,7 +24,25 @@ ob_start();
         <?php
         if (@$_SESSION["etatConnexion"] == "1"){
             //Bouton déconnexion qui apparaît quand on est connecté
-            echo('<label class="buttonD"><a class="textbuttonD" href="index.php?page=deconnexion">Deconnexion</a></label>');
+            echo('<label class="buttonD" for="login-popup">Deconnexion</label>
+                    <input type="checkbox" id="login-popup"> 
+                    <div class="popup">
+                        <label for="login-popup"></label>
+                        <div class="inner">
+                            <div class="title">
+                                <h6>DECONNEXION</h6>
+                                <label for="login-popup">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </label>
+                            </div>
+                            <p class="areYouSure">Voulez vous vous déconnecter ?</p>
+                            <button class="yes" type="button"><a class="aYes" href="index.php?page=deconnexion">Oui</button>
+                            <button class="no" type="button"><a class="aNo" href="">Non</a></button>
+                            <br>
+                            <img class="logoGoodBye" src="public/Medias/see_you_soon.png">
+                        </div>
+                    </div>
+            ');
         }
         else {
             //Bouton connexion par défaut sur le site si on n'est pas connecté ou si on a pas de compte.

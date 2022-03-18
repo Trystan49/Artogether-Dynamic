@@ -90,8 +90,8 @@
             navigateurs.</p>
 
         <ul>
-            <li><strong>Internet Explorer / Edge</strong></li>
-            <ol>Dans Internet Explorer, cliquez sur le bouton Outils, puis sur Options Internet.
+            <li><strong>Microsoft Edge</strong></li>
+            <ol>Dans Microsoft Edge, cliquez sur le bouton Outils, puis sur Options Internet.
                 Sous l’onglet Général, sous Historique de navigation, cliquez sur Paramètres.
                 Cliquez sur le bouton Afficher les fichiers.</ol>
             <li><strong>Firefox</strong></li>

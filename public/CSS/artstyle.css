@@ -1,3 +1,6 @@
+html{
+  height:100%
+}
 /* Arrière plan */
 body
 {
@@ -6,7 +9,14 @@ body
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100%;
-}
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-bottom: 100px;
+  -moz-box-sizing: border-box; box-sizing: border-box;
+  z-index: -4;
+  }
 /* Scroll Bar */
 ::-webkit-scrollbar{
   width: 6px;
@@ -32,6 +42,8 @@ body
 /* Header */
 .navbar-global {
   background-color: rgb(255, 255, 255);
+  position: fixed;
+  z-index: -3;
 }
 
 .navbar-global .navbar-title {
@@ -142,7 +154,7 @@ a, a:hover
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-bottom: auto;
 }
 
@@ -224,12 +236,14 @@ a, a:hover
   width: 100%;
   height: 365px;
   border-bottom: 5px solid black;
+  position: relative;
+  z-index: -5;
 }
 /* Contenu */
 .main-content {
   margin-top: 60px;
   margin-left: 180px;
-  margin-bottom: 300px;
+  margin-bottom: 1000px;
 }
 
 .collapsed + .main-content {
@@ -239,8 +253,6 @@ a, a:hover
 .container-gallery
 {
   margin-left: 50px;
-  z-index: 20;
-  position: static;
 }
 .row
 {
@@ -251,6 +263,7 @@ a, a:hover
 {
   margin-top: 20px;
   position: absolute;
+  z-index: -4;
   width: 225px;
   height: 300px;
   border: 5px solid black;
@@ -264,6 +277,7 @@ a, a:hover
 {
   margin-top: 450px;
   position: absolute;
+  z-index: -4;
   width: 225px;
   height: 300px;
   border: 5px solid black;
@@ -280,7 +294,7 @@ a, a:hover
   font-size: 12px;
   margin-top: 340px;
   position: absolute;
-  z-index: -1;
+  z-index: -4;
   text-align: center;
   background-color: rgb(255, 255, 255);
   padding: 10px;
@@ -296,7 +310,7 @@ a, a:hover
   font-size: 12px;
   margin-top: 770px;
   position: absolute;
-  z-index: -1;
+  z-index: -4;
   text-align: center;
   background-color: rgb(255, 255, 255);
   padding: 10px;
@@ -322,14 +336,23 @@ figcaption {
   filter: grayscale(50%)
 }
 /* Bas de page */
+footer{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 5em;
+  position: absolute;
+  z-index: -5;
+}
 .backgroundFooter
 {
   background-color: rgb(0, 0, 0);
   border-width: 1px 0px 0px 0px;
   border-style: solid;
   border-color: black;
-  padding: 10px;
-  margin-top: 1050px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 500px;
 }
 .copyright, .conditions, .mentionsLégales, .version, .cookies, .donnéesPerso
 {
@@ -341,6 +364,7 @@ figcaption {
   background: #000000;
   margin-top: 950px;
   position: absolute;
+  z-index: -4;
   left: 52%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -414,6 +438,7 @@ figcaption {
   border-radius: 25px;
   font-size: 14px;
   font-weight: 500;
+  color: #fff;
   cursor: pointer;
 }
 .textbuttonD{
@@ -455,6 +480,7 @@ figcaption {
 }
 .popup-container .popup .inner {
   position: absolute;
+  z-index: 10;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -547,6 +573,99 @@ figcaption {
 .popup-container > input:checked + .popup .inner {
   top: 50%;
 }
+/* Popup déconnexion */
+.areYouSure{
+  font-family: "Reem Kufi", sans-serif;
+  margin-top: 20px;
+  text-align: center;
+}
+.yes{
+  font-family: "Reem Kufi", sans-serif;
+  background-color: rgb(0, 129, 6);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 75px;
+}
+.no{
+  font-family: "Reem Kufi", sans-serif;
+  background-color: rgb(160, 1, 1);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+.logoGoodBye{
+  width: 120px;
+  margin-top: 30px;
+  margin-left: 90px;
+}
+.aYes, .aNo, .aYes:hover, .aNo:hover {
+  text-decoration: none;
+  color: white;
+}
+/* Bouton Profil */
+.imageProfil{
+  width: 50px;
+  height: 50px;
+}
+.principal_petit
+{
+  display: block;
+  margin-left: 65px;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50px;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_petit:hover
+{
+  -webkit-transform: scale(1.1);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(1.1);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(1.1);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(1.1);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(1.1);
+  transition:all 0.2s ease-in;
+}
+.principal_img
+{
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_img:hover
+{
+  -webkit-transform: scale(0.7);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(0.7);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(0.7);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(0.7);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(0.7);
+  transition:all 0.2s ease-in;
+}
 /* Formulaire */
 .champ
 {
@@ -616,4 +735,77 @@ form i {
 }
 .aCgu:hover, .aDonneesPerso:hover, .aMentionsLegales:hover, .aCookies:hover{
   color: lightgreen
+}
+/* Zoom Image */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  margin-top: -6%;
+  display: block;
+  width: 32%;
+  max-width: 900px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 480px;
+  z-index: 1;
+  color: #000000;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }

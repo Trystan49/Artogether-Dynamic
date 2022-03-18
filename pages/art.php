@@ -34,10 +34,16 @@
         <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/F1JP.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/F1JP.jpg" data-target="#image-gallery">
-                        <img class="dessin1" src="pages/Admin/files/F1JP.jpg" alt="Another alt text">
-                    </a>
+                    <img id="01" class="dessin1" style="cursor:pointer" src="pages/Admin/files/F1JP.jpg">
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- The Close Button -->
+                        <span class="close">&times;</span>
+                        <!-- Modal Content (The Image) -->
+                        <img class="modal-content" id="img01">
+                        <!-- Modal Caption (Image Text) -->
+                        <div id="caption"></div>
+                    </div>
                     <figcaption>
                         <p class="description1">
                             <strong>Formula Japan</strong>, 2021
@@ -52,10 +58,16 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Samus.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Samus.jpg" data-target="#image-gallery">
-                        <img class="dessin2" src="pages/Admin/files/Samus.jpg" alt="Another alt text">
-                    </a>
+                <img id="01" class="dessin1" style="cursor:pointer" src="pages/Admin/files/Samus.jpg">
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- The Close Button -->
+                        <span class="close">&times;</span>
+                        <!-- Modal Content (The Image) -->
+                        <img class="modal-content" id="img01">
+                        <!-- Modal Caption (Image Text) -->
+                        <div id="caption"></div>
+                    </div>
                     <figcaption>
                         <p class="description2">
                             <strong>Samus</strong>, 2021
@@ -185,3 +197,6 @@
         </a>
     </div>
 </div>
+
+
+<script src="public/JS/oeuvrescript.js"></script>

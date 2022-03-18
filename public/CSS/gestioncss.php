@@ -21,6 +21,7 @@
     "cgu"=>"lienfooterstyle",
     "mentionslegales"=>"lienfooterstyle",
     "cookies"=>"lienfooterstyle",
-    "donneespersonnelles"=>"lienfooterstyle"
+    "donneespersonnelles"=>"lienfooterstyle",
+    "accesinterdit"=>"accesinterditstyle"
 ];
 ?>

@@ -44,6 +44,7 @@ if ($result) {
             $_SESSION["pseudo"] = $result['PSEUDO_UTILISATEUR'];
             $_SESSION["prenom"] = $result['PRENOM_UTILISATEUR'];
             $_SESSION["nom"] = $result['NOM_UTILISATEUR'];
+            $_SESSION["mail"] = $result['ADRESSE_MAIL_UTILISATEUR'];
             $_SESSION["motdepasse"] = $result['MOT_DE_PASSE_UTILISATEUR'];
             $_SESSION["id_utilisateur"] = $result['ID_UTILISATEUR'];
             $_SESSION["is_administrateur"] = $result['IS_ADMINISTRATEUR'];

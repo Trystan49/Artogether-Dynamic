@@ -12,7 +12,8 @@ $nom = htmlspecialchars($_POST['nom']);
 try {
     $stmt = $pdo->prepare("INSERT INTO utilisateurs (PSEUDO_UTILISATEUR, ADRESSE_MAIL_UTILISATEUR, MOT_DE_PASSE_UTILISATEUR, PRENOM_UTILISATEUR, NOM_UTILISATEUR) VALUES (?,?,?,?,?)");
     $stmt->execute([$pseudo, $mail, password_hash($pwd, PASSWORD_DEFAULT), $prenom, $nom]);
-    header('Location: index.php?page=authentif');
+    header('Location: index.php?page=authentif&creation=ok');
+    die();
 } catch (PDOException $e) {
     echo "Erreur  : " . $e->getMessage();
 }

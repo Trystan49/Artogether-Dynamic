@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['pseudo'])){
+    header('Location: index.php?page=authentif');
+}
+else {
+    $pseudo = $_SESSION['pseudo'];
+}
+?>
 <!-- Dashboard -->
 <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
@@ -16,7 +24,7 @@
                 <div class="navbar-title">ARTOGETHER
             </a>
             <span class="slogan">Apprenons l'art de créer ensemble</span>
-            <span class="create">Modification profil</span>
+            <span class="create">Votre Profil</span>
             <span class="discover"><em>Bonne découverte !</em></span>
         </div>
     </div>
@@ -30,46 +38,90 @@
     </div>
     </div>
 </nav>
-<!-- formulaire permettant à l'utilisateur de modifier son profil -->
-<div class="container mt-3">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-login">
-                <div class="panel-body">
-                    <div class="row">
-                        <h1 class="titlebis">Modification profil utilisateur</h1>
-                        <div class="col-lg-12">
-                            <form id="register-form" action="index.php?page=profilUtilisateurModif" method="post" role="form">
-                                <div class="form-group pseudo">
-                                    <input type="text" name="pseudo" id="pseudo" tabindex="1" class="form-control" placeholder="Pseudo" value="<?php if(isset($_POST['pseudo'])) { echo $_POST['pseudo']; } ?>">
-                                </div>
-                                <div class="form-group prenom">
-                                    <input type="text" name="prenom" id="prenom" tabindex="1" class="form-control" placeholder="Prénom" value="<?php if(isset($_POST['prenom'])) { echo $_POST['prenom']; } ?>">
-                                </div>
-                                <div class="form-group nom">
-                                    <input type="text" name="nom" id="nom" tabindex="1" class="form-control" placeholder="Nom" value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>">
-                                </div>
-                                <div class="form-group mail">
-                                    <input type="email" name="mail" id="mail" tabindex="1" class="form-control" placeholder="Mail" value="<?php if(isset($_POST['mail'])) { echo $_POST['mail']; } ?>">
-                                </div>
-                                <div class="form-group motdepasse">
-                                    <input type="password" name="motdepasse" id="motdepasse" tabindex="2" class="form-control" placeholder="Mot de passe">
-                                </div>
-                                <div class="form-group motdepasse">
-                                    <input type="password" name="confirm-motdepasse" id="confirm-motdepasse" tabindex="2" class="form-control" placeholder="Confirmer mot de passe">
-                                </div>
-                                <div class="form-group">
-                                    <div class="row justify-content-center">
-                                        <div class="col-sm-6 col-sm-offset-3">
-                                            <input class="send" type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-secondary" value="Mettre à jour">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+<div class="main-content">
+    <!-- Affichage du profil de l'utilisateur avec les données de sa connexion au site -->
+    <div class="profil">
+        <img class="avatar" src="public/Medias/avatar_icon.png">
+        <br><br>
+        <span class="titlebis1">Profil</span>
+        <br><br>
+        <div align="center">
+            <strong>Prénom :</strong>
+            <?php echo $_SESSION["prenom"]; ?>
+            <br><br>
+            <strong>Nom :</strong>
+            <?php echo $_SESSION["nom"]; ?>
+            <br><br>
+            <strong>Pseudo :</strong>
+            <?php echo $_SESSION["pseudo"]; ?>
+            <br><br>
+            <strong>Mail :</strong>
+            <?php echo $_SESSION["mail"]; ?>
+        </div>
+        <br>
+        <!-- Bouton popup modification profil -->
+        <button class="modif" type="button"><a class="aModif" href="#openModal">Modifier le profil</a></button>
+        <br><br>
+        <button class="accueil" type="button"><a class="aAccueil" href="index.php?page=accueil">Retour à l'accueil</a></button>
+    </div>
+    <div id="openModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h1 class="titlebis2">Modification profil utilisateur</h1>
+            <form id="register-form" action="index.php?page=profilUtilisateurModif" method="post" role="form">
+                <div class="form-group pseudo">
+                    <input type="text" name="pseudo" id="pseudo" tabindex="1" class="form-control" placeholder="Pseudo" value="<?php if(isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo'];} ?>">
+                </div>
+                <div class="form-group prenom">
+                    <input type="text" name="prenom" id="prenom" tabindex="1" class="form-control" placeholder="Prénom" value="<?php if(isset($_SESSION['prenom'])) { echo $_SESSION['prenom'];} ?>">
+                </div>
+                <div class="form-group nom">
+                    <input type="text" name="nom" id="nom" tabindex="1" class="form-control" placeholder="Nom" value="<?php if(isset($_SESSION['nom'])) { echo $_SESSION['nom'];} ?>">
+                </div>
+                <div class="form-group mail">
+                    <input type="email" name="mail" id="mail" tabindex="1" class="form-control" placeholder="Mail" value="<?php if(isset($_SESSION['mail'])) { echo $_SESSION['mail'];} ?>">
+                </div>
+                <div class="form-group motdepasse">
+                    <input type="password" name="motdepasse" id="motdepasse" tabindex="2" class="form-control"
+                        placeholder="Mot de passe">
+                </div>
+                <div class="form-group motdepasse">
+                    <input type="password" name="confirm-motdepasse" onchange="confirmPwd()" id="confirm-motdepasse"
+                        tabindex="2" class="form-control" placeholder="Confirmer mot de passe">
+                </div>
+                <div class="form-group">
+                    <br>
+                    <div class="row justify-content-center">
+                        <input class="send" type="submit" name="register-submit" id="register-submit" tabindex="4"
+                        class="form-control btn btn-secondary" value="Mettre à jour">
                     </div>
                 </div>
-            </div>
+            </form>
+            <?php 
+            /* if (isset($msg)) {
+                echo $msg;
+            } */
+            ?>
         </div>
     </div>
+
 </div>
+<a href="#close" title="Close" class="close">x</a>
+</div>
+</div>
+
+<!-- formulaire permettant à l\'utilisateur de modifier son profil -->
+
+<script>
+function confirmPwd() {
+    const pwd = document.getElementById('motdepasse');
+    const pwdConfirm = document.getElementById('confirm-motdepasse');
+    if (pwd.value != pwdConfirm.value) {
+        pwdConfirm.validity.valid = "false";
+        pwdConfirm.setCustomValidity("Saisir le même mot de passe");
+    } else {
+        pwdConfirm.validity.valid = "true";
+        pwdConfirm.setCustomValidity("");
+    }
+}
+</script>

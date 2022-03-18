@@ -1,3 +1,6 @@
+html{
+  height:100%
+}
 /* Arrière plan */
 body
 {
@@ -6,6 +9,13 @@ body
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-bottom: 100px;
+  -moz-box-sizing: border-box; box-sizing: border-box;
+  z-index: -4;
 }
 /* Scroll Bar */
 ::-webkit-scrollbar{
@@ -32,6 +42,8 @@ body
 /* Header */
 .navbar-global {
   background-color: rgb(255, 255, 255);
+  position: fixed;
+  z-index: -3;
 }
 
 .navbar-global .navbar-title {
@@ -114,6 +126,7 @@ a, a:hover
   bottom: 0px;
   left: 0px;
   position: fixed;
+  z-index: -2;
   top: 81px;
   width: 180px;
   overflow: hidden;
@@ -141,7 +154,7 @@ a, a:hover
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 /* Menu */
 .navbar-primary.collapsed {
@@ -221,12 +234,14 @@ a, a:hover
   width: 100%;
   height: 365px;
   border-bottom: 5px solid black;
+  position: relative;
+  z-index: -4;
 }
 /* Contenu */
 .main-content {
   margin-top: 60px;
   margin-left: 180px;
-  margin-bottom: 300px;
+  margin-bottom: 1000px;
 }
 
 .collapsed + .main-content {
@@ -246,6 +261,7 @@ a, a:hover
 {
   margin-top: 20px;
   position: absolute;
+  z-index: -4;
   width: 225px;
   height: 300px;
   border: 5px solid black;
@@ -259,6 +275,7 @@ a, a:hover
 {
   margin-top: 450px;
   position: absolute;
+  z-index: -4;
   width: 225px;
   height: 300px;
   border: 5px solid black;
@@ -275,7 +292,7 @@ a, a:hover
   font-size: 12px;
   margin-top: 340px;
   position: absolute;
-  z-index: -1;
+  z-index: -4;
   text-align: center;
   background-color: rgb(255, 255, 255);
   padding: 10px;
@@ -322,7 +339,7 @@ a, a:hover
   font-size: 12px;
   margin-top: 770px;
   position: absolute;
-  z-index: -1;
+  z-index: -4;
   text-align: center;
   background-color: rgb(255, 255, 255);
   padding: 10px;
@@ -347,14 +364,23 @@ figcaption {
   filter: grayscale(50%)
 }
 /* Bas de page */
+footer{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 5em;
+  position: absolute;
+  z-index: -5;
+}
 .backgroundFooter
 {
   background-color: rgb(0, 0, 0);
   border-width: 1px 0px 0px 0px;
   border-style: solid;
   border-color: black;
-  padding: 10px;
-  margin-top: 1050px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 500px;
 }
 .copyright, .conditions, .mentionsLégales, .version, .cookies, .donnéesPerso
 {
@@ -366,6 +392,7 @@ figcaption {
   background: #000000;
   margin-top: 950px;
   position: absolute;
+  z-index: -4;
   left: 52%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -439,6 +466,7 @@ figcaption {
   border-radius: 25px;
   font-size: 14px;
   font-weight: 500;
+  color: #fff;
   cursor: pointer;
 }
 .textbuttonD{
@@ -571,6 +599,99 @@ figcaption {
 }
 .popup-container > input:checked + .popup .inner {
   top: 50%;
+}
+/* Popup déconnexion */
+.areYouSure{
+  font-family: "Reem Kufi", sans-serif;
+  margin-top: 20px;
+  text-align: center;
+}
+.yes{
+  font-family: "Reem Kufi", sans-serif;
+  background-color: rgb(0, 129, 6);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 75px;
+}
+.no{
+  font-family: "Reem Kufi", sans-serif;
+  background-color: rgb(160, 1, 1);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+.logoGoodBye{
+  width: 120px;
+  margin-top: 30px;
+  margin-left: 90px;
+}
+.aYes, .aNo, .aYes:hover, .aNo:hover {
+  text-decoration: none;
+  color: white;
+}
+/* Bouton Profil */
+.imageProfil{
+  width: 50px;
+  height: 50px;
+}
+.principal_petit
+{
+  display: block;
+  margin-left: 65px;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50px;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_petit:hover
+{
+  -webkit-transform: scale(1.1);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(1.1);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(1.1);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(1.1);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(1.1);
+  transition:all 0.2s ease-in;
+}
+.principal_img
+{
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_img:hover
+{
+  -webkit-transform: scale(0.7);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(0.7);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(0.7);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(0.7);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(0.7);
+  transition:all 0.2s ease-in;
 }
 /* Formulaire */
 .champ
