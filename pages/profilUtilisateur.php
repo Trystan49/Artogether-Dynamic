@@ -7,7 +7,7 @@ else {
 }
 ?>
 <!-- Dashboard -->
-<nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
     <div class="container-fluid">
         <!-- Haut de page -->
@@ -37,7 +37,7 @@ else {
         </p>
     </div>
     </div>
-</nav>
+</div>
 <div class="main-content">
     <!-- Affichage du profil de l'utilisateur avec les données de sa connexion au site -->
     <div class="profil">

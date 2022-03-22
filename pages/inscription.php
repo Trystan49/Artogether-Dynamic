@@ -1,5 +1,5 @@
 <!-- Dashboard -->
-<nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
     <div class="container-fluid">
         <!-- Haut de page -->
@@ -29,7 +29,7 @@
         </p>
     </div>
     </div>
-</nav>
+</div>
 
 <!-- Contenu -->
 <div class="main-content">

@@ -1,5 +1,5 @@
 <!-- Dashboard -->
-<nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
     <div class="container-fluid">
         <!-- Haut de page -->
@@ -24,7 +24,7 @@
         <span class="navbar-right verticalBarre"></span>
     </div>
     </div>
-</nav>
+</div>
 <!-- Contenu -->
 <div class="main-content">
     <!-- Bannière image ours -->
@@ -34,16 +34,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <img id="01" class="dessin1" style="cursor:pointer" src="pages/Admin/files/F1JP.jpg">
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <!-- The Close Button -->
-                        <span class="close">&times;</span>
-                        <!-- Modal Content (The Image) -->
-                        <img class="modal-content" id="img01">
-                        <!-- Modal Caption (Image Text) -->
-                        <div id="caption"></div>
-                    </div>
+                    <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="pages/Admin/files/F1JP.jpg">
                     <figcaption>
                         <p class="description1">
                             <strong>Formula Japan</strong>, 2021
@@ -58,16 +49,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <img id="01" class="dessin1" style="cursor:pointer" src="pages/Admin/files/Samus.jpg">
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <!-- The Close Button -->
-                        <span class="close">&times;</span>
-                        <!-- Modal Content (The Image) -->
-                        <img class="modal-content" id="img01">
-                        <!-- Modal Caption (Image Text) -->
-                        <div id="caption"></div>
-                    </div>
+                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="pages/Admin/files/Samus.jpg">
                     <figcaption>
                         <p class="description2">
                             <strong>Samus</strong>, 2021
@@ -78,13 +60,11 @@
                         </p>
                     </figcaption>
                 </figure>
+                
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/NL.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/NL.jpg" data-target="#image-gallery">
-                        <img class="dessin3" src="pages/Admin/files/NL.jpg" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="pages/Admin/files/NL.jpg">    
                     <figcaption>
                         <p class="description3">
                             <strong>Nicki Lauda</strong>, 2021
@@ -98,10 +78,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Chevalier.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Chevalier.jpg" data-target="#image-gallery">
-                        <img class="dessin4" src="pages/Admin/files/Chevalier.jpg" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="pages/Admin/files/Chevalier.jpg">
                     <figcaption>
                         <p class="description4">
                             <strong>Casque Chevalier</strong>, 2021
@@ -116,10 +93,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Bmw.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Bmw.jpg" data-target="#image-gallery">
-                        <img class="dessin5" src="pages/Admin/files/Bmw.jpg" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin5" id="myImg" style="cursor:pointer" src="pages/Admin/files/Bmw.jpg">
                     <figcaption>
                         <p class="description5">
                             <strong>BMW M3 (E30)</strong>, 2021
@@ -134,10 +108,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Toons_F1.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Toons_F1.jpg" data-target="#image-gallery">
-                        <img class="dessin6" src="pages/Admin/files/Toons_F1.jpg" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin6" id="myImg" style="cursor:pointer" src="pages/Admin/files/Toons_F1.jpg">
                     <figcaption>
                         <p class="description6">
                             <strong>F1 Toons</strong>, 2021
@@ -152,10 +123,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Team_Yoshi.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Team_Yoshi.jpg" data-target="#image-gallery">
-                        <img class="dessin7" src="pages/Admin/files/Team_Yoshi.jpg" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin7" id="myImg" style="cursor:pointer" src="pages/Admin/files/Team_Yoshi.jpg">
                     <figcaption>
                         <p class="description7">
                             <strong>Driver F1 Yoshi</strong>, 2021
@@ -170,10 +138,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/7DS.jpg" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/7DS.jpg" data-target="#image-gallery">
-                        <img class="dessin8" src="pages/Admin/files/7DS.jpg" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin8" id="myImg" style="cursor:pointer" src="pages/Admin/files/7DS.jpg">
                     <figcaption>
                         <p class="description8">
                             <strong>7DS F1 (Animé)</strong>, 2021
@@ -196,6 +161,12 @@
             </div>
         </a>
     </div>
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
 </div>
 
 

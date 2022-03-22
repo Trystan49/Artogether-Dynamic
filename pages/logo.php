@@ -1,5 +1,5 @@
 <!-- Dashboard -->
-<nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
     <div class="container-fluid">
         <!-- Haut de page -->
@@ -24,7 +24,7 @@
         <span class="navbar-right verticalBarre"></span>
     </div>
     </div>
-</nav>
+</div>
 <!-- Contenu -->
 <div class="main-content">
     <!-- Bannière image -->
@@ -34,10 +34,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Dragon Squad.png" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Dragon_Squad.png" data-target="#image-gallery">
-                        <img class="dessin1" src="pages/Admin/files/Dragon Squad.png" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="pages/Admin/files/Dragon Squad.png">
                     <figcaption>
                         <p class="description1">
                             <strong>Dragon Squad</strong>, 2021
@@ -52,10 +49,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/LOGO OFFICIEL TRISTAN.png" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/LOGO OFFICIEL TRISTAN.png" data-target="#image-gallery">
-                        <img class="dessin2" src="pages/Admin/files/LOGO OFFICIEL TRISTAN.png" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="pages/Admin/files/LOGO OFFICIEL TRISTAN.png">
                     <figcaption>
                         <p class="description2">
                             <strong>Logo Artogether</strong>, 2021
@@ -69,10 +63,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Planète logo_1.png" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Planète logo_1.png" data-target="#image-gallery">
-                        <img class="dessin3" src="pages/Admin/files/Planète logo_1.png" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="pages/Admin/files/Planète logo_1.png">
                     <figcaption>
                         <p class="description3">
                             <strong>Green_Planet</strong>, 2021
@@ -86,10 +77,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <a href="pages/Admin/files/Logo Synthwave.png" data-image-id="" data-toggle="modal" data-title=""
-                        data-image="pages/Admin/files/Logo Synthwave.png" data-target="#image-gallery">
-                        <img class="dessin4" src="pages/Admin/files/Logo Synthwave.png" alt="Another alt text">
-                    </a>
+                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="pages/Admin/files/Logo Synthwave.png">
                     <figcaption>
                         <p class="description4">
                             <strong>Synthwave</strong>, 2021
@@ -121,3 +109,12 @@
         Ou remplisser le formulaire présent dans la page aide (?)
     </div>
 </div>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+
+<script src="public/JS/oeuvrescript.js"></script>

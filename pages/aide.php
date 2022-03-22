@@ -1,6 +1,23 @@
 <?php
+require('./captcha_google/autoload.php');
+
 if(isset($_POST['mailform'])) {
-   if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) {
+    if(isset($_POST['g-recaptcha-response'])) {
+        $recaptcha = new \ReCaptcha\ReCaptcha('6Ld43PAeAAAAAPir_ZK52N-DzsoeD8jJXrqfDZXP');
+        $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
+
+        if ($resp->isSuccess()) {
+        var_dump('Captcha Valide');
+        } else {
+        $errors = $resp->getErrorCodes();
+        var_dump('Captcha Invalide');
+        var_dump($errors);
+    }
+    } else {
+        var_dump('Captcha non rempli');
+    }
+
+    if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) {
       $header="MIME-Version: 1.0\r\n";
       $header.='From:"Artogether"<contact.artogether@gmail.com>'."\n";
       $header.='Content-Type:text/html; charset="uft-8"'."\n";
@@ -28,7 +45,7 @@ if(isset($_POST['mailform'])) {
 }
 ?>
 <!-- Dashboard -->
-<nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
     <div class="container-fluid">
         <!-- Haut de page -->
@@ -52,25 +69,26 @@ if(isset($_POST['mailform'])) {
         </p>
     </div>
     </div>
-</nav>
+</div>
 <!-- Contenu -->
 <div class="main-content">
     <!-- Formulaire contact auprès du propriétaire du site -->
     <div class="aide">Une explication personnelle sur un projet ?<br>Des questions ? Besoin d'aide ? <br>N'hésitez pas,
         Artogether est là pour vous aider.<br> Laissez-moi votre message et j'y<br> répondrai dans les plus brefs
         délais.
-        <form method="post" action="">
+        <form method="post">
             <div class="champ">
                 <br>
-                <input class="prenom" type="text" id="prenom" name="prenom" placeholder="Prénom" maxlength="25" size="30"
-                    value="<?php if(isset($_POST['prenom'])) { echo $_POST['prenom']; } ?>">
+                <input class="prenom" type="text" id="prenom" name="prenom" placeholder="Prénom" maxlength="25"
+                    size="30" value="<?php if(isset($_POST['prenom'])) { echo $_POST['prenom']; } ?>">
             </div>
             <div class="champ">
                 <input class="nom" type="text" id="nom" name="nom" placeholder="Nom" maxlength="25" size="30"
                     value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>">
             </div>
             <div class="champ">
-                <input class="mail" type="text" id="mail" name="mail" placeholder="Adresse mail" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" maxlength="50" size="30"
+                <input class="mail" type="text" id="mail" name="mail" placeholder="Adresse mail"
+                    pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" maxlength="50" size="30"
                     value="<?php if(isset($_POST['mail'])) { echo $_POST['mail']; } ?>">
             </div>
             <div class="champ">
@@ -78,9 +96,13 @@ if(isset($_POST['mailform'])) {
                     value="<?php if(isset($_POST['sujet'])) { echo $_POST['sujet']; } ?>">
             </div>
             <div class="champ">
-                <textarea rows="2" cols="30" class="message" type="message" id="message" name="message" placeholder="Message" maxlength="1000"
+                <textarea rows="2" cols="30" class="message" type="message" id="message" name="message"
+                    placeholder="Message" maxlength="1000"
                     value="<?php if(isset($_POST['message'])) { echo $_POST['message']; } ?>"></textarea>
             </div>
+            <!-- reCaptcha Google -->
+            <div class="g-recaptcha" data-sitekey="6Ld43PAeAAAAAPir_ZK52N-DzsoeD8jJXrqfDZXP"></div>
+            <br>
             <!--bouton d'envoi du formulaire-->
             <div class="champ">
                 <input class="send" type="submit" value="Envoyer le message" name="mailform">
@@ -113,6 +135,9 @@ if(isset($_POST['mailform'])) {
         </ul>
     </div>
 </div>
+<br>
+<br>
 
 <script src='public/CDN/jquery.min.js'></script>
 <script src="public/JS/aidescript.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
