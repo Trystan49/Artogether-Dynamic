@@ -352,12 +352,12 @@ a, a:hover
   background-color: rgb(230, 230, 230);
   border-radius: 5px;
   width:300px;
-  height:310px;
+  height:410px;
   overflow:hidden;
   padding:10px;
   margin-top: 26px;
   font-family:Helvetica;
-  margin-bottom: 37px;
+  margin-bottom: 40px;
   border: 2px solid black;
 }
 .holder .mask {
@@ -365,7 +365,7 @@ a, a:hover
   left: 0px;
   top: 10px;
   width:300px;
-  height:240px;
+  height:350px;
   overflow: hidden;
 }
 .holder ul {
@@ -386,7 +386,7 @@ footer{
   bottom: 0;
   left: 0;
   right: 0;
-  top: 110%;
+  top: 130%;
   position: absolute;
   z-index: -5;
 }

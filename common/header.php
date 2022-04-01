@@ -3,8 +3,8 @@
 
 <head>
   <!-- Appel de Bootstrap -->
-  <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'> -->
-  <link rel='stylesheet' href="public/CDN/bootstrap.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <!-- <link rel='stylesheet' href="public/CDN/bootstrap.min.css"> -->
   
   <!-- Police Titre -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="public/CDN/normalize.min.css">
   <link rel="stylesheet" href="public/CSS/transitionpage.css">
   <!-- Icône affichage oeil mot de passe -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" /> -->
-  <link rel='stylesheet' href="public/CDN/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <!-- <link rel='stylesheet' href="public/CDN/bootstrap-icons.css"> -->
   <!-- Mini-Jeu -->
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton'>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>

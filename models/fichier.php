@@ -10,7 +10,7 @@ class Fichier
             $file_size = $_FILES['fichier']['size']; // Information sur la taille du fichier
 
             $file_tmp_name = $_FILES['fichier']['tmp_name']; // Provenance du fichier
-            $file_dest = 'pages/Admin/files/' . $file_name; // Ici on indique la destination du fichier
+            $file_dest = 'Admin/files/' . $file_name; // Ici on indique la destination du fichier
 
             $extension_autorisees = array('.png', '.jpg', '.PNG', '.JPG'); // Ici on notera les extensions autorisées 
             $size_max = 20000000; // Ici on définira une taille maximale de notre fichier

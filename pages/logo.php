@@ -10,6 +10,7 @@
             </a><span class="discover">Besoin d'une nouvelle identité graphique ?</span><span class="home">Logo</span>
         </div>
     </div>
+    <!-- Bouton icône qui renvoie à la page d'aide -->
     <div id="navbar" class="collapse navbar-collapse">
         <p class="navbar-right help">
             <a class="helpClick">
@@ -27,15 +28,17 @@
 </div>
 <!-- Contenu -->
 <div class="main-content">
-    <!-- Bannière image -->
+    <!-- Bannière image driver -->
     <img class="driver" src="public/Medias/Japan driver.png" alt="image">
-    <!-- Gallerie -->
+    <!-- Gallerie des logos -->
     <div class="container-gallery">
         <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="pages/Admin/files/Dragon Squad.png">
+                <!-- Image dynamique -->    
+                <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="Admin/files/Dragon Squad.png">
                     <figcaption>
+                        <!-- Description de l'oeuvre -->
                         <p class="description1">
                             <strong>Dragon Squad</strong>, 2021
                             <br>
@@ -49,8 +52,10 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="pages/Admin/files/LOGO OFFICIEL TRISTAN.png">
+                <!-- Image dynamique -->
+                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="Admin/files/LOGO OFFICIEL TRISTAN.png">
                     <figcaption>
+                        <!-- Description de l'oeuvre -->
                         <p class="description2">
                             <strong>Logo Artogether</strong>, 2021
                             <br>
@@ -63,8 +68,10 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="pages/Admin/files/Planète logo_1.png">
+                <!-- Image dynamique -->
+                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Planète logo_1.png">
                     <figcaption>
+                        <!-- Description de l'oeuvre -->
                         <p class="description3">
                             <strong>Green_Planet</strong>, 2021
                             <br>
@@ -77,8 +84,10 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="pages/Admin/files/Logo Synthwave.png">
+                <!-- Image dynamique -->
+                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="Admin/files/Logo Synthwave.png">
                     <figcaption>
+                        <!-- Description de l'oeuvre -->
                         <p class="description4">
                             <strong>Synthwave</strong>, 2021
                             <br>
@@ -110,6 +119,7 @@
     </div>
 </div>
 
+<!-- Script pour rendre les oeuvres dynamiques quand on clique dessus -->
 <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">

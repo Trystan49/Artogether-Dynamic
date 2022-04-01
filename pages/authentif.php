@@ -20,6 +20,7 @@
             <span class="discover"><em>Bonne découverte !</em></span>
         </div>
     </div>
+    <!-- Boutons icônes qui renvoie à la page d'Instagram et Pinterest de l'artiste -->
     <div id="navbar" class="collapse navbar-collapse">
         <p class="navbar-right follow">
             Suivre Artogether
@@ -31,6 +32,7 @@
     </div>
 </div>
 <br><br><br>
+<!-- Message pour indiquer que le compte a bien été créé pour l'utilisateur -->
 <?php
 if (isset($_GET["creation"])) {
     echo ('
@@ -46,6 +48,7 @@ if (isset($_GET["creation"])) {
         <span class="title">ARTOGETHER</span>
         <br>
         <span class="titlebis">L'art est entre vos mains</span>
+        <!-- Espace de connexion pour l'utilisateur -->
         <form action="index.php?page=connexion" method="post" role="form">
             <div class="champ">
                 <br>
@@ -55,7 +58,7 @@ if (isset($_GET["creation"])) {
                 <input type="password" name="motdepasse" id="motdepasse" size="30" maxlength="25" class="motdepasse" placeholder="Mot de passe" required>
                 <i class="bi-eye-slash" id="toggleMotDePasse"></i>
             </div>
-            <!--bouton d'envoi du formulaire-->
+            <!--Bouton d'envoi du formulaire-->
             <div class="champ">
                 <?php
                 if (isset($_SESSION["etatConnexion"]) && $_SESSION["etatConnexion"] == 0) {
@@ -64,10 +67,12 @@ if (isset($_GET["creation"])) {
                 ?>
                 <input class="send" type="submit" value="Connexion">
             </div>
+            <!-- Lien pour récupérer un mot de passe -->
             <div class="forget">
                 <a href="../8.Page recuperation mdp 1/mdp1.html" target="_blank"><u>Mot de passe oublié ?</u></a>
             </div>
             <br>
+            <!-- Lien pour créer un compte -->
             <div class="account">
                 <a href="index.php?page=inscription" target="_blank"><u>Créer un compte</u></a>
             </div>
@@ -82,15 +87,15 @@ if (isset($_GET["creation"])) {
     const password = document.querySelector("#motdepasse");
 
     togglePassword.addEventListener("click", function() {
-        // toggle the type attribute
+        // Lier les input
         const type = password.getAttribute("type") === "password" ? "text" : "password";
         password.setAttribute("type", type);
 
-        // toggle the icon
+        // Icône oeil
         this.classList.toggle("bi-eye");
     });
 
-    // prevent form submit
+    // Lier avec le formulaire d'envoi
     const form = document.querySelector("form");
     form.addEventListener('submit');
 </script>

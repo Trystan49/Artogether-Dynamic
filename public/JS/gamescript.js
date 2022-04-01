@@ -118,7 +118,7 @@
 		},
 		{
 			name: "Girl-neon",
-			img: "gamesreen/Girl-neon.jpg",
+			img: "gamescreen/Girl-neon.jpg",
 			id: 2
 		},
 		{

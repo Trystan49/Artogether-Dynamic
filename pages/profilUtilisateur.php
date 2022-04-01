@@ -1,8 +1,11 @@
 <?php
-if (!isset($_SESSION['pseudo'])){
+ob_start();
+include('./models/utilisateur.php');
+include('./utils/db.php');
+
+if (!isset($_SESSION['pseudo'])) {
     header('Location: index.php?page=authentif');
-}
-else {
+} else {
     $pseudo = $_SESSION['pseudo'];
 }
 ?>
@@ -28,6 +31,7 @@ else {
             <span class="discover"><em>Bonne découverte !</em></span>
         </div>
     </div>
+    <!-- Boutons icônes qui renvoie à la page d'Instagram et Pinterest de l'artiste -->
     <div id="navbar" class="collapse navbar-collapse">
         <p class="navbar-right follow">
             Suivre Artogether
@@ -36,7 +40,7 @@ else {
             <a href="https://www.pinterest.fr/ART_Tristoune/_saved/" class="fa fa-pinterest"></a>
         </p>
     </div>
-    </div>
+</div>
 </div>
 <div class="main-content">
     <!-- Affichage du profil de l'utilisateur avec les données de sa connexion au site -->
@@ -46,14 +50,14 @@ else {
         <span class="titlebis1">Profil</span>
         <br><br>
         <div align="center">
+            <strong>Pseudo :</strong>
+            <?php echo $_SESSION["pseudo"]; ?>
+            <br><br>
             <strong>Prénom :</strong>
             <?php echo $_SESSION["prenom"]; ?>
             <br><br>
             <strong>Nom :</strong>
             <?php echo $_SESSION["nom"]; ?>
-            <br><br>
-            <strong>Pseudo :</strong>
-            <?php echo $_SESSION["pseudo"]; ?>
             <br><br>
             <strong>Mail :</strong>
             <?php echo $_SESSION["mail"]; ?>
@@ -62,24 +66,45 @@ else {
         <!-- Bouton popup modification profil -->
         <button class="modif" type="button"><a class="aModif" href="#openModal">Modifier le profil</a></button>
         <br><br>
-        <button class="accueil" type="button"><a class="aAccueil" href="index.php?page=accueil">Retour à l'accueil</a></button>
+        <button class="accueil" type="button"><a class="aAccueil" href="index.php?page=accueil">Retour à
+                l'accueil</a></button>
+        <br><br>
+        <?php
+            if (isset($_POST['register-submit'])) {
+                Utilisateur::update($pdo, $_POST);
+                echo ('<p style=color:green>Votre profil a été modifié avec succès !</p>');
+            }            
+        ?>
     </div>
+    <!-- Popup qui s'affiche pour la modification du profil -->
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
             <h1 class="titlebis2">Modification profil utilisateur</h1>
-            <form id="register-form" action="index.php?page=profilUtilisateurModif" method="post" role="form">
+            <form id="register-form" action="index.php?page=profilUtilisateur" method="post" role="form">
                 <div class="form-group pseudo">
-                    <input type="text" name="pseudo" id="pseudo" tabindex="1" class="form-control" placeholder="Pseudo" value="<?php if(isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo'];} ?>">
+                    <input type="text" name="pseudo" id="pseudo" tabindex="1" class="form-control" placeholder="Pseudo"
+                        value="<?php if (isset($_SESSION['pseudo'])) {
+                                                                                                                                    echo $_SESSION['pseudo'];
+                                                                                                                                } ?>">
                 </div>
                 <div class="form-group prenom">
-                    <input type="text" name="prenom" id="prenom" tabindex="1" class="form-control" placeholder="Prénom" value="<?php if(isset($_SESSION['prenom'])) { echo $_SESSION['prenom'];} ?>">
+                    <input type="text" name="prenom" id="prenom" tabindex="1" class="form-control" placeholder="Prénom"
+                        value="<?php if (isset($_SESSION['prenom'])) {
+                                                                                                                                    echo $_SESSION['prenom'];
+                                                                                                                                } ?>">
                 </div>
                 <div class="form-group nom">
-                    <input type="text" name="nom" id="nom" tabindex="1" class="form-control" placeholder="Nom" value="<?php if(isset($_SESSION['nom'])) { echo $_SESSION['nom'];} ?>">
+                    <input type="text" name="nom" id="nom" tabindex="1" class="form-control" placeholder="Nom"
+                        value="<?php if (isset($_SESSION['nom'])) {
+                                                                                                                            echo $_SESSION['nom'];
+                                                                                                                        } ?>">
                 </div>
                 <div class="form-group mail">
-                    <input type="email" name="mail" id="mail" tabindex="1" class="form-control" placeholder="Mail" value="<?php if(isset($_SESSION['mail'])) { echo $_SESSION['mail'];} ?>">
+                    <input type="email" name="mail" id="mail" tabindex="1" class="form-control" placeholder="Mail"
+                        value="<?php if (isset($_SESSION['mail'])) {
+                                                                                                                                echo $_SESSION['mail'];
+                                                                                                                            } ?>">
                 </div>
                 <div class="form-group motdepasse">
                     <input type="password" name="motdepasse" id="motdepasse" tabindex="2" class="form-control"
@@ -93,26 +118,21 @@ else {
                     <br>
                     <div class="row justify-content-center">
                         <input class="send" type="submit" name="register-submit" id="register-submit" tabindex="4"
-                        class="form-control btn btn-secondary" value="Mettre à jour">
+                            class="form-control btn btn-secondary" value="Mettre à jour">
                     </div>
                 </div>
             </form>
-            <?php 
-            /* if (isset($msg)) {
-                echo $msg;
-            } */
-            ?>
         </div>
     </div>
 
 </div>
+<!-- Fermeture de la popup de modification de profil -->
 <a href="#close" title="Close" class="close">x</a>
 </div>
 </div>
 
-<!-- formulaire permettant à l\'utilisateur de modifier son profil -->
-
 <script>
+/* Fonction pour confirmation du mot de passe pour qu'il soit identique */ 
 function confirmPwd() {
     const pwd = document.getElementById('motdepasse');
     const pwdConfirm = document.getElementById('confirm-motdepasse');

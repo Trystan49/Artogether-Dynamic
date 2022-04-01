@@ -1,3 +1,4 @@
+<!-- Espace mini jeux avec popup de fin de partie -->
 <div class="wrap">
 <div class="game"></div>
 	
@@ -11,8 +12,9 @@
 		</div>
 	</div>
 </div>
+<!-- Message expliquant les règles du jeu -->
 <footer>
 	<p class="disclaimer"><strong>Jeu du Memory : Trouve les paires de cartes indentiques en les retournant 2 par 2.</strong></p>
 </footer>
 
-  <script src='public/CDN/jquery.min.js'></script><script  src="public/JS/gamescript.js"></script>
+<script src='public/CDN/jquery.min.js'></script><script  src="public/JS/gamescript.js"></script>

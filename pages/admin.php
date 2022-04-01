@@ -1,3 +1,5 @@
+<!-- Page admin réservé uniquement à l'administrateur pouvant accéder aux différentes pages comme la plateforme de transfert d'oeuvre
+et l'espace modération pour l'espace commentaire -->
 <?php
 if (!empty($_SESSION["is_administrateur"] == "Yes"))
 {

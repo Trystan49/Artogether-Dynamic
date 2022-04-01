@@ -1,3 +1,6 @@
+<?php
+include('./models/utilisateur.php');
+?>
 <!-- Dashboard -->
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
@@ -20,6 +23,7 @@
             <span class="discover"><em>Bonne découverte !</em></span>
         </div>
     </div>
+    <!-- Boutons icônes qui renvoie à la page d'Instagram et Pinterest de l'artiste -->
     <div id="navbar" class="collapse navbar-collapse">
         <p class="navbar-right follow">
             Suivre Artogether
@@ -37,6 +41,7 @@
         <span class="title">ARTOGETHER</span>
         <br>
         <span class="titlebis">Création de compte</span>
+        <!-- Formulaire de création de compte -->
         <form action="index.php?page=register" method="post" role="form">
             <div class="champ">
                 <br>
@@ -62,9 +67,11 @@
                     tabindex="2" class="motdepasse" placeholder="Confirmer mot de passe" required>
                 <i class="bi bi-eye-slash" id="toggleMotDePasse"></i>
             </div>
+            <!-- Bouton d'envoi du formulaire -->
             <div class="champ">
                 <input class="send" type="submit" value="Créer un compte">
             </div>
+            <!-- Lien pour s'authentifier si compte déjà créé -->
             <div class="account">
                 Déjà membre ?<a href="index.php?page=authentif"> <u>Se connecter</u></a>
             </div>
@@ -72,24 +79,28 @@
     </div>
 </div>
 
+<!-- Script pour fonctionnement de l'oeil mot de passe visible ou non -->
 <script>
+/* Possibilité de rendre visible le mot de passe avec l'oeil */    
 const togglePassword = document.querySelector("#toggleMotDePasse");
 const password = document.querySelector("#motdepasse");
 
 togglePassword.addEventListener("click", function() {
-    // toggle the type attribute
+    // Lier les input
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
 
-    // toggle the icon
+    // Icône oeil
     this.classList.toggle("bi-eye");
 });
 
-// prevent form submit
+// Lier avec le formulaire d'envoi
 const form = document.querySelector("form");
 form.addEventListener('submit');
 </script>
 <script>
+
+/* Fonction pour confirmation du mot de passe pour qu'il soit identique */  
 function confirmPwd() {
     const pwd = document.getElementById('motdepasse');
     const pwdConfirm = document.getElementById('confirm-motdepasse');
@@ -102,6 +113,7 @@ function confirmPwd() {
     }
 }
 
+/* Contrôle de mot de passe respectant différents paramètres : nb de caractères, caractères spéciaux, chiffres, majuscules, etc. */
 function controlPwd(elemPwd) {
     const pwd = String(elemPwd.value);
     if (!pwd.match(/[0-9]/g) || !pwd.match(/[A-Z]/g) || !pwd.match(/[a-z]/g) || !pwd.match(/[^a-zA-Z\d]/g) || pwd

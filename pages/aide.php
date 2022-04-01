@@ -1,47 +1,42 @@
 <?php
-require('./captcha_google/autoload.php');
-
 if(isset($_POST['mailform'])) {
-    if(isset($_POST['g-recaptcha-response'])) {
-        $recaptcha = new \ReCaptcha\ReCaptcha('6Ld43PAeAAAAAPir_ZK52N-DzsoeD8jJXrqfDZXP');
-        $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
-
-        if ($resp->isSuccess()) {
-        var_dump('Captcha Valide');
-        } else {
-        $errors = $resp->getErrorCodes();
-        var_dump('Captcha Invalide');
-        var_dump($errors);
-    }
-    } else {
-        var_dump('Captcha non rempli');
-    }
 
     if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) {
-      $header="MIME-Version: 1.0\r\n";
-      $header.='From:"Artogether"<contact.artogether@gmail.com>'."\n";
-      $header.='Content-Type:text/html; charset="uft-8"'."\n";
-      $header.='Content-Transfer-Encoding: 8bit';
-      $message='
-      <html>
-         <body>
-            <div align="center">
-               <u>Prénom de l\'expéditeur :</u> '.$_POST['prenom'].' <br />
-               <u>Nom de l\'expéditeur :</u> '.$_POST['nom'].' <br />
-               <u>Mail de l\'expéditeur :</u> '.$_POST['mail'].' <br />
-               <u>Sujet :</u> '.$_POST['sujet'].' <br />
-               <br />
-               '.nl2br($_POST['message']).'
-               <br />
-            </div>
-         </body>
-      </html>
-      ';
-      mail("artogether492022@outlook.fr", "CONTACT - ARTOGETHER", $message, $header);
-      $msg='<p style=color:green>Votre message a bien été envoyé !</p>';
-   } else {
-      $msg='<p style=color:red>Tous les champs doivent être complétés !</p>';
-   }
+        $secret = "6Ld43PAeAAAAAJ8FrvicMDMfviVus86Ewgy1kugP";
+        $response = htmlspecialchars($_POST['g-recaptcha-response']);
+        $remoteip = $_SERVER['REMOTE_ADDR'];
+        $request = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
+
+        $get = file_get_contents($request);
+        $decode = json_decode($get, true);
+        
+        if($decode['success']){
+            $header="MIME-Version: 1.0\r\n";
+            $header.='From:"Artogether"<contact.artogether@gmail.com>'."\n";
+            $header.='Content-Type:text/html; charset="uft-8"'."\n";
+            $header.='Content-Transfer-Encoding: 8bit';
+            $message='
+            <html>
+                <body>
+                    <div align="center">
+                    <u>Prénom de l\'expéditeur :</u> '.$_POST['prenom'].' <br />
+                    <u>Nom de l\'expéditeur :</u> '.$_POST['nom'].' <br />
+                    <u>Mail de l\'expéditeur :</u> '.$_POST['mail'].' <br />
+                    <u>Sujet :</u> '.$_POST['sujet'].' <br />
+                    <br />
+                    '.nl2br($_POST['message']).'
+                    <br />
+                    </div>
+                </body>
+            </html>
+            ';
+            mail("artogether492022@outlook.fr", "CONTACT - ARTOGETHER", $message, $header);
+            $msg='<p style=color:green>Votre message a bien été envoyé !</p>';  
+        }
+    }
+    else {
+        $msg='<p style=color:red>Tous les champs doivent être complétés<br>ainsi que le captcha !</p>';      
+    }
 }
 ?>
 <!-- Dashboard -->
@@ -72,11 +67,11 @@ if(isset($_POST['mailform'])) {
 </div>
 <!-- Contenu -->
 <div class="main-content">
-    <!-- Formulaire contact auprès du propriétaire du site -->
+    <!-- Formulaire contact auprès du propriétaire du site pour donner un avis sur le site et obtenir ses services -->
     <div class="aide">Une explication personnelle sur un projet ?<br>Des questions ? Besoin d'aide ? <br>N'hésitez pas,
         Artogether est là pour vous aider.<br> Laissez-moi votre message et j'y<br> répondrai dans les plus brefs
         délais.
-        <form method="post">
+        <form method="post" action="" id="demo-form">
             <div class="champ">
                 <br>
                 <input class="prenom" type="text" id="prenom" name="prenom" placeholder="Prénom" maxlength="25"
@@ -108,13 +103,15 @@ if(isset($_POST['mailform'])) {
                 <input class="send" type="submit" value="Envoyer le message" name="mailform">
             </div>
         </form>
+        <!-- Message de confirmation d'envoi du formulaire -->
         <?php if (isset($msg)) {
           echo $msg;
         }
         ?>
     </div>
+    <!-- Dessin journal présent au milieu de la page -->
     <img class="journal" src="public/Medias/journal.png">
-    <!-- Coordonnées et fil d'actualité -->
+    <!-- Coordonnées -->
     <span class="contact"> Coordonnées !
         <br>
         <p class="email">Email: contact.artogether@gmail.com
@@ -122,6 +119,7 @@ if(isset($_POST['mailform'])) {
     <br>
     <p class="siteweb">Site web : https://www.artogether.fr</span>
         <br>
+    <!-- Fil d'actualité  -->    
     <div class="holder">
         <ul id="ticker01">
             <li><u><em>Nos prochaines actualités</em></u></a></li>
@@ -140,4 +138,11 @@ if(isset($_POST['mailform'])) {
 
 <script src='public/CDN/jquery.min.js'></script>
 <script src="public/JS/aidescript.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Script pour appeler l'API Google Captcha -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+    }
+</script>
