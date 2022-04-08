@@ -1,5 +1,21 @@
 <?php
+//enregistrement en BD du nouvel utilisateur
+//chargement des paramètres de la BD
+include('./utils/db.php');
 include('./models/utilisateur.php');
+
+/* Création du compte utilisateur */
+if (isset($_POST['register-submit'])) {
+    Utilisateur::create($pdo, $_POST);
+}
+/* Vérification du pseudo identique ou non afin d'éviter les doublons */
+if (isset($_POST['pseudo'])) {
+    Utilisateur::SamePwd($pdo, $_POST);
+}
+/* Vérification du mail identique ou non afin d'éviter les doublons */
+if (isset($_POST['mail'])) {
+    Utilisateur::SameMail($pdo, $_POST);
+}
 ?>
 <!-- Dashboard -->
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
@@ -42,7 +58,7 @@ include('./models/utilisateur.php');
         <br>
         <span class="titlebis">Création de compte</span>
         <!-- Formulaire de création de compte -->
-        <form action="index.php?page=register" method="post" role="form">
+        <form action="index.php?page=inscription" method="post" role="form">
             <div class="champ">
                 <br>
                 <input class="prenom" type="text" id="prenom" name="prenom" size="30" maxlength="25" placeholder="Prénom" required>
@@ -52,10 +68,24 @@ include('./models/utilisateur.php');
             </div>
             <div class="champ">
                 <input class="pseudo" type="text" id="pseudo" name="pseudo" size="30" maxlength="25" placeholder="Pseudo" required>
+                <?php
+                if (isset($_POST['pseudo'])) {
+                    echo ('<p style=color:red>❌ Pseudo déjà existant</p>');
+                } else {
+                    // pseudo disponible
+                } 
+                ?>
             </div>
             <div class="champ">
                 <input class="mail" type="text" required maxlength="50" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" id="mail"
                     name="mail" size="30" placeholder="Adresse mail">
+                    <?php
+                if (isset($_POST['mail'])) {
+                    echo ('<p style=color:red>❌ Mail déjà existant</p>');
+                } else {
+                    // mail disponible
+                } 
+                ?>
             </div>
             <div class="champ form-group d-flex">
                 <input type="password" required name="motdepasse" id="motdepasse" size="30" maxlength="25" class="motdepasse"
@@ -69,7 +99,7 @@ include('./models/utilisateur.php');
             </div>
             <!-- Bouton d'envoi du formulaire -->
             <div class="champ">
-                <input class="send" type="submit" value="Créer un compte">
+                <input class="send" type="submit" name="register-submit" value="Créer un compte">
             </div>
             <!-- Lien pour s'authentifier si compte déjà créé -->
             <div class="account">

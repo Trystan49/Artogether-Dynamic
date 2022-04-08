@@ -50,6 +50,7 @@ ob_start();
             <input type="checkbox" id="login-popup">');
         }
         ?>
+        <!-- Popup de connexion -->
         <div class="popup">
             <label for="login-popup"></label>
             <div class="inner">
@@ -72,6 +73,7 @@ ob_start();
                     </div>
                     <div class="champ">
                         <?php
+                        // Vérification si le mot de passe ou l'identifiant est correct pour l'utilisateur lors de sa connexion sur le site
                         if (isset($_SESSION["etatConnexion"]) && $_SESSION["etatConnexion"] == 0) {
                             echo "<p style=color:red><u>Identifiant ou mot de passe incorrect<u></p>";
                         }
@@ -105,19 +107,20 @@ ob_start();
 </nav>
 
 <script>
+/* Possibilité de rendre visible le mot de passe avec l'oeil */
 const togglePassword = document.querySelector("#toggleMotDePasse");
 const password = document.querySelector("#motdepasse");
 
 togglePassword.addEventListener("click", function() {
-    // toggle the type attribute
+    // Lier les input
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
 
-    // toggle the icon
+    // Icône oeil
     this.classList.toggle("bi-eye");
 });
 
-// prevent form submit
+// Lier avec le formulaire d'envoi
 const form = document.querySelector("form");
 form.addEventListener('submit');
 </script>

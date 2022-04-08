@@ -22,6 +22,7 @@
     "mentionslegales"=>"lienfooterstyle",
     "cookies"=>"lienfooterstyle",
     "donneespersonnelles"=>"lienfooterstyle",
-    "accesinterdit"=>"accesinterditstyle"
+    "accesinterdit"=>"accesinterditstyle",
+    "error404"=>"error404style"
 ];
 ?>

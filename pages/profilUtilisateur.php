@@ -47,7 +47,7 @@ if (!isset($_SESSION['pseudo'])) {
     <div class="profil">
         <img class="avatar" src="public/Medias/avatar_icon.png">
         <br><br>
-        <span class="titlebis1">Profil</span>
+        <span class="titlebis1"><strong><u>Profil</u></strong></span>
         <br><br>
         <div align="center">
             <strong>Pseudo :</strong>
@@ -72,8 +72,11 @@ if (!isset($_SESSION['pseudo'])) {
         <?php
             if (isset($_POST['register-submit'])) {
                 Utilisateur::update($pdo, $_POST);
-                echo ('<p style=color:green>Votre profil a été modifié avec succès !</p>');
-            }            
+            }
+            if (isset($_GET['confirm'])) {
+                echo ('<p style=color:green>Votre profil a été modifié avec succès ! 🎉</p>');
+            }
+            
         ?>
     </div>
     <!-- Popup qui s'affiche pour la modification du profil -->
@@ -81,30 +84,22 @@ if (!isset($_SESSION['pseudo'])) {
         <div>
             <a href="#close" title="Close" class="close">X</a>
             <h1 class="titlebis2">Modification profil utilisateur</h1>
-            <form id="register-form" action="index.php?page=profilUtilisateur" method="post" role="form">
+            <form id="register-form" action="index.php?page=profilUtilisateur&confirm=ok" method="post" role="form">
                 <div class="form-group pseudo">
                     <input type="text" name="pseudo" id="pseudo" tabindex="1" class="form-control" placeholder="Pseudo"
-                        value="<?php if (isset($_SESSION['pseudo'])) {
-                                                                                                                                    echo $_SESSION['pseudo'];
-                                                                                                                                } ?>">
+                        value="<?php if (isset($_SESSION['pseudo'])) {echo $_SESSION['pseudo'];} ?>">
                 </div>
                 <div class="form-group prenom">
                     <input type="text" name="prenom" id="prenom" tabindex="1" class="form-control" placeholder="Prénom"
-                        value="<?php if (isset($_SESSION['prenom'])) {
-                                                                                                                                    echo $_SESSION['prenom'];
-                                                                                                                                } ?>">
+                        value="<?php if (isset($_SESSION['prenom'])) {echo $_SESSION['prenom'];} ?>">
                 </div>
                 <div class="form-group nom">
                     <input type="text" name="nom" id="nom" tabindex="1" class="form-control" placeholder="Nom"
-                        value="<?php if (isset($_SESSION['nom'])) {
-                                                                                                                            echo $_SESSION['nom'];
-                                                                                                                        } ?>">
+                        value="<?php if (isset($_SESSION['nom'])) {echo $_SESSION['nom'];} ?>">
                 </div>
                 <div class="form-group mail">
                     <input type="email" name="mail" id="mail" tabindex="1" class="form-control" placeholder="Mail"
-                        value="<?php if (isset($_SESSION['mail'])) {
-                                                                                                                                echo $_SESSION['mail'];
-                                                                                                                            } ?>">
+                        value="<?php if (isset($_SESSION['mail'])) {echo $_SESSION['mail'];} ?>">
                 </div>
                 <div class="form-group motdepasse">
                     <input type="password" name="motdepasse" id="motdepasse" tabindex="2" class="form-control"

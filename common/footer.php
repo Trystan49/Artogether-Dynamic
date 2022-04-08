@@ -1,4 +1,5 @@
 <?php
+/* Affichage des cookies sur le site */
 if (isset($_COOKIE['accept_cookie'])) {
   $showcookie = false;
 } else {
@@ -54,7 +55,7 @@ if ($showcookie) { ?>
   }
 </style>
 
-<!-- Bas de page -->
+<!-- Bas de page avec un ensemble de liens -->
 <footer class="bg-light text-right text-white">
   <div class="text-right p-3 backgroundFooter">
     <span class="copyright">© 2021 Copyright: Artogether</span>

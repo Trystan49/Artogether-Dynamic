@@ -24,6 +24,7 @@
             <span class="home">Accueil</span>
         </div>
     </div>
+    <!-- Bouton icône qui renvoie à la page d'aide -->
     <div id="navbar" class="collapse navbar-collapse">
         <p class="navbar-right help">
             <a class="helpClick">

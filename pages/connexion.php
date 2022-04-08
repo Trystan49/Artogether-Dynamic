@@ -81,7 +81,6 @@ if ($result) {
                     majSessionNews($pdo, 1, time(), $pseudo);
                 }
             }
-
             header('Location: index.php?page=authentif');
             die();
         }

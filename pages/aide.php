@@ -1,7 +1,9 @@
 <?php
-if(isset($_POST['mailform'])) {
+/* Fonctionnement d'envoi du formulaire et demande reçu dans la boîte mail du propriétaire */
+if(isset($_POST['mailform'])) { // Lien avec le bouton d'envoi du formulaire
 
-    if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) {
+    if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) { // données remplies dans chaque input du formulaire par l'utilisateur
+        // mise en place du système de captcha pour éviter le spam (ex: robot)
         $secret = "6Ld43PAeAAAAAJ8FrvicMDMfviVus86Ewgy1kugP";
         $response = htmlspecialchars($_POST['g-recaptcha-response']);
         $remoteip = $_SERVER['REMOTE_ADDR'];
@@ -10,11 +12,12 @@ if(isset($_POST['mailform'])) {
         $get = file_get_contents($request);
         $decode = json_decode($get, true);
         
-        if($decode['success']){
+        if($decode['success']){ // corps du message reçu sur la boîte mail du propriétaire
             $header="MIME-Version: 1.0\r\n";
             $header.='From:"Artogether"<contact.artogether@gmail.com>'."\n";
             $header.='Content-Type:text/html; charset="uft-8"'."\n";
             $header.='Content-Transfer-Encoding: 8bit';
+            // on récupère les données que l'utilisateur a inséré dans le formulaire et on les affiche dans le mail
             $message='
             <html>
                 <body>
@@ -31,11 +34,13 @@ if(isset($_POST['mailform'])) {
             </html>
             ';
             mail("artogether492022@outlook.fr", "CONTACT - ARTOGETHER", $message, $header);
-            $msg='<p style=color:green>Votre message a bien été envoyé !</p>';  
+            // notification pour l'utilisateur que sa demande a été prise en compte et envoyée sur la boîte mail du propriétaire
+            $msg='<p style=color:green>Votre message a bien été envoyé ! 📤</p>';  
         }
     }
-    else {
-        $msg='<p style=color:red>Tous les champs doivent être complétés<br>ainsi que le captcha !</p>';      
+    else { 
+        // notification pour l'utilisateur qu'il doit remplir l'ensemble des champs et cocher le captcha pour que sa demande soit envoyé
+        $msg='<p style=color:red>Tous les champs doivent être complétés<br>ainsi que le captcha ! ⚠️</p>';      
     }
 }
 ?>

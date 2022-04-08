@@ -36,7 +36,7 @@
 <?php
 if (isset($_GET["creation"])) {
     echo ('
-    <div class="alert success-alert">
+    <div class="transition alert success-alert">
         <p class="success">Votre profil a été créé avec succès ! 🎉<br><br> Vous pouvez vous connecter !</p>
     </div>
   ');
@@ -62,7 +62,7 @@ if (isset($_GET["creation"])) {
             <div class="champ">
                 <?php
                 if (isset($_SESSION["etatConnexion"]) && $_SESSION["etatConnexion"] == 0) {
-                    echo '<p style=color:red>Identifiant ou mot de passe incorrect</p>';
+                    echo '<p style=color:red>⚠️<br><strong>Identifiant ou <br> mot de passe incorrect</strong></p>';
                 }
                 ?>
                 <input class="send" type="submit" value="Connexion">

@@ -109,7 +109,7 @@ form i {
 .aide
 {
   position: absolute;
-  top: 20%;
+  top: 18%;
   left: 10%;
   background-color: white;
   text-align: center;
@@ -117,7 +117,7 @@ form i {
   padding-bottom: 20px;
   padding-right: 40px;
   padding-left: 40px;
-  padding-bottom: 75px;
+  padding-bottom: 40px;
 }
 .title
 {
@@ -215,6 +215,7 @@ input:focus:invalid {
   z-index: 10;
   border-radius: 5px;
   box-shadow: 0 0 15px 5px #ccc;
+  opacity: 0;
 }
 .success-alert {
   background-color: #a8f0c6;
@@ -227,4 +228,30 @@ input:focus:invalid {
 /* Input required */
 input:required {
   box-shadow: none;
+}
+.transition{
+  -webkit-animation-name: transitionOpacity;
+          animation-name: transitionOpacity;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+@-webkit-keyframes transitionOpacity {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+}
+@keyframes transitionOpacity {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
 }

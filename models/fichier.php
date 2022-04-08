@@ -33,6 +33,9 @@ class Fichier
     }
     public static function download($filesP, $values, $pdoP)
     {
+        // Ici on connecte la base de données dans un premier temps.
+        // Ensuite on va faire une requete pour allé chercher le nom et l'url du fichier afin de pouvoir le télécharger.
+        // Par le suite on crée une boucle (foreach) afin d'afficher les différents fichiers uploader dans notre dossier files.
         $req = $pdoP->prepare('SELECT TITRE_OEUVRE, ANNEE_OEUVRE, IMG_OEUVRES FROM oeuvres');
         $req->execute();
         $data = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -55,8 +58,5 @@ class Fichier
         echo "</tbody>
         </table>
         </div>";
-        // Ici on connecte la base de données dans un premier temps.
-        // Ensuite on va faire une requete pour allé chercher le nom et l'url du fichier afin de pouvoir le télécharger.
-        // Par le suite on crée une boucle (foreach) afin d'afficher les différents fichiers uploader dans notre dossier files.
     }
 }
