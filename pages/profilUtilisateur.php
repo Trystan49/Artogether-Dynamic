@@ -64,10 +64,11 @@ if (!isset($_SESSION['pseudo'])) {
         </div>
         <br>
         <!-- Bouton popup modification profil -->
-        <button class="modif" type="button"><a class="aModif" href="#openModal">Modifier le profil</a></button>
+        <a href="#openModalProfil"><input class="modif aModif" type="button" value="Modifier le profil"></a>
         <br><br>
-        <button class="accueil" type="button"><a class="aAccueil" href="index.php?page=accueil">Retour à
-                l'accueil</a></button>
+        <a href="#openModalPwd"><input class="modifPwd aModif" type="button" value="Modifier le mot de passe"></a>
+        <br><br>
+        <a href="index.php?page=accueil"><input class="accueil aAccueil" type="button" value="Retour à l'accueil"></a>
         <br><br>
         <?php
             if (isset($_POST['register-submit'])) {
@@ -76,11 +77,18 @@ if (!isset($_SESSION['pseudo'])) {
             if (isset($_GET['confirm'])) {
                 echo ('<p style=color:green>Votre profil a été modifié avec succès ! 🎉</p>');
             }
+
+            if (isset($_POST['register-submit'])) {
+                Utilisateur::ModifPwd($pdo, $_POST);
+            }
+            if (isset($_GET['confirm'])) {
+                echo ('<p style=color:green>Votre mot de Passe a été modifié avec succès ! 🎉</p>');
+            }
             
         ?>
     </div>
     <!-- Popup qui s'affiche pour la modification du profil -->
-    <div id="openModal" class="modalDialog">
+    <div id="openModalProfil" class="modalProfil">
         <div>
             <a href="#close" title="Close" class="close">X</a>
             <h1 class="titlebis2">Modification profil utilisateur</h1>
@@ -101,12 +109,32 @@ if (!isset($_SESSION['pseudo'])) {
                     <input type="email" name="mail" id="mail" tabindex="1" class="form-control" placeholder="Mail"
                         value="<?php if (isset($_SESSION['mail'])) {echo $_SESSION['mail'];} ?>">
                 </div>
+                <div class="form-group">
+                    <br>
+                    <div class="row justify-content-center">
+                        <input class="send" type="submit" name="register-submit" id="register-submit" tabindex="4"
+                            class="form-control btn btn-secondary" value="Mettre à jour">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Popup qui s'affiche pour la modification du Mot de passe -->
+    <div id="openModalPwd" class="modalPwd">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h1 class="titlebis2">Modification Mot de passe</h1>
+            <form id="register-form" action="index.php?page=profilUtilisateur&confirm=ok" method="post" role="form">
                 <div class="form-group motdepasse">
                     <input type="password" name="motdepasse" id="motdepasse" tabindex="2" class="form-control"
-                        placeholder="Mot de passe">
+                        placeholder="Mot de passe actuel">
                 </div>
                 <div class="form-group motdepasse">
-                    <input type="password" name="confirm-motdepasse" onchange="confirmPwd()" id="confirm-motdepasse"
+                    <input type="password" name="new-motdepasse" id="new-motdepasse" tabindex="2" class="form-control"
+                        placeholder="Nouveau Mot de passe">
+                </div>
+                <div class="form-group motdepasse">
+                    <input type="password" name="confirm-motdepasse" id="confirm-motdepasse"
                         tabindex="2" class="form-control" placeholder="Confirmer mot de passe">
                 </div>
                 <div class="form-group">
@@ -125,18 +153,3 @@ if (!isset($_SESSION['pseudo'])) {
 <a href="#close" title="Close" class="close">x</a>
 </div>
 </div>
-
-<script>
-/* Fonction pour confirmation du mot de passe pour qu'il soit identique */ 
-function confirmPwd() {
-    const pwd = document.getElementById('motdepasse');
-    const pwdConfirm = document.getElementById('confirm-motdepasse');
-    if (pwd.value != pwdConfirm.value) {
-        pwdConfirm.validity.valid = "false";
-        pwdConfirm.setCustomValidity("Saisir le même mot de passe");
-    } else {
-        pwdConfirm.validity.valid = "true";
-        pwdConfirm.setCustomValidity("");
-    }
-}
-</script>

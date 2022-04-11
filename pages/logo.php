@@ -69,7 +69,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                 <!-- Image dynamique -->
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Planète logo_1.png">
+                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Planète logo.png">
                     <figcaption>
                         <!-- Description de l'oeuvre -->
                         <p class="description3">

@@ -36,8 +36,8 @@ ob_start();
                                 </label>
                             </div>
                             <p class="areYouSure">Voulez vous vous déconnecter ?</p>
-                            <button class="yes" type="button"><a class="aYes" href="index.php?page=deconnexion">Oui</button>
-                            <button class="no" type="button"><a class="aNo" href="">Non</a></button>
+                            <a href="index.php?page=deconnexion"><input class="yes aYes" type="button" value="Oui"></a>
+                            <a href=""><input class="no aNo" type="button" value="Non"></a>
                             <br>
                             <img class="logoGoodBye" src="public/Medias/see_you_soon.png">
                         </div>

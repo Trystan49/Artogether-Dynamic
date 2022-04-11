@@ -41,5 +41,5 @@ if (Fichier::download($_FILES, $_POST, $pdo)) {
 
 <!-- Bouton de retour à la page principale de l'espace admin -->
 <div class="champ">
-  <button class="accueil" type="button"><a href="index.php?page=admin">Page admin</a></button>
+  <a href="index.php?page=admin" target="_blank"><input class="accueil" type="button" value="Page admin"></a>
 </div>

@@ -227,7 +227,7 @@ a, a:hover
 }
 /* Contenu */
 .main-content {
-  margin-top: 60px;
+  margin-top: 70px;
   margin-left: 180px;
 }
 /* Aide et poster un message */
@@ -386,7 +386,7 @@ footer{
   bottom: 0;
   left: 0;
   right: 0;
-  top: 130%;
+  top: 120%;
   position: absolute;
   z-index: -5;
 }

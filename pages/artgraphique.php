@@ -54,7 +54,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                 <!-- Image dynamique -->
-                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="Admin/files/Tiger_Samouraï.jpg">
+                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="Admin/files/Tiger Samouraï0000.jpg">
                     <figcaption>
                         <!-- Description de l'oeuvre -->
                         <p class="description2">
@@ -70,7 +70,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                 <!-- Image dynamique -->
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Logo-Pasquier-modern.jpg">
+                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Logo Pasquier (modern)0000.jpg">
                     <figcaption>
                         <!-- Description de l'oeuvre -->
                         <p class="description3">

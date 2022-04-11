@@ -55,8 +55,7 @@
             commun." <br><br> <em>(Albert Jacquard)</em>
         </span>
         <!-- Bouton Mini-Jeu -->
-        <button class="game" type="button"><a class="mini-jeu"
-                href="index.php?page=game"><strong>Mini-jeu</strong></a></button>
+        <a href="index.php?page=game" target="_blank"><strong><input class="game mini-jeu" type="button" value="Mini-jeu"></strong></a>
 
     </div>
 

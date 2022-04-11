@@ -1,3 +1,15 @@
+<?php
+//enregistrement en BD du nouvel utilisateur
+//chargement des paramètres de la BD
+include('./utils/db.php');
+include('./models/oeuvres.php');
+
+/* Lien avec les oeuvres enregistrés en BDD */
+if (isset($_POST['oeuvres'])) {
+    Oeuvres::getDrawing($pdo, $_POST);
+}
+?>
+
 <!-- Dashboard -->
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
@@ -36,7 +48,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                     <!-- Image dynamique -->
-                    <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="Admin/files/F1JP.jpg">
+                    <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="Admin/files/Japan F1.jpg">
                     <figcaption>
                         <!-- Description de l'oeuvre -->
                         <p class="description1">
@@ -70,7 +82,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                 <!-- Image dynamique -->
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/NL.jpg">    
+                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Nicki Lauda.jpg">    
                     <figcaption>
                         <!-- Description de l'oeuvre -->
                         <p class="description3">
@@ -86,7 +98,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                 <!-- Image dynamique -->
-                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="Admin/files/Chevalier.jpg">
+                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="Admin/files/Casque Chevalier.jpg">
                     <figcaption>
                         <!-- Description de l'oeuvre -->
                         <p class="description4">

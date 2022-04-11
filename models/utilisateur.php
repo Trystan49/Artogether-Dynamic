@@ -21,6 +21,7 @@ class Utilisateur
             echo "Erreur  : " . $e->getMessage();
         }
     }
+
     public static function update($pdoP, $values)
     {
         // mettre à jour les données de l'utilisateur dans la BDD
@@ -43,6 +44,7 @@ class Utilisateur
             echo $e;
         }
     }
+
     private static function refresh($pseudo, $prenom, $nom, $mail)
     {
         // mettre à jour les données de l'utilisateur dans la session
@@ -51,6 +53,7 @@ class Utilisateur
         $_SESSION["nom"] = $nom;
         $_SESSION["mail"] = $mail;
     }
+
     /* Vérification du pseudo identique ou non afin d'éviter les doublons */
     public static function SamePwd($pdo, $values){
         $pseudo = htmlspecialchars($values['pseudo']);
@@ -58,11 +61,17 @@ class Utilisateur
         $stmt->execute([$pseudo]); 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
     /* Vérification du mail identique ou non afin d'éviter les doublons */
     public static function SameMail($pdo, $values){
         $mail = htmlspecialchars($values['mail']);
         $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE ADRESSE_MAIL_UTILISATEUR=?");
         $stmt->execute([$mail]); 
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    /* Possibilité de modifier le mot de passe de l'utilisateur */
+    public static function ModifPwd($pdo, $values){
+        
     }
 }

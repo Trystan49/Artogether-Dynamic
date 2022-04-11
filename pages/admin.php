@@ -10,13 +10,13 @@ if (!empty($_SESSION["is_administrateur"] == "Yes"))
         <br>
         <span class="titlebis">Espace Admin</span>
         <div class="champ">
-            <button class="oeuvres" type="button"><a href="index.php?page=envoifichier">Téléchargement oeuvres</a></button>
+            <a href="index.php?page=envoifichier" target="_blank"><input class="oeuvres" type="button" value="Téléchargement oeuvres"></a>
         </div>
         <div class="champ">
-            <button class="commentaire" type="button"><a href="">Administrateur commentaires</a></button>
+            <a href="" target="_blank"><input class="commentaire" type="button" value="Administrateur commentaires"></a>
         </div>
         <div class="champ">
-            <button class="accueil" type="button"><a href="index.php?page=accueil">Retour à l\'accueil</a></button>
+            <a href="index.php?page=accueil" target="_blank"><input class="accueil" type="button" value="Retour à l\'accueil"></a>
         </div>
         <img class="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png">
     </div>
