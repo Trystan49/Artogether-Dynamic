@@ -113,62 +113,62 @@
 	var cards = [
 		{
 			name: "F1JP",
-			img: "gamescreen/F1JP.jpg",
+			img: "Admin/files/Japan F1.jpg",
 			id: 1,
 		},
 		{
 			name: "Girl-neon",
-			img: "gamescreen/Girl-neon.jpg",
+			img: "Admin/files/Girl neon.png",
 			id: 2
 		},
 		{
 			name: "Samus",
-			img: "gamescreen/Samus.jpg",
+			img: "Admin/files/Samus.jpg",
 			id: 3
 		},
 		{
 			name: "Yoshi Nike",
-			img: "gamescreen/Yoshi Nike.png",
+			img: "Admin/files/Yoshi Nike.png",
 			id: 4
 		}, 
 		{
 			name: "Dragon Squad",
-			img: "gamescreen/Dragon Squad.png",
+			img: "Admin/files/Dragon Squad.png",
 			id: 5
 		},
 		{
 			name: "Nicki Lauda",
-			img: "gamescreen/NL.jpg",
+			img: "Admin/files/Nicki Lauda.jpg",
 			id: 6
 		},
 		{
 			name: "Toons_F1",
-			img: "gamescreen/Toons_F1.jpg",
+			img: "Admin/files/Toons_F1.jpg",
 			id: 7
 		},
 		{
 			name: "BMW",
-			img: "gamescreen/Bmw.jpg",
+			img: "Admin/files/Bmw.jpg",
 			id: 8
 		},
 		{
 			name: "Red wolf blue girl0000",
-			img: "gamescreen/Red wolf blue girl0000.jpg",
+			img: "Admin/files/Red wolf blue girl0000.jpg",
 			id: 9
 		},
 		{
 			name: "Samouraï",
-			img: "gamescreen/Samouraï.jpg",
+			img: "Admin/files/Tiger Samouraï0000.jpg",
 			id: 10
 		},
 		{
 			name: "sublime",
-			img: "gamescreen/Templar x wolf.png",
+			img: "Admin/files/Templar x wolf.png",
 			id: 11
 		},
 		{
 			name: "Planète logo",
-			img: "gamescreen/Planète logo_1.png",
+			img: "Admin/files/Planète logo.png",
 			id: 12
 		},
 	];

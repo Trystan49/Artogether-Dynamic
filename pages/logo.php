@@ -1,3 +1,10 @@
+<?php
+//enregistrement en BD du nouvel utilisateur
+//chargement des paramètres de la BD
+include('./utils/db.php');
+include('./models/oeuvres.php');
+?>
+
 <!-- Dashboard -->
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
@@ -32,74 +39,43 @@
     <img class="driver" src="public/Medias/Japan driver.png" alt="image">
     <!-- Gallerie des logos -->
     <div class="container-gallery">
-        <div class="row">
+    <?php
+        $drawings = Oeuvres::getLogo($pdo);
+        $compteur = 0;
+        foreach ($drawings as $draw) {
+            if ($compteur == 1) {
+                echo ('<div class="row">');
+            }
+            $idOeuvre = $draw['ID_OEUVRE'];
+            $techniques = Oeuvres::getTechnique($pdo, $idOeuvre);
+            $techniquesSt="";
+            foreach($techniques as $technique) {
+                $techniquesSt.=$technique['LIBELLE_TECHNIQUE']." ";
+            }
+            //$json = json_encode($techniques);
+            
+            echo ('
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <!-- Image dynamique -->    
-                <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="Admin/files/Dragon Squad.png">
+                    <img class="myImages dessin" id="myImg" style="cursor:pointer" src="' . $draw['IMG_OEUVRES'] . '">
                     <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description1">
-                            <strong>Dragon Squad</strong>, 2021
+                        <p class="description">
+                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> '. $draw['ANNEE_OEUVRE'] . '
                             <br>
-                            Canva
-                            <br>
-                            225 x 225 pixels
+                            '. $techniquesSt .
+                            '<br>
+                            21 x 29,7 (A4)
                             <br>
                         </p>
                     </figcaption>
                 </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="Admin/files/LOGO OFFICIEL TRISTAN.png">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description2">
-                            <strong>Logo Artogether</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            225 x 225 pixels
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Planète logo.png">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description3">
-                            <strong>Green_Planet</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            225 x 225 pixels
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="Admin/files/Logo Synthwave.png">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description4">
-                            <strong>Synthwave</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            225 x 225 pixels
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
+            </div>');
+            if ($compteur == 4) {
+                echo ('</div>');
+                $compteur++;
+            }
+        }
+        ?>
     </div>
     <!-- Explication et démarches pour les personnes interressées pour une nouvelle charte graphique -->
     <div class="explication">

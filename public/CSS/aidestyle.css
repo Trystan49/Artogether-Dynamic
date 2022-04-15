@@ -352,12 +352,12 @@ a, a:hover
   background-color: rgb(230, 230, 230);
   border-radius: 5px;
   width:300px;
-  height:410px;
+  height:370px;
   overflow:hidden;
   padding:10px;
   margin-top: 26px;
   font-family:Helvetica;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border: 2px solid black;
 }
 .holder .mask {
@@ -380,6 +380,23 @@ a, a:hover
 .holder ul li a {
   color:rgb(0, 0, 0);
   text-decoration:none;
+}
+/* Bouton Calendrier */
+.calendar {
+  font-family: "Reem Kufi", sans-serif;
+  background-color: black;
+  color: white;
+  padding-left: 55px;
+  padding-right: 55px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.aCalendar,
+.aCalendar:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 /* Bas de page */
 footer{

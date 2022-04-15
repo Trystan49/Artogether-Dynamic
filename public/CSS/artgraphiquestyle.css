@@ -15,7 +15,7 @@ body
   position: relative;
   padding-bottom: 100px;
   -moz-box-sizing: border-box; box-sizing: border-box;
-  z-index: -4;
+  z-index: -1;
 }
 /* Scroll Bar */
 ::-webkit-scrollbar{
@@ -43,7 +43,7 @@ body
 .navbar-global {
   background-color: rgb(255, 255, 255);
   position: fixed;
-  z-index: -3;
+  z-index: -1;
 }
 
 .navbar-global .navbar-title {
@@ -235,13 +235,15 @@ a, a:hover
   height: 365px;
   border-bottom: 5px solid black;
   position: relative;
-  z-index: -4;
+  z-index: -2;
 }
 /* Contenu */
 .main-content {
   margin-top: 60px;
   margin-left: 180px;
   margin-bottom: 1000px;
+  position: relative;
+  z-index: -3;
 }
 
 .collapsed + .main-content {
@@ -251,105 +253,48 @@ a, a:hover
 .container-gallery
 {
   margin-left: 60px;
+  position: relative;
+  z-index: -2;
 }
 .row
 {
-  margin-right: 30px;
-  position: relative;
+  margin-right: 10px;
 }
-.dessin1, .dessin2, .dessin3, .dessin4
+.dessin
 {
   margin-top: 20px;
   position: absolute;
-  z-index: -4;
+  z-index: 1;
   width: 225px;
   height: 300px;
   border: 5px solid black;
   transition: transform ease-in-out 0.3s;
 }
-.dessin1:hover, .dessin2:hover, .dessin3:hover, .dessin4:hover
+.dessin:hover
 {
   transform: scale(1.1);
 }
-.dessin5, .dessin6, .dessin7, .dessin8
-{
-  margin-top: 450px;
-  position: absolute;
-  z-index: -4;
-  width: 225px;
-  height: 300px;
-  border: 5px solid black;
-  transition: transform ease-in-out 0.3s;
-}
-.dessin5:hover, .dessin6:hover, .dessin7:hover, .dessin8:hover
-{
-  transform: scale(1.1);
-}
+
 /*  Description oeuvres */
-.description1, .description2, .description3, .description4
+.description
 {
   font-family: 'Reem Kufi', sans-serif;
   font-size: 12px;
   margin-top: 340px;
   position: absolute;
-  z-index: -4;
+  z-index: 1;
   text-align: center;
   background-color: rgb(255, 255, 255);
-  padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
-  padding-right: 35px;
-  padding-left: 35px;
-}
-.description1
-{
-  margin-left: 35px;
-}
-.description2
-{
-  margin-left: 20px;
-}
-.description3
-{
-  margin-left: 16px;
-}
-.description4
-{
-  margin-left: 34px;
-}
-.description5
-{
-  margin-left: 34px;
-}
-.description6
-{
-  margin-left: 27px;
-}
-.description7
-{
-  margin-left: 34px;
-}
-.description8
-{
-  margin-left: 25px;
-}
-.description5, .description6, .description7, .description8
-{
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 12px;
-  margin-top: 770px;
-  position: absolute;
-  z-index: -4;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding-right: 35px;
-  padding-left: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-left: 8px;
 }
 figure {
-  margin: 15px 0;
+  margin: 15px 0 430px 0;
 }
 
 figcaption {
@@ -370,7 +315,7 @@ footer{
   right: 0;
   margin-top: 5em;
   position: absolute;
-  z-index: -5;
+  z-index: -3;
 }
 .backgroundFooter
 {
@@ -392,7 +337,7 @@ footer{
   background: #000000;
   margin-top: 950px;
   position: absolute;
-  z-index: -4;
+  z-index: -2;
   left: 52%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -820,7 +765,7 @@ form i {
   top: 20px;
   right: 480px;
   z-index: 1;
-  color: #000000;
+  color: #ff0000;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
@@ -828,7 +773,7 @@ form i {
 
 .close:hover,
 .close:focus {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
   text-decoration: none;
   cursor: pointer;
 }

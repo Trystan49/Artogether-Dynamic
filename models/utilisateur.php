@@ -65,7 +65,7 @@ class Utilisateur
     /* Vérification du mail identique ou non afin d'éviter les doublons */
     public static function SameMail($pdo, $values){
         $mail = htmlspecialchars($values['mail']);
-        $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE ADRESSE_MAIL_UTILISATEUR=?");
+        $stmt = $pdo->prepare("SELECT ID_UTILISATEUR FROM utilisateurs WHERE ADRESSE_MAIL_UTILISATEUR=?");
         $stmt->execute([$mail]); 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

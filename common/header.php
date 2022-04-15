@@ -34,6 +34,8 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton'>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
+  <!-- Jquery ui (popup) -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <?php
   // Relis l'ensemble de mes CSS sur chacune de mes pages .php avec navigation 
   include('./public/CSS/gestioncss.php');

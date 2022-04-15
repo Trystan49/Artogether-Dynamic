@@ -137,6 +137,7 @@ if(isset($_POST['mailform'])) { // Lien avec le bouton d'envoi du formulaire
             <li><span>25/03/2023</span><br><a href="#">Mise en place d'une boutique en ligne</a></li>
         </ul>
     </div>
+    <a href="index.php?page=calendrier"><input class="calendar aCalendar" type="button" value="Retour à l'accueil"></a>
 </div>
 <br>
 <br>

@@ -1,4 +1,5 @@
 <!-- Page de transition avant d'entrer sur la page d'accueil -->
+
 <body>
     <div class="loader-wrapper">
         <div class="loader"></div>
@@ -55,12 +56,21 @@
             commun." <br><br> <em>(Albert Jacquard)</em>
         </span>
         <!-- Bouton Mini-Jeu -->
-        <a href="index.php?page=game" target="_blank"><strong><input class="game mini-jeu" type="button" value="Mini-jeu"></strong></a>
-
+        <a class="ExplicationMJ" href="index.php?page=game" title="Amuse toi avec ce mini-jeu sur les oeuvres !" target="_blank"><strong><input class="game mini-jeu" type="button" value="Mini-jeu"></strong></a>
     </div>
 
     <script src='public/CDN/jquery.min.js'></script>
     <script src="public/JS/transitionpage.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <script>
+        /* Popup Jquery UI */
+        $(function() {
+            $('.ExplicationMJ').tooltip({
+                position: { my: "left-60 bottom+70", at: "bottom" }
+            });
+        });
+    </script>
 
 </body>
 

@@ -3,11 +3,6 @@
 //chargement des paramètres de la BD
 include('./utils/db.php');
 include('./models/oeuvres.php');
-
-/* Lien avec les oeuvres enregistrés en BDD */
-if (isset($_POST['oeuvres'])) {
-    Oeuvres::getDrawing($pdo, $_POST);
-}
 ?>
 
 <!-- Dashboard -->
@@ -36,7 +31,7 @@ if (isset($_POST['oeuvres'])) {
         </p>
         <span class="navbar-right verticalBarre"></span>
     </div>
-    </div>
+</div>
 </div>
 <!-- Contenu -->
 <div class="main-content">
@@ -44,144 +39,45 @@ if (isset($_POST['oeuvres'])) {
     <img class="space" src="./public/Medias/space official_ps.jpg" alt="image">
     <!-- Gallerie avec toutes les oeuvres d'art -->
     <div class="container-gallery">
-        <div class="row">
+        <?php
+        $drawings = Oeuvres::getDrawing($pdo);
+        $compteur = 0;
+        foreach ($drawings as $draw) {
+            if ($compteur == 1) {
+                echo ('<div class="row">');
+            }
+            $idOeuvre = $draw['ID_OEUVRE'];
+            $techniques = Oeuvres::getTechnique($pdo, $idOeuvre);
+            $techniquesSt="";
+            foreach($techniques as $technique) {
+                $techniquesSt.=$technique['LIBELLE_TECHNIQUE']." ";
+            }
+            //$json = json_encode($techniques);
+            
+            echo ('
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                    <!-- Image dynamique -->
-                    <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="Admin/files/Japan F1.jpg">
+                    <img class="myImages dessin" id="myImg" style="cursor:pointer" src="' . $draw['IMG_OEUVRES'] . '">
                     <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description1">
-                            <strong>Formula Japan</strong>, 2021
+                        <p class="description">
+                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> '. $draw['ANNEE_OEUVRE'] . '
                             <br>
-                            Crayon de couleur, feutre
-                            <br>
+                            '. $techniquesSt .
+                            '<br>
                             21 x 29,7 (A4)
                             <br>
                         </p>
                     </figcaption>
                 </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="Admin/files/Samus.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description2">
-                            <strong>Samus</strong>, 2021
-                            <br>
-                            Crayon de couleur, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                        </p>
-                    </figcaption>
-                </figure>
-                
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Nicki Lauda.jpg">    
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description3">
-                            <strong>Nicki Lauda</strong>, 2021
-                            <br>
-                            Crayon de couleur, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="Admin/files/Casque Chevalier.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description4">
-                            <strong>Casque Chevalier</strong>, 2021
-                            <br>
-                            Crayon de papier, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin5" id="myImg" style="cursor:pointer" src="Admin/files/Bmw.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description5">
-                            <strong>BMW M3 (E30)</strong>, 2021
-                            <br>
-                            Crayon de papier, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin6" id="myImg" style="cursor:pointer" src="Admin/files/Toons_F1.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description6">
-                            <strong>F1 Toons</strong>, 2021
-                            <br>
-                            Crayon de papier, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin7" id="myImg" style="cursor:pointer" src="Admin/files/Team_Yoshi.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description7">
-                            <strong>Driver F1 Yoshi</strong>, 2021
-                            <br>
-                            Crayon de papier, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin8" id="myImg" style="cursor:pointer" src="Admin/files/7DS.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description8">
-                            <strong>7DS F1 (Animé)</strong>, 2021
-                            <br>
-                            Crayon de papier, feutre
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
+            </div>');
+            if ($compteur == 4) {
+                echo ('</div>');
+                $compteur++;
+            }
+        }
+        ?>
     </div>
+
     <!-- Accès à l'espace commentaire des oeuvres -->
     <div class="comment">
         <a href="#">
@@ -191,13 +87,12 @@ if (isset($_POST['oeuvres'])) {
             </div>
         </a>
     </div>
-</div>
-<!-- Script pour rendre les oeuvres dynamiques quand on clique dessus -->
-<div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
-</div>
+    <!-- Script pour rendre les oeuvres dynamiques quand on clique dessus -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 
 
-<script src="public/JS/oeuvrescript.js"></script>
+    <script src="public/JS/oeuvrescript.js"></script>

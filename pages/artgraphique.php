@@ -1,3 +1,10 @@
+<?php
+//enregistrement en BD du nouvel utilisateur
+//chargement des paramètres de la BD
+include('./utils/db.php');
+include('./models/oeuvres.php');
+?>
+
 <!-- Dashboard -->
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
@@ -33,143 +40,43 @@
     <img class="skyline" src="public/Medias/Skyline_ps.jpg" alt="image">
     <!-- Gallerie des oeuvres graphiques -->
     <div class="container-gallery">
-        <div class="row">
+    <?php
+        $drawings = Oeuvres::getImage($pdo);
+        $compteur = 0;
+        foreach ($drawings as $draw) {
+            if ($compteur == 1) {
+                echo ('<div class="row">');
+            }
+            $idOeuvre = $draw['ID_OEUVRE'];
+            $techniques = Oeuvres::getTechnique($pdo, $idOeuvre);
+            $techniquesSt="";
+            foreach($techniques as $technique) {
+                $techniquesSt.=$technique['LIBELLE_TECHNIQUE']." ";
+            }
+            //$json = json_encode($techniques);
+            
+            echo ('
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin1" id="myImg" style="cursor:pointer" src="Admin/files/Girl neon.png">
+                    <img class="myImages dessin" id="myImg" style="cursor:pointer" src="' . $draw['IMG_OEUVRES'] . '">
                     <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description1">
-                            <strong>Néon Girl</strong>, 2021
+                        <p class="description">
+                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> '. $draw['ANNEE_OEUVRE'] . '
                             <br>
-                            Photoshop
-                            <br>
+                            '. $techniquesSt .
+                            '<br>
                             21 x 29,7 (A4)
                             <br>
                         </p>
                     </figcaption>
                 </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin2" id="myImg" style="cursor:pointer" src="Admin/files/Tiger Samouraï0000.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description2">
-                            <strong>Tiger Samouraï</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin3" id="myImg" style="cursor:pointer" src="Admin/files/Logo Pasquier (modern)0000.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description3">
-                            <strong>Modern Pasquier</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin4" id="myImg" style="cursor:pointer" src="Admin/files/Yoshi Nike.png">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description4">
-                            <strong>Yoshi Nike</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin5" id="myImg" style="cursor:pointer" src="Admin/files/Red wolf blue girl0000.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description5">
-                            <strong>Wolf-Girl</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin6" id="myImg" style="cursor:pointer" src="Admin/files/LibertyRide0000.jpg">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description6">
-                            <strong>Liberty Ride</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin7" id="myImg" style="cursor:pointer" src="Admin/files/Black effect - Hamilton.png">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description7">
-                            <strong>L.Hamilton</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure>
-                <!-- Image dynamique -->
-                <img class="myImages dessin8" id="myImg" style="cursor:pointer" src="Admin/files/Templar x wolf.png">
-                    <figcaption>
-                        <!-- Description de l'oeuvre -->
-                        <p class="description8">
-                            <strong>Templar x Wolf</strong>, 2021
-                            <br>
-                            Photoshop
-                            <br>
-                            21 x 29,7 (A4)
-                            <br>
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-    </div>
+            </div>');
+            if ($compteur == 4) {
+                echo ('</div>');
+                $compteur++;
+            }
+        }
+        ?>
     <!-- Accès à l'espace commentaire des oeuvres -->
     <div class="comment">
         <a href="#">
