@@ -32,7 +32,7 @@ include('./models/oeuvres.php');
         </p>
         <span class="navbar-right verticalBarre"></span>
     </div>
-    </div>
+</div>
 </div>
 <!-- Contenu -->
 <div class="main-content">
@@ -40,7 +40,7 @@ include('./models/oeuvres.php');
     <img class="skyline" src="public/Medias/Skyline_ps.jpg" alt="image">
     <!-- Gallerie des oeuvres graphiques -->
     <div class="container-gallery">
-    <?php
+        <?php
         $drawings = Oeuvres::getImage($pdo);
         $compteur = 0;
         foreach ($drawings as $draw) {
@@ -49,22 +49,22 @@ include('./models/oeuvres.php');
             }
             $idOeuvre = $draw['ID_OEUVRE'];
             $techniques = Oeuvres::getTechnique($pdo, $idOeuvre);
-            $techniquesSt="";
-            foreach($techniques as $technique) {
-                $techniquesSt.=$technique['LIBELLE_TECHNIQUE']." ";
+            $techniquesSt = "";
+            foreach ($techniques as $technique) {
+                $techniquesSt .= $technique['LIBELLE_TECHNIQUE'] . " ";
             }
             //$json = json_encode($techniques);
-            
+
             echo ('
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                     <img class="myImages dessin" id="myImg" style="cursor:pointer" src="' . $draw['IMG_OEUVRES'] . '">
                     <figcaption>
                         <p class="description">
-                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> '. $draw['ANNEE_OEUVRE'] . '
+                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> ' . $draw['ANNEE_OEUVRE'] . '
                             <br>
-                            '. $techniquesSt .
-                            '<br>
+                            ' . $techniquesSt .
+                '<br>
                             21 x 29,7 (A4)
                             <br>
                         </p>
@@ -77,23 +77,28 @@ include('./models/oeuvres.php');
             }
         }
         ?>
-    <!-- Accès à l'espace commentaire des oeuvres -->
-    <div class="comment">
-        <a href="#">
-            <p class="commenText">Espace Commentaire</p>
-            <div class="commenTwo">
-                <p class="commenText2 glyphicon glyphicon-comment"></p>
-            </div>
-        </a>
+        <!-- Accès à l'espace commentaire des oeuvres -->
+        <div class="comment">
+            <a href="#">
+                <p class="commenText">Espace Commentaire</p>
+                <div class="commenTwo">
+                    <p class="commenText2 glyphicon glyphicon-comment"></p>
+                </div>
+            </a>
+        </div>
     </div>
-</div>
 
-<!-- Script pour rendre les oeuvres dynamiques quand on clique dessus -->
-<div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
-</div>
+    <!-- Script pour rendre les oeuvres dynamiques quand on clique dessus -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 
+    <script>
+        document.oncontextmenu = function() {
+            return false;
+        }
+    </script>
 
-<script src="public/JS/oeuvrescript.js"></script>
+    <script src="public/JS/oeuvrescript.js"></script>

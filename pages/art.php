@@ -48,22 +48,22 @@ include('./models/oeuvres.php');
             }
             $idOeuvre = $draw['ID_OEUVRE'];
             $techniques = Oeuvres::getTechnique($pdo, $idOeuvre);
-            $techniquesSt="";
-            foreach($techniques as $technique) {
-                $techniquesSt.=$technique['LIBELLE_TECHNIQUE']." ";
+            $techniquesSt = "";
+            foreach ($techniques as $technique) {
+                $techniquesSt .= $technique['LIBELLE_TECHNIQUE'] . " ";
             }
             //$json = json_encode($techniques);
-            
+
             echo ('
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <figure>
                     <img class="myImages dessin" id="myImg" style="cursor:pointer" src="' . $draw['IMG_OEUVRES'] . '">
                     <figcaption>
                         <p class="description">
-                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> '. $draw['ANNEE_OEUVRE'] . '
+                            <strong>' . $draw['TITRE_OEUVRE'] . '</strong>, <br> ' . $draw['ANNEE_OEUVRE'] . '
                             <br>
-                            '. $techniquesSt .
-                            '<br>
+                            ' . $techniquesSt .
+                '<br>
                             21 x 29,7 (A4)
                             <br>
                         </p>
@@ -94,5 +94,10 @@ include('./models/oeuvres.php');
         <div id="caption"></div>
     </div>
 
+    <script>
+        document.oncontextmenu = function() {
+            return false;
+        }
+    </script>
 
     <script src="public/JS/oeuvrescript.js"></script>

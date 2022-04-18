@@ -36,6 +36,11 @@
 
   <!-- Jquery ui (popup) -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+  <!-- Full Calendar -->
+  <link rel="stylesheet" href="./fullcalendar/main.css">
+  <script src="./fullcalendar/main.js" defer></script>
+  
   <?php
   // Relis l'ensemble de mes CSS sur chacune de mes pages .php avec navigation 
   include('./public/CSS/gestioncss.php');

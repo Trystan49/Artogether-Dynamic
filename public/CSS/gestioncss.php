@@ -23,6 +23,7 @@
     "cookies"=>"lienfooterstyle",
     "donneespersonnelles"=>"lienfooterstyle",
     "accesinterdit"=>"accesinterditstyle",
-    "error404"=>"error404style"
+    "error404"=>"error404style",
+    "eventCalendar"=>"eventCalendarstyle"
 ];
 ?>

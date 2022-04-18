@@ -67,9 +67,18 @@
         /* Popup Jquery UI */
         $(function() {
             $('.ExplicationMJ').tooltip({
-                position: { my: "left-60 bottom+70", at: "bottom" }
+                position: {
+                    my: "left-60 bottom+70",
+                    at: "bottom"
+                }
             });
         });
+    </script>
+
+    <script>
+        document.oncontextmenu = function() {
+            return false;
+        }
     </script>
 
 </body>
