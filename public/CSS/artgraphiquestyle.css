@@ -43,7 +43,7 @@ body
 .navbar-global {
   background-color: rgb(255, 255, 255);
   position: fixed;
-  z-index: -1;
+  z-index: -3;
 }
 
 .navbar-global .navbar-title {
@@ -235,7 +235,7 @@ a, a:hover
   height: 365px;
   border-bottom: 5px solid black;
   position: relative;
-  z-index: -2;
+  z-index: -4;
 }
 /* Contenu */
 .main-content {
@@ -252,7 +252,7 @@ a, a:hover
 {
   margin-left: 60px;
   position: relative;
-  z-index: -2;
+  z-index: -4;
 }
 .row
 {
@@ -313,7 +313,7 @@ footer{
   right: 0;
   margin-top: 5em;
   position: absolute;
-  z-index: -3;
+  z-index: -5;
 }
 .backgroundFooter
 {
