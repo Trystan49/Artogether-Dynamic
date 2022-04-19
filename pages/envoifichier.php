@@ -36,6 +36,7 @@ if (isset($_POST['envoiFichier'])) {
 <!-- Créer un lien avec le dossier models pour le fichier.php -->
 <?php
 if (Fichier::download($_FILES, $_POST, $pdo)) {
+  echo "<p class=\"bg-success\">Fichier bien téléchargé</p>";
 }
 ?>
 
