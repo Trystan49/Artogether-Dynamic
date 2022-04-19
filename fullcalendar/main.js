@@ -1,4 +1,4 @@
-/* Explication Calendar js */
+/* Explication Calendar Javascript */
 /*!
 FullCalendar v5.11.0
 Docs & License: https://fullcalendar.io/
