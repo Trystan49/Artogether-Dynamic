@@ -33,10 +33,10 @@ if (isset($_POST['envoiFichier'])) {
 <h2>Fichiers PNG ou JPG enregistrés</h2>
 <br>
 
-<!-- Créer un lien avec le dossier models pour le fichier.php -->
+
 <?php
 if (Fichier::download($_FILES, $_POST, $pdo)) {
-  echo "<p class=\"bg-success\">Fichier bien téléchargé</p>";
+  //Créer un lien avec le dossier models pour le fichier.php
 }
 ?>
 
