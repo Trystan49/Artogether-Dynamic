@@ -1,3 +1,4 @@
+/* Explication Calendar js */
 document.addEventListener("DOMContentLoaded", function () {
   var calendarEl = document.getElementById("calendar");
 
