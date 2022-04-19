@@ -80,25 +80,25 @@ if(isset($_POST['mailform'])) { // Lien avec le bouton d'envoi du formulaire
             <div class="champ">
                 <br>
                 <input class="prenom" type="text" id="prenom" name="prenom" placeholder="Prénom" maxlength="25"
-                    size="30" value="<?php if(isset($_POST['prenom'])) { echo  htmlspecialchars($_POST['prenom']); } ?>">
+                    size="30" value="<?php if(isset($_POST['prenom'])) { echo ($_POST['prenom']); } ?>">
             </div>
             <div class="champ">
                 <input class="nom" type="text" id="nom" name="nom" placeholder="Nom" maxlength="25" size="30"
-                    value="<?php if(isset($_POST['nom'])) { echo  htmlspecialchars($_POST['nom']); } ?>">
+                    value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>">
             </div>
             <div class="champ">
                 <input class="mail" type="text" id="mail" name="mail" placeholder="Adresse mail"
                     pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" maxlength="50" size="30"
-                    value="<?php if(isset($_POST['mail'])) { echo htmlspecialchars($_POST['mail']); } ?>">
+                    value="<?php if(isset($_POST['mail'])) { echo ($_POST['mail']); } ?>">
             </div>
             <div class="champ">
                 <input class="sujet" type="text" id="sujet" name="sujet" placeholder="Sujet" maxlength="100" size="30"
-                    value="<?php if(isset($_POST['sujet'])) { echo  htmlspecialchars($_POST['sujet']); } ?>">
+                    value="<?php if(isset($_POST['sujet'])) { echo ($_POST['sujet']); } ?>">
             </div>
             <div class="champ">
                 <textarea rows="2" cols="30" class="message" type="message" id="message" name="message"
                     placeholder="Message" maxlength="1000"
-                    value="<?php if(isset($_POST['message'])) { echo  htmlspecialchars($_POST['message']); } ?>"></textarea>
+                    value="<?php if(isset($_POST['message'])) { echo ($_POST['message']); } ?>"></textarea>
             </div>
             <!-- reCaptcha Google -->
             <div class="g-recaptcha" data-sitekey="6Ld43PAeAAAAAPir_ZK52N-DzsoeD8jJXrqfDZXP"></div>
