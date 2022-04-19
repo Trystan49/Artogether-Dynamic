@@ -115,8 +115,8 @@ if(isset($_POST['mailform'])) { // Lien avec le bouton d'envoi du formulaire
         ?>
     </div>
     <!-- Dessin journal présent au milieu de la page -->
-    <img class="journal" src="public/Medias/journal.png">
-    <img class="calendrier" src="public/Medias/calendrier.png">
+    <img class="journal" alt="journal" src="public/Medias/journal.png">
+    <img class="calendrier" alt="calendrier" src="public/Medias/calendrier.png">
     <!-- Coordonnées -->
     <span class="contact"> Coordonnées !
         <br>

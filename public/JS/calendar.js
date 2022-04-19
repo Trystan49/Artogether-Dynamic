@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
       list: "Liste",
     },
     initialDate: "2022-07-01",
-    navLinks: true, // can click day/week names to navigate views
-    businessHours: true, // display business hours
     events: [
       {
         title: "Présentation du site",

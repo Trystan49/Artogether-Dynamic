@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <title>Artogether</title>
   <!-- Appel de Bootstrap -->
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <!-- <link rel='stylesheet' href="public/CDN/bootstrap.min.css"> -->

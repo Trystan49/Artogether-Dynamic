@@ -108,7 +108,7 @@
         </ul>
         <br>
         <p>Pour obtenir plus d’information sur les cookies, vous pouvez consulter le site internet de la CNIL.</p>
-        <img class="logoCookies" src="public/Medias/cookie.png">
+        <img class="logoCookies" alt="cookies" src="public/Medias/cookie.png">
         <br><br><br><br>
         </p>
     </div>

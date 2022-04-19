@@ -384,14 +384,12 @@ footer{
 .buttonC:hover
 {
   background: #39fad7;
-  background: -webkit-linear-gradient(to right,#44ea76, #39fad7);
   background: linear-gradient(to right, #44ea76, #39fad7);
   color: white;
 }
 .buttonD:hover
 {
   background: #e52d27;
-  background: -webkit-linear-gradient(to right, #b31217, #e52d27);
   background: linear-gradient(to right, #b31217, #e52d27);
   color: rgb(255, 255, 255);
 }

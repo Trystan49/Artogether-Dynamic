@@ -45,7 +45,7 @@ if (!isset($_SESSION['pseudo'])) {
 <div class="main-content">
     <!-- Affichage du profil de l'utilisateur avec les données de sa connexion au site -->
     <div class="profil">
-        <img class="avatar" src="public/Medias/avatar_icon.png">
+        <img class="avatar" alt="avatar" src="public/Medias/avatar_icon.png">
         <br><br>
         <span class="titlebis1"><strong><u>Profil</u></strong></span>
         <br><br>

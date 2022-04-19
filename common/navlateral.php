@@ -97,13 +97,13 @@ ob_start();
         <a href="index.php?page=profilUtilisateur">
             <div class="principal_petit">
                 <div class="principal_img">
-                    <img class="imageProfil" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/img_scale_sociaux.png"/>
+                    <img class="imageProfil" alt="imageProfil" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/img_scale_sociaux.png"/>
                 </div>
             </div>
         </a>
     </div>
     <!-- Logo barre de navigation -->
-    <a href="index.php?page=admin"><img class="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png"></a>
+    <a href="index.php?page=admin"><img class="logo" alt="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png"></a>
 </nav>
 
 <script>

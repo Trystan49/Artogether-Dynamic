@@ -17,7 +17,7 @@
         <!-- Signature de l'artiste -->
         <div class="signature">By Tristan Bossard</div>
         <!-- Portrait de l'artiste -->
-        <img class="portrait" src="public/Medias/Double_face.jpg">
+        <img class="portrait" alt="portrait" src="public/Medias/Double_face.jpg">
         <!-- Texte biographie -->
         <span class="biographie">
             L'artiste Tristan Bossard débute sa carrière de créateur en tout genre en juin 2013, âgé de 15 ans,

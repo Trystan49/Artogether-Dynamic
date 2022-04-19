@@ -305,14 +305,12 @@ form i {
 .buttonC:hover
 {
   background: #39fad7;
-  background: -webkit-linear-gradient(to right,#44ea76, #39fad7);
   background: linear-gradient(to right, #44ea76, #39fad7);
   color: white;
 }
 .buttonD:hover
 {
   background: #e52d27;
-  background: -webkit-linear-gradient(to right, #b31217, #e52d27);
   background: linear-gradient(to right, #b31217, #e52d27);
   color: rgb(255, 255, 255);
 }
@@ -347,7 +345,6 @@ form i {
   min-width: 300px;
   box-sizing: border-box;
   transition: 400ms all;
-  z-index: 10;
   min-height: 300px;
   overflow: auto;
   border-radius: 10px;

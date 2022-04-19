@@ -91,7 +91,7 @@ include('./models/oeuvres.php');
     <!-- Script pour rendre les oeuvres dynamiques quand on clique dessus -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
+        <img class="modal-content" alt="modal" id="img01">
         <div id="caption"></div>
     </div>
 

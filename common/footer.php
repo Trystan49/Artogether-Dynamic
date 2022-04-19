@@ -7,7 +7,7 @@ if (isset($_COOKIE['accept_cookie'])) {
 }
 if ($showcookie) { ?>
   <div class="cookie-alert">
-    En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts. &nbsp;<img class="logoCookie" src="public/Medias/cookie.png"><br/><a href="donnees/accept_cookie.php">OK</a>
+    En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts. &nbsp;<img class="logoCookie" alt="cookie" src="public/Medias/cookie.png"><br/><a href="donnees/accept_cookie.php">OK</a>
   </div>
 <?php }
 ?>

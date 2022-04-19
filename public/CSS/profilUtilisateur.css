@@ -66,7 +66,6 @@ a, a:hover
   padding-right: 30px;
   padding-left: 30px;
   background: #50c9c3;
-  background: -webkit-linear-gradient(to right, #50c9c3, #96deda);
   background: linear-gradient(to right, #50c9c3, #96deda);
 }
 @keyframes gradient {
@@ -138,7 +137,6 @@ form i {
   padding-bottom: 20px;
   padding-right: 40px;
   padding-left: 40px;
-  padding-bottom: 23px;
 }
 .container
 {
@@ -148,7 +146,6 @@ form i {
   padding-bottom: 20px;
   padding-right: 40px;
   padding-left: 40px;
-  padding-bottom: 23px;
 }
 .avatar
 {

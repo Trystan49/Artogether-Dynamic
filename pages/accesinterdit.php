@@ -11,6 +11,6 @@
         <div class="champ">
             <button class="accueil" type="button"><a href="index.php?page=accueil">Retour à l'accueil</a></button>
         </div>
-        <img class="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png">
+        <img class="logo" alt="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png">
     </div>
 </div>
