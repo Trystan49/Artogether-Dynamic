@@ -7,7 +7,7 @@ if (isset($_COOKIE['accept_cookie'])) {
 }
 if ($showcookie) { ?>
   <div class="cookie-alert">
-    En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts. &nbsp;<img class="logoCookie" alt="cookie" src="public/Medias/cookie.png"><br/><a href="donnees/accept_cookie.php">OK</a>
+    En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts. &nbsp;<img class="logoCookie" alt="image" src="public/Medias/cookie.png" ><br/><a href="donnees/accept_cookie.php">OK</a>
   </div>
 <?php }
 ?>
@@ -27,7 +27,7 @@ if ($showcookie) { ?>
     color:white;
     padding:10px 15px;
     width:300px;
-    z-index:-2;
+    z-index:10;
   }
   .cookie-alert a {
     display:block;
@@ -66,6 +66,7 @@ if ($showcookie) { ?>
     <span class="version">V1.0</span>
   </div>
 </footer>
+
 </body>
 
 </html>
