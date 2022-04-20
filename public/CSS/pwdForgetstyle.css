@@ -1,18 +1,22 @@
+html{
+  height:100%
+}
 /* Arrière plan */
 body
 {
   background-image: url(../Medias/Fond-ecran-rmdp1.jpg);
-  background-repeat: no-repeat ;
-  background-size: 1500px;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 /* Scroll Bar */
 ::-webkit-scrollbar{
-  width: 13px;
-  height: 10px;
+  width: 6px;
+  display: none;
   }
   ::-webkit-scrollbar-thumb{
   background: linear-gradient(40deg, #FF8A8A 20%,#F771D1 40%,#A18AFF 60%,#4CD2FF 80%,#6AFC82 100%);
-  border: 1px solid #000000;
   border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover{
@@ -22,6 +26,11 @@ body
   background: #FFFFFF;
   border-radius: 0px;
   box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  }
+  /* Scroll bar smooth */
+  html
+  {
+    scroll-behavior: smooth;
   }
 /* Header */
 .navbar-global {
@@ -33,6 +42,11 @@ body
   font-family: 'Reenie Beanie', cursive;
   font-size: 50px;
   margin-left: 20px;
+}
+a, a:hover
+{
+  color: #000000;
+  text-decoration: none;
 }
 /* Bienvenue */
 .slogan
@@ -64,13 +78,12 @@ body
 }
 .fa {
   padding: 7px;
-  font-size: 10px;
+  font-size: 14px;
   width: 30px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
   border: 1px solid black;
-  color: black;
 }
 .fa-instagram:hover {
   background: #125688;
@@ -83,7 +96,7 @@ body
 }
 /* Contenu */
 .main-content {
-  margin-top: 60px;
+  margin-top: 50px;
   margin-left: 180px;
   margin-bottom: 200px;
 }
@@ -95,7 +108,6 @@ body
 .aide
 {
   position: absolute;
-  top: 20%;
   left: 10%;
   background-color: white;
   text-align: center;
@@ -123,7 +135,7 @@ body
   margin-bottom: 30px;
   text-align: center;
 }
-.motdepasse
+.pseudo
 {
   font-family: 'Reem Kufi', sans-serif;
   background-color: rgb(230, 230, 230);
@@ -132,17 +144,7 @@ body
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 10px;
-  margin-top: 30px;
-}
-.verificationmdp
-{
-  font-family: 'Reem Kufi', sans-serif;
-  background-color: rgb(230, 230, 230);
-  border-radius: 5px;
-  padding-bottom: 8px;
-  padding-right: 60px;
-  padding-top: 8px;
-  padding-left: 10px;
+  margin-top: 10px;
 }
 ::placeholder
 {
@@ -158,7 +160,7 @@ body
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .forget, .account
 {

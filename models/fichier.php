@@ -53,10 +53,20 @@ class Fichier
             echo "<td>" . $datavalue['TITRE_OEUVRE'] . "</td>";
             echo "<td>" . $datavalue['ANNEE_OEUVRE'] . "</td>";
             echo '<td><a href="' . $datavalue['IMG_OEUVRES'] . '"><img src="./public/ICONS/Downloadicon.png" style="width:15px; height:15px; margin-left:15px;"></a></td>';
+            echo '<td><a href="' . $datavalue['IMG_OEUVRES'] . '"><img src="./public/ICONS/trash-can.png" style="width:15px; height:15px; margin-left:15px;"></a></td>';
             echo "<tr>";
         }
         echo "</tbody>
         </table>
         </div>";
+    }
+    public static function delete($filesP, $values, $pdoP)
+    {
+        // Ici on connecte la base de données dans un premier temps.
+        // Ensuite on va faire une requete pour allé chercher le nom et l'url du fichier afin de pouvoir le télécharger.
+        // Par le suite on crée une boucle (foreach) afin d'afficher les différents fichiers uploader dans notre dossier files.
+        $req = $pdoP->prepare('DELETE FROM oeuvres WHERE ID_OEUVRE=?');
+        $req->execute();
+        $req->fetchAll(PDO::FETCH_ASSOC);
     }
 }

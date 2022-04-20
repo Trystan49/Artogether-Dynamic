@@ -69,7 +69,7 @@ if (isset($_GET["creation"])) {
             </div>
             <!-- Lien pour récupérer un mot de passe -->
             <div class="forget">
-                <a href="../8.Page recuperation mdp 1/mdp1.html" target="_blank"><u>Mot de passe oublié ?</u></a>
+                <a href="#" onclick="redirection()"><u>Mot de passe oublié ?</u></a>
             </div>
             <br>
             <!-- Lien pour créer un compte -->
@@ -77,7 +77,6 @@ if (isset($_GET["creation"])) {
                 <a href="index.php?page=inscription" target="_blank"><u>Créer un compte</u></a>
             </div>
         </form>
-
     </div>
 </div>
 
@@ -98,4 +97,11 @@ if (isset($_GET["creation"])) {
     // Lier avec le formulaire d'envoi
     const form = document.querySelector("form");
     form.addEventListener('submit');
+</script>
+
+<script>
+    function redirection() {
+        const PseudoVal = $('#pseudo').val();
+        window.location.href="index.php?page=pwdForget&pseudo=" + PseudoVal;
+    }
 </script>

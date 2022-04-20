@@ -81,7 +81,7 @@ ob_start();
                         <input class="send" type="submit" value="Connexion">
                     </div>
                     <div class="forget">
-                        <a class="forget" href="../9.Page recuperation mdp 2/mdp2.html" target="_blank"><u>Mot de passe
+                        <a class="forget" href="index.php?page=pwdForget" target="_blank"><u>Mot de passe
                                 oublié ?</u></a>
                     </div>
                     <br>

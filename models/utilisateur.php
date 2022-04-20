@@ -55,23 +55,38 @@ class Utilisateur
     }
 
     /* Vérification du pseudo identique ou non afin d'éviter les doublons */
-    public static function SamePwd($pdo, $values){
+    public static function SamePwd($pdo, $values)
+    {
         $pseudo = htmlspecialchars($values['pseudo']);
         $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE PSEUDO_UTILISATEUR=?");
-        $stmt->execute([$pseudo]); 
+        $stmt->execute([$pseudo]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     /* Vérification du mail identique ou non afin d'éviter les doublons */
-    public static function SameMail($pdo, $values){
+    public static function SameMail($pdo, $values)
+    {
         $mail = htmlspecialchars($values['mail']);
         $stmt = $pdo->prepare("SELECT ID_UTILISATEUR FROM utilisateurs WHERE ADRESSE_MAIL_UTILISATEUR=?");
-        $stmt->execute([$mail]); 
+        $stmt->execute([$mail]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    
-    /* Possibilité de modifier le mot de passe de l'utilisateur */
-    public static function ModifPwd($pdo, $values){
-        
+
+    /* fonction qui renvoie l'id de l'utilisateur et son email */
+    public static function getMail($pdoP, $pseudoP)
+    {
+        $stmt = $pdoP->prepare("SELECT ADRESSE_MAIL_UTILISATEUR FROM utilisateurs WHERE ID_UTILISATEUR=?");
+        $stmt->execute([$pseudoP]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['ADRESSE_MAIL_UTILISATEUR'];
+    }
+
+    //fonction qui met à jour pour un identifiant donné la date du jeton et la valeur du jeton
+    //pour une réinitialisation du mot de passe
+    public static function updateToken($pdoP, $tokenP, $userNameP)
+    {
+        //ATTENTION l'identifiant doit être unique
+        $stmt = $pdoP->prepare("UPDATE utilisateurs SET PWD_CHANGE_DATE=NOW(), PWD_CHANGE_TOKEN=? WHERE ID_UTILISATEUR=?");
+        $stmt->execute([$tokenP, $userNameP]);
     }
 }
