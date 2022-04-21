@@ -132,10 +132,10 @@ a, a:hover
 /* Formulaire */
 .champ
 {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
 }
-.pseudo
+.pseudo, .password
 {
   font-family: 'Reem Kufi', sans-serif;
   background-color: rgb(230, 230, 230);

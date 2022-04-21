@@ -24,6 +24,10 @@ a:visited:hover {
   margin: 0;
 }
 
+.contactAdmin {
+  font-size: 20px;
+}
+
 #oopss {
   background: rgb(0, 0, 0);
   text-align: center;
@@ -39,7 +43,7 @@ a:visited:hover {
 }
 
 #error-text {
-  top: 30%;
+  top: 25%;
   position: relative;
   font-size: 40px;
   color: #eee;

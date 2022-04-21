@@ -16,9 +16,9 @@ class Utilisateur
             header('Location: index.php?page=authentif&creation=ok');
             die();
         } catch (PDOException $e) {
-            //header('Location: index.php?page=error404');
-            //die();
-            echo "Erreur  : " . $e->getMessage();
+            header('Location: index.php?page=error404');
+            die();
+            //echo "Erreur  : " . $e->getMessage();
         }
     }
 
@@ -41,7 +41,9 @@ class Utilisateur
             header('Location: index.php?page=profilUtilisateur&confirm=ok');
             die();
         } catch (PDOException $e) {
-            echo $e;
+            header('Location: index.php?page=error404');
+            die();
+            //echo $e;
         }
     }
 
@@ -75,7 +77,7 @@ class Utilisateur
     /* fonction qui renvoie l'id de l'utilisateur et son email */
     public static function getMail($pdoP, $pseudoP)
     {
-        $stmt = $pdoP->prepare("SELECT ADRESSE_MAIL_UTILISATEUR FROM utilisateurs WHERE ID_UTILISATEUR=?");
+        $stmt = $pdoP->prepare("SELECT ADRESSE_MAIL_UTILISATEUR FROM utilisateurs WHERE PSEUDO_UTILISATEUR=?");
         $stmt->execute([$pseudoP]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result['ADRESSE_MAIL_UTILISATEUR'];
@@ -83,10 +85,30 @@ class Utilisateur
 
     //fonction qui met à jour pour un identifiant donné la date du jeton et la valeur du jeton
     //pour une réinitialisation du mot de passe
-    public static function updateToken($pdoP, $tokenP, $userNameP)
+    public static function updateToken($pdoP, $tokenP, $pseudoP)
     {
         //ATTENTION l'identifiant doit être unique
-        $stmt = $pdoP->prepare("UPDATE utilisateurs SET PWD_CHANGE_DATE=NOW(), PWD_CHANGE_TOKEN=? WHERE ID_UTILISATEUR=?");
-        $stmt->execute([$tokenP, $userNameP]);
+        $stmt = $pdoP->prepare("UPDATE utilisateurs SET PWD_CHANGE_DATE=NOW(), PWD_CHANGE_TOKEN=? WHERE PSEUDO_UTILISATEUR=?");
+        $stmt->execute([$tokenP, $pseudoP]);
+    }
+
+    //fonction qui renvoie les infos spécifiques à un jeton passé en paramètre
+    public static function getInfosToken($pdoP, $tokenP)
+    {
+        //ATTENTION l'identifiant doit être unique
+        $stmt = $pdoP->prepare("SELECT PWD_CHANGE_DATE, PSEUDO_UTILISATEUR FROM utilisateurs WHERE PWD_CHANGE_TOKEN=?");
+        $stmt->execute([$tokenP]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    //fonction qui modifie le mot de passe et enlève les infos concernant le token
+    public static function reinitPwd($pdoP, $values)
+    {
+        //ATTENTION l'identifiant doit être unique
+        $pseudo = htmlspecialchars($values['pseudo']);
+        $pwd = htmlspecialchars($values['motdepasse']);
+        $pwdHash = password_hash($pwd, PASSWORD_DEFAULT);
+        $stmt = $pdoP->prepare("UPDATE utilisateurs SET PWD_CHANGE_DATE=NULL, PWD_CHANGE_TOKEN=NULL, MOT_DE_PASSE_UTILISATEUR=? WHERE PSEUDO_UTILISATEUR=?");
+        $stmt->execute([$pwdHash, $pseudo]);
     }
 }

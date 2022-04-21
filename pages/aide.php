@@ -21,6 +21,8 @@ if(isset($_POST['mailform'])) { // Lien avec le bouton d'envoi du formulaire
             $message='
             <html>
                 <body>
+                    <h1 style="font-family: Square Peg, cursive; text-align: center">ARTOGETHER</h1>
+                    <h2 style="font-size: 20px; background-color: green; text-align: center">CONTACT</h2>
                     <div align="center">
                     <u>Prénom de l\'expéditeur :</u> '.$_POST['prenom'].' <br />
                     <u>Nom de l\'expéditeur :</u> '.$_POST['nom'].' <br />
@@ -33,9 +35,13 @@ if(isset($_POST['mailform'])) { // Lien avec le bouton d'envoi du formulaire
                 </body>
             </html>
             ';
-            mail("artogether492022@outlook.fr", "CONTACT - ARTOGETHER", $message, $header);
-            // notification pour l'utilisateur que sa demande a été prise en compte et envoyée sur la boîte mail du propriétaire
-            $msg='<p style=color:green>Votre message a bien été envoyé ! 📤</p>';  
+            if(mail("artogether492022@outlook.fr", "CONTACT - ARTOGETHER", $message, $header)) {
+              // notification pour l'utilisateur que sa demande a été prise en compte et envoyée sur la boîte mail du propriétaire
+            $msg='<p style=color:green>Votre message a bien été envoyé ! 📤</p>';   
+            }
+            else {
+                $msg = '<p style=color:red>Erreur dans l\'envoi du message ! ❌</p>'; 
+            }
         }
     }
     else { 
