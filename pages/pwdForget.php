@@ -130,12 +130,22 @@ if (isset($_POST['recovery-submit'])) { //CAS où l'utilisateur valid son change
         <h2 style="font-size: 20px; background-color: yellow; text-align: center">MODIFICATION DE MOT DE PASSE</h2>
         <p>Un nouveau mot de passe a conserver :)</p>
         <p>Veuillez suivre ce lien : <a href="localhost/ARTOGETHER-Dynamic/index.php?page=pwdForget&token=' . $token . '">Recreer un mot de passe</a></p>
-        </p>Pour vous eviter des heures de recherche, on a pense à mettre une "ouverture facile" : tout simplement creer un nouveau code secret.</p>
+        </p>Pour vous eviter des heures de recherche, on a pense a mettre une "ouverture facile" : tout simplement creer un nouveau code secret.</p>
         <p>En quelques clics, c\'est dans la boite !</p>
         <p>Cordialement.</p>
         <p>L\'equipe Artogether.</p>';
         if (mail($dest, $sujet, utf8_decode($message), implode("\r\n", $headers))) {
-            echo "Un email vous a été envoyé sur votre boite mail, veuillez le consulter. 📤";
+            echo '<div class="main-content">
+                    <div class="info">
+                        <span class="title">ARTOGETHER</span>
+                        <br>
+                        <br>
+                        <p>Un email vous a été envoyé sur votre boite mail, veuillez le consulter. 📤</p>
+                        <div class="champ">
+                            <a href="index.php?page=accueil"><input class="send" type="button" value="Retour à l\'accueil"></a>
+                        </div>
+                    </div>
+                </div>';
             //enregistrement en BD du token et de la date
             Utilisateur::updateToken($pdo, $token, $user);
         } else {

@@ -104,11 +104,22 @@ a, a:hover
 .collapsed + .main-content {
   margin-left: 60px;
 }
-/* Espace connexion */
+/* Contenu précis */
 .aide
 {
   position: absolute;
   left: 10%;
+  background-color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.info
+{
+  position: absolute;
+  left: 30%;
   background-color: white;
   text-align: center;
   padding-top: 20px;

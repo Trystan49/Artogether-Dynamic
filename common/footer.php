@@ -27,7 +27,7 @@ if ($showcookie) { ?>
     color:white;
     padding:10px 15px;
     width:300px;
-    z-index:10;
+    z-index:-1;
   }
   .cookie-alert a {
     display:block;

@@ -69,7 +69,7 @@ if (isset($_GET["creation"])) {
             </div>
             <!-- Lien pour récupérer un mot de passe -->
             <div class="forget">
-                <a href="#" onclick="redirection()"><u>Mot de passe oublié ?</u></a>
+                <a href="index.php?page=pwdForget" target="_blank"><u>Mot de passe oublié ?</u></a>
             </div>
             <br>
             <!-- Lien pour créer un compte -->

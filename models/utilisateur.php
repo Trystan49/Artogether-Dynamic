@@ -38,7 +38,7 @@ class Utilisateur
             $stmt->execute([$pseudo, $prenom, $nom, $mail, password_hash($pwd, PASSWORD_DEFAULT), $id]);
             // mise à jour des données en BDD et sur la page avec raffraichissement de la page pour voir la modification
             Utilisateur::refresh($pseudo, $prenom, $nom, $mail);
-            header('Location: index.php?page=profilUtilisateur&confirm=ok');
+            header('Location: index.php?page=profilUtilisateur&confirmLogin=ok');
             die();
         } catch (PDOException $e) {
             header('Location: index.php?page=error404');
@@ -54,6 +54,22 @@ class Utilisateur
         $_SESSION["prenom"] = $prenom;
         $_SESSION["nom"] = $nom;
         $_SESSION["mail"] = $mail;
+    }
+
+    public static function modifPwd($pdoP, $values){
+        $n_password = htmlspecialchars($values['new-motdepasse']);
+        $id = $_SESSION["id_utilisateur"];
+        try {
+            $sql = 'UPDATE utilisateurs SET MOT_DE_PASSE_UTILISATEUR=? WHERE ID_UTILISATEUR=?';
+            $stmt = $pdoP->prepare($sql);
+            $stmt->execute([password_hash($n_password, PASSWORD_DEFAULT), $id]);
+            header('Location: index.php?page=profilUtilisateur&confirmPassword=ok');
+            die();
+        } catch (PDOException $e) {
+            /* header('Location: index.php?page=error404');
+            die(); */
+            echo $e;
+        }
     }
 
     /* Vérification du pseudo identique ou non afin d'éviter les doublons */
