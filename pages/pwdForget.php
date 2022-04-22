@@ -149,7 +149,17 @@ if (isset($_POST['recovery-submit'])) { //CAS où l'utilisateur valid son change
             //enregistrement en BD du token et de la date
             Utilisateur::updateToken($pdo, $token, $user);
         } else {
-            echo "Échec de l'envoi de l'email. Veuillez vous adresser à l'administrateur. ❌";
+            echo '<div class="main-content">
+            <div class="info">
+                <span class="title">ARTOGETHER</span>
+                <br>
+                <br>
+                <p>Échec de l\'envoi de l\'email. Veuillez vous adresser à l\'administrateur. ❌</p>
+                <div class="champ">
+                    <a href="index.php?page=accueil"><input class="send" type="button" value="Retour à l\'accueil"></a>
+                </div>
+            </div>
+        </div>';
         }
     }
 }

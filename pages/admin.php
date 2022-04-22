@@ -16,7 +16,7 @@ if (!empty($_SESSION["is_administrateur"] == "Yes"))
             <a href="" target="_blank"><input class="commentaire" type="button" value="Administrateur commentaires"></a>
         </div>
         <div class="champ">
-            <a href="index.php?page=accueil" target="_blank"><input class="accueil" type="button" value="Retour à l\'accueil"></a>
+            <a href="index.php?page=accueil"><input class="accueil" type="button" value="Retour à l\'accueil"></a>
         </div>
         <img class="logo" src="public/Medias/LOGO OFFICIEL TRISTAN (Transparent).png">
     </div>
