@@ -8,7 +8,7 @@ $pwd = $_POST['motdepasse'];
 //réinitialisation du nb de tentatives
 unset($_SESSION["timeNextTentative"]);
 
-$stmt = $pdo->prepare("SELECT ID_UTILISATEUR, NOM_UTILISATEUR, PRENOM_UTILISATEUR, PSEUDO_UTILISATEUR, ADRESSE_MAIL_UTILISATEUR, MOT_DE_PASSE_UTILISATEUR, IS_ADMINISTRATEUR, NBCONNEXION_UTILISATEUR, DATE_CONNEXION_UTILISATEUR FROM utilisateurs WHERE PSEUDO_UTILISATEUR=?");
+$stmt = $pdo->prepare("SELECT ID_UTILISATEUR, NOM_UTILISATEUR, PRENOM_UTILISATEUR, PSEUDO_UTILISATEUR, ADRESSE_MAIL_UTILISATEUR, MOT_DE_PASSE_UTILISATEUR, STATUT_UTILISATEUR, NBCONNEXION_UTILISATEUR, DATE_CONNEXION_UTILISATEUR FROM utilisateurs WHERE PSEUDO_UTILISATEUR=?");
 $stmt->execute([$pseudo]);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -47,7 +47,7 @@ if ($result) {
             $_SESSION["mail"] = $result['ADRESSE_MAIL_UTILISATEUR'];
             $_SESSION["motdepasse"] = $result['MOT_DE_PASSE_UTILISATEUR'];
             $_SESSION["id_utilisateur"] = $result['ID_UTILISATEUR'];
-            $_SESSION["is_administrateur"] = $result['IS_ADMINISTRATEUR'];
+            $_SESSION["statut_utilisateur"] = $result['STATUT_UTILISATEUR'];
             if (!is_null($nbConnexionFailed)) {
                 //mise à jour en BD des données gerant les attaques de force brute
                 majSessionNews($pdo, null, null, $pseudo);

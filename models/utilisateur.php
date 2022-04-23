@@ -16,9 +16,9 @@ class Utilisateur
             header('Location: index.php?page=authentif&creation=ok');
             die();
         } catch (PDOException $e) {
-            header('Location: index.php?page=error404');
-            die();
-            //echo "Erreur  : " . $e->getMessage();
+            /* header('Location: index.php?page=error404');
+            die(); */
+            echo "Erreur  : " . $e->getMessage();
         }
     }
 
@@ -76,7 +76,7 @@ class Utilisateur
     public static function SamePwd($pdo, $values)
     {
         $pseudo = htmlspecialchars($values['pseudo']);
-        $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE PSEUDO_UTILISATEUR=?");
+        $stmt = $pdo->prepare("SELECT ID_UTILISATEUR FROM utilisateurs WHERE PSEUDO_UTILISATEUR=?");
         $stmt->execute([$pseudo]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

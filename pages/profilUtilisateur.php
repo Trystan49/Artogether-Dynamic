@@ -50,6 +50,16 @@ if (!isset($_SESSION['pseudo'])) {
         <span class="titlebis1"><strong><u>Profil</u></strong></span>
         <br><br>
         <div align="center">
+
+            <?php 
+            if (!empty($_SESSION["statut_utilisateur"] == "Admin")){
+                echo '<strong style="color: red;">Admin</strong>';
+            }
+            else {
+                echo '<strong style="color: green;">Membre</strong>';
+            } 
+            ?>
+            <br><br>
             <strong>Pseudo :</strong>
             <?php echo $_SESSION["pseudo"]; ?>
             <br><br>
