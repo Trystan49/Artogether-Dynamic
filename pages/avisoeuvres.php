@@ -1,10 +1,16 @@
 <?php
-include('./utils/db.php');
-include('./models/oeuvrescommentaire.php');
+if(!isset($_GET['ID_OEUVRE']) OR !is_numeric($_GET['ID_OEUVRE']))
+    header('Location: index.php?page=commentaire');
+else {
+    extract($_GET);
+    $idOeuvre = strip_tags($idOeuvre);
 
-$oeuvres = getOeuvresComments($pdo);
+    require_once('./models/oeuvrescommentaire.php');
 
+    $oeuvre = getOeuvre($idOeuvre);
+}
 ?>
+
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
     <div class="container-fluid">
@@ -31,12 +37,6 @@ $oeuvres = getOeuvresComments($pdo);
     </div>
 </div>
 </div>
-<br><br><br>
 
-<h1>Oeuvres : </h1>
-
-<?php foreach($oeuvres as $oeuvre): ?>
-    <h2><?= $oeuvre['TITRE_OEUVRE'] ?></h2>
-    <time><?= $oeuvre['DATE_CREATION_EC'] ?></time>
-    <a href="index.php?page=avisoeuvres.php?id=<?= $oeuvre['ID_OEUVRE'] ?>">Lire la suite</a>
-    <?php endforeach; ?>
+<h1><?= $oeuvre['ID_OEUVRE'] ?></h1>
+<p><?= $oeuvre['CONTENU_OEUVRES'] ?></p>

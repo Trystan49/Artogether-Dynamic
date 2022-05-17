@@ -14,6 +14,7 @@
     "mdp2"=>"mdp2style",
     "accueil, art, artgraphique"=>"cookie",
     "commentaire"=>"commentairestyle",
+    "avisoeuvres"=>"commentairestyle",
     "envoifichier"=>"fichierstyle",
     "admin"=>"adminstyle",
     "game"=>"gamestyle",
