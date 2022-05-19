@@ -1,5 +1,5 @@
 <?php
-if(!isset($_GET['ID_OEUVRE']) OR !is_numeric($_GET['ID_OEUVRE']))
+if (!isset($_GET['ID_OEUVRE']) or !is_numeric($_GET['ID_OEUVRE']))
     header('Location: index.php?page=commentaire');
 else {
     extract($_GET);
@@ -7,7 +7,30 @@ else {
 
     require_once('./models/oeuvrescommentaire.php');
 
+    if (!empty($_POST)) {
+        extract($_POST);
+        $errors = array();
+
+        $pseudo = strip_tags($pseudo);
+        $comment = strip_tags($comment);
+
+        if (empty($pseudo))
+            array_push($errors, 'Entrez un pseudo');
+
+        if (empty($comment))
+            array_push($errors, 'Entrez un commentaire');
+
+        if (count($errors) == 0) {
+            $comment = addComment($idOeuvre, $pseudo, $comment);
+            $success = "Votre commentaire a bien été publié";
+
+            unset($pseudo);
+            unset($comment);
+        }
+    }
+
     $oeuvre = getOeuvre($idOeuvre);
+    $comments = getComments($idOeuvre);
 }
 ?>
 
@@ -16,8 +39,7 @@ else {
     <div class="container-fluid">
         <!-- Haut de page -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                aria-expanded="false" aria-controls="navbar"></button>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"></button>
             <!-- Contenu du haut de page-->
             <a href="index.php?page=accueil">
                 <div class="navbar-title">ARTOGETHER
@@ -38,5 +60,46 @@ else {
 </div>
 </div>
 
-<h1><?= $oeuvre['ID_OEUVRE'] ?></h1>
-<p><?= $oeuvre['CONTENU_OEUVRES'] ?></p>
+<div class="container-fluid">
+    <a href="index.php?page=commentaire">Retour aux oeuvres</a>
+    <h1><?= $oeuvre['ID_OEUVRE'] ?></h1>
+    <time><?= $oeuvre['DATE_CREATION_EC'] ?></time>
+    <p><?= $oeuvre['CONTENU_OEUVRES'] ?></p>
+    <hr>
+
+    <?php
+    if (isset($success))
+        echo $success;
+    if (!empty($errors)) : ?>
+        <?php foreach ($errors as $error) : ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-danger"><?= $error ?></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif;
+    ?>
+
+    <div class="row">
+        <div class="col-md-6">
+        <form action="avisoeuvres.php?id=<?= $oeuvre['ID_OEUVRE'] ?>" method="post">
+        <p><label for="pseudo">Pseudo :</label><br>
+            <input type="text" name="pseudo" id="pseudo" value="<?php if (isset($pseudo)) echo $pseudo ?>" class="form-control">
+        </p>
+        <p><label for="comment">Commentaire :</label><br>
+            <textarea name="comment" id="comment" cols="30" rows="5" value="<?php if (isset($comment)) echo $comment ?>" class="form-control"></textarea>
+        </p>
+        <button type="submit" class="btn btn-success">Envoyer</button>
+    </form>
+        </div>
+    </div>
+
+    <h2>Commentaires: </h2>
+
+    <?php foreach ($comments as $com) : ?>
+        <h3><?= $com['PSEUDO_UTILISATEUR'] ?></h3>
+        <time><?= $com['DATE_CREATION_EC'] ?></time>
+        <p><?= $com['MESSAGE_UTILISATEUR'] ?></p>
+    <?php endforeach; ?>
+</div>
