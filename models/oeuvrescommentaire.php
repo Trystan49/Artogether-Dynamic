@@ -7,18 +7,13 @@ function getOeuvresComments($pdo)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
 }
-/* Fonction qui récupère un article */
+/* Fonction qui récupère une oeuvre */
 function getOeuvre($idOeuvre)
 {
     require('./utils/db.php');
     $stmt = $pdo->prepare("SELECT * FROM oeuvres WHERE ID_OEUVRE = ?");
     $stmt->execute(array($idOeuvre));
-    if($stmt->rowCount() == 1){
-        return $stmt->fetch(PDO::FETCH_OBJ);
-    }
-    else {
-        header('Location: index.php?page=commentaire');
-    }
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 /* Fonction qui ajoute un commentaire en BDD */
 function addComment($oeuvreId, $pseudo, $comment)
@@ -32,7 +27,7 @@ function addComment($oeuvreId, $pseudo, $comment)
 function getComments($idOeuvre)
 {
     require('./utils/db.php');
-    $stmt = $pdo->prepare("SELECT FROM interagir WHERE ID_OEUVRE = ?");
+    $stmt = $pdo->prepare("SELECT * FROM interagir WHERE ID_OEUVRE = ?");
     $stmt->execute(array($idOeuvre));
     return $stmt->fetchAll(PDO::FETCH_OBJ);
     $stmt->closeCursor();

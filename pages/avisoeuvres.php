@@ -1,10 +1,8 @@
 <?php
-if (!isset($_GET['ID_OEUVRE']) or !is_numeric($_GET['ID_OEUVRE']))
-    header('Location: index.php?page=commentaire');
-else {
+if(true) {
     extract($_GET);
-    $idOeuvre = strip_tags($idOeuvre);
-
+    $idOeuvre = $_GET['id'];
+    /* strip_tags($idOeuvre) */
     require_once('./models/oeuvrescommentaire.php');
 
     if (!empty($_POST)) {
@@ -59,12 +57,12 @@ else {
     </div>
 </div>
 </div>
-
+<br><br><br><br><br>
 <div class="container-fluid">
-    <a href="index.php?page=commentaire">Retour aux oeuvres</a>
-    <h1><?= $oeuvre['ID_OEUVRE'] ?></h1>
-    <time><?= $oeuvre['DATE_CREATION_EC'] ?></time>
-    <p><?= $oeuvre['CONTENU_OEUVRES'] ?></p>
+    <a href="index.php?page=commentaire" class="btn btn-success">Retour aux oeuvres</a>
+    <h1><?php echo $oeuvre['TITRE_OEUVRE'] ?></h1>
+    <time><?php echo $oeuvre['DATE_CREATION_EC'] ?></time>
+    <p><?php echo $oeuvre['CONTENU_OEUVRES'] ?></p>
     <hr>
 
     <?php
@@ -83,7 +81,7 @@ else {
 
     <div class="row">
         <div class="col-md-6">
-        <form action="avisoeuvres.php?id=<?= $oeuvre['ID_OEUVRE'] ?>" method="post">
+        <form action="index.php?page=avisoeuvres&id=<?= $oeuvre['ID_OEUVRE'] ?>" method="post">
         <p><label for="pseudo">Pseudo :</label><br>
             <input type="text" name="pseudo" id="pseudo" value="<?php if (isset($pseudo)) echo $pseudo ?>" class="form-control">
         </p>
@@ -94,7 +92,7 @@ else {
     </form>
         </div>
     </div>
-
+    <hr>
     <h2>Commentaires: </h2>
 
     <?php foreach ($comments as $com) : ?>
