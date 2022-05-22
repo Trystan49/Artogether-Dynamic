@@ -158,13 +158,10 @@ tr:nth-child(even) {
 }
 
 p,
-time {
+time, .btn {
   font-family: "Reem Kufi", sans-serif;
 }
 
-.time {
-  color: white;
-}
 .timeMessage {
   color: rgb(32, 84, 228);
 }

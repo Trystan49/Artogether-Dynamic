@@ -40,7 +40,7 @@ if (!isset($_SESSION['pseudo'])) {
 <table>
     <tr>
         <th>Titre de l'oeuvre</th>
-        <th>Date de dernier commentaire</th>
+        <th>Date création de l'espace commentaire</th>
         <th>Accès à l'espace commentaire</th>
     </tr>
     <?php foreach ($oeuvres as $oeuvre) : ?>

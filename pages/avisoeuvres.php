@@ -62,8 +62,6 @@ if (true) {
     echo ('<img class="dessin" src="' . $oeuvre['IMG_OEUVRES'] . '">');
     ?>
     <br><br>
-    <time class="time"><strong><?php echo $oeuvre['DATE_CREATION_EC'] ?></strong></time>
-    <br><br>
     <p><?php echo $oeuvre['CONTENU_OEUVRES'] ?></p>
     <hr>
 
