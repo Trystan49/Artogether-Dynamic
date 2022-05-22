@@ -1,56 +1,73 @@
-/* Arrière plan */
-h2{
-    width: 500px;
+/* Body */
+body {
+  background-color: rgb(34, 37, 42);
+}
+h2 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: white;
 }
 /* Scroll Bar */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 6px;
   display: none;
-  }
-  ::-webkit-scrollbar-thumb{
-  background: linear-gradient(40deg, #FF8A8A 20%,#F771D1 40%,#A18AFF 60%,#4CD2FF 80%,#6AFC82 100%);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    40deg,
+    #ff8a8a 20%,
+    #f771d1 40%,
+    #a18aff 60%,
+    #4cd2ff 80%,
+    #6afc82 100%
+  );
   border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover{
-  background: linear-gradient(40deg, #FF5757 20%,#FF61D0 40%,#9278FA 60%,#24C5FF 80%,#43F761 100%);
-  }
-  ::-webkit-scrollbar-track{
-  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    40deg,
+    #ff5757 20%,
+    #ff61d0 40%,
+    #9278fa 60%,
+    #24c5ff 80%,
+    #43f761 100%
+  );
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
   border-radius: 0px;
-  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
-  }
-  /* Scroll bar smooth */
-  html
-  {
-    scroll-behavior: smooth;
-  }
+  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+}
+/* Scroll bar smooth */
+html {
+  scroll-behavior: smooth;
+}
 /* Header */
 .navbar-global {
   background-color: rgb(255, 255, 255);
 }
 .navbar-global .navbar-title {
   color: rgb(0, 0, 0);
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Reenie Beanie", cursive;
   font-size: 50px;
   margin-left: 20px;
 }
-a, a:hover
-{
+a,
+a:hover {
   color: #000000;
   text-decoration: none;
 }
 /* Bienvenue */
-.slogan
-{
-  font-family: 'Reem Kufi', sans-serif;
+.slogan {
+  font-family: "Reem Kufi", sans-serif;
   font-size: 17px;
   margin-left: 50px;
 }
 /* Création de compte */
-.create
-{
-  font-family: 'Reem Kufi', sans-serif;
+.create {
+  font-family: "Reem Kufi", sans-serif;
   font-size: 17px;
   margin-left: 75px;
   color: white;
@@ -60,34 +77,35 @@ a, a:hover
   padding-bottom: 10px;
   padding-right: 30px;
   padding-left: 30px;
-  background: linear-gradient(45deg,#1CD860, #8F29DD);
-    background-size: 600% 100%;
-    animation: gradient 5s linear infinite;
-    animation-direction: alternate;
+  background: linear-gradient(45deg, #1cd860, #8f29dd);
+  background-size: 600% 100%;
+  animation: gradient 5s linear infinite;
+  animation-direction: alternate;
 }
 @keyframes gradient {
-    0% {background-position: 0%}
-    100% {background-position: 100%}
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 /* Bonne découverte */
-.discover
-{
-  font-family: 'Reem Kufi', sans-serif;
+.discover {
+  font-family: "Reem Kufi", sans-serif;
   font-size: 17px;
   margin-left: 75px;
 }
-.avisverifies
-{
-  font-family: 'Reem Kufi', sans-serif;
+.avisverifies {
+  font-family: "Reem Kufi", sans-serif;
   font-size: 17px;
   margin-left: 125px;
 }
 /* Follow */
-.follow
-{
-  font-family: 'Reem Kufi', sans-serif;
+.follow {
+  font-family: "Reem Kufi", sans-serif;
   text-align: center;
-  margin: 15px ;
+  margin: 15px;
   color: black;
 }
 .fa {
@@ -103,8 +121,7 @@ a, a:hover
   background: #125688;
   color: white;
 }
-.fa-pinterest:hover
-{
+.fa-pinterest:hover {
   background: #cb2027;
   color: white;
 }
@@ -132,6 +149,41 @@ th {
   padding: 14px;
 }
 
+tr {
+  background-color: white;
+}
+
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+p,
+time {
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.time {
+  color: white;
+}
+.timeMessage {
+  color: rgb(32, 84, 228);
+}
+
+p {
+  color: white;
+}
+
+.message {
+  border: 1px solid white;
+  background-color: rgb(54,62,73);
+  padding: 10px;
+}
+
+/* Dessins espace commentaire */
+.dessin {
+  width: 225px;
+  height: 300px;
+  border: 5px solid black;
+  display: block;
+  margin: 0 auto;
 }

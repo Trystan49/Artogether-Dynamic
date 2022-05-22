@@ -77,6 +77,7 @@ include('./models/oeuvres.php');
         }
         ?>
     </div>
+    <br>
     <!-- Explication et démarches pour les personnes interressées pour une nouvelle charte graphique -->
     <div class="explication">
         Besoin d'aide pour créer votre logo ou votre charte graphique ?

@@ -4,6 +4,11 @@ include('./models/oeuvrescommentaire.php');
 
 $oeuvres = getOeuvresComments($pdo);
 
+if (!isset($_SESSION['pseudo'])) {
+    header('Location: index.php?page=authentif');
+} else {
+    $pseudo = $_SESSION['pseudo'];
+}
 ?>
 <div class="navbar navbar-inverse navbar-global navbar-fixed-top">
     <!-- Conteneur du site -->
@@ -16,7 +21,7 @@ $oeuvres = getOeuvresComments($pdo);
                 <div class="navbar-title">ARTOGETHER
             </a>
             <span class="slogan">Apprenons l'art de créer ensemble</span>
-            <span class="create">Accueil Commentaire</span>
+            <span class="create">Accueil commentaire</span>
             <span class="discover"><em>Bonne découverte !</em></span>
         </div>
     </div>
