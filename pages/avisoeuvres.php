@@ -62,7 +62,8 @@ if (true) {
     echo ('<img class="dessin" src="' . $oeuvre['IMG_OEUVRES'] . '">');
     ?>
     <br><br>
-    <p><?php echo $oeuvre['CONTENU_OEUVRES'] ?></p>
+    <p class="explication"><?php echo $oeuvre['CONTENU_OEUVRES'] ?></p>
+    <br>
     <hr>
 
     <?php
@@ -85,20 +86,21 @@ if (true) {
         <div class="message">
             <p><?php echo $_SESSION['pseudo'] ?></p>
             <time class="timeMessage"><?php echo $com['DATE_COMMENTAIRE'] ?></time>
-            <br><br>
+            <hr>
             <p><?php echo $com['MESSAGE_UTILISATEUR'] ?></p>
         </div>
     <br>
     <?php endforeach; ?>
     <hr>
+    <br>
 
-    <div class="row">
+    <div class="row center">
         <div class="col-md-6">
             <form action="index.php?page=avisoeuvres&id=<?= $oeuvre['ID_OEUVRE'] ?>" method="post">
-                <p><label for="comment">Commentaire :</label><br>
+                <p class="area"><label for="comment">Poster un commentaire</label><br>
                     <textarea name="comment" id="comment" cols="30" rows="5" value="<?php if (isset($comment)) echo $comment ?>" class="form-control" placeholder="Pour que les discussions restent agréables, nous vous remercions de rester poli en toutes circonstances. Tout message discriminatoire ou incitant à la haine sera supprimé et son auteur sanctionné."></textarea>
                 </p>
-                <button type="submit" class="btn btn-success">Envoyer</button>
+                <button type="submit" class="btn btn-success btnCenter">Envoyer</button>
             </form>
         </div>
     </div>

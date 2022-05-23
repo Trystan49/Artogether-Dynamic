@@ -43,9 +43,10 @@ class Fichier
         <thead class=\"thead-light\">
             <tr>
                 <th>Nom du fichier</th>
-                <th>Types oeuvres (ID)</th>
+                <th>Types oeuvres (ID) <br> 1 = Dessin <br> 2 = Photo <br> 3 = Logo</th>
                 <th>Date oeuvre</th>
-                <th>Télécharger</th>    
+                <th>Télécharger</th>  
+                <th>Supprimer</th>  
             </tr>
         </thead>
         <tbody>";
@@ -55,6 +56,7 @@ class Fichier
             echo "<td>" . $datavalue['ID_TYPES_OEUVRES'] . "</td>";
             echo "<td>" . $datavalue['ANNEE_OEUVRE'] . "</td>";
             echo '<td><a href="' . $datavalue['IMG_OEUVRES'] . '"><img src="./public/ICONS/Downloadicon.png" style="width:15px; height:15px; margin-left:15px;"></a></td>';
+            // Rajouter la fonction supprimer dans mon tableau ?
             echo '<td><a href="' . $datavalue['IMG_OEUVRES'] . '"><img src="./public/ICONS/trash-can.png" style="width:15px; height:15px; margin-left:15px;"></a></td>';
             echo "<tr>";
         }
@@ -62,13 +64,19 @@ class Fichier
         </table>
         </div>";
     }
-    public static function delete($filesP, $values, $pdoP)
+
+    public static function delete($values, $pdoP)
     {
+        try {
         // Ici on connecte la base de données dans un premier temps.
         // Ensuite on va faire une requete pour allé chercher le nom et l'url du fichier afin de pouvoir le télécharger.
         // Par le suite on crée une boucle (foreach) afin d'afficher les différents fichiers uploader dans notre dossier files.
-        $req = $pdoP->prepare('DELETE FROM oeuvres WHERE ID_OEUVRE=?');
-        $req->execute();
-        $req->fetchAll(PDO::FETCH_ASSOC);
+            $req = $pdoP->prepare('DELETE FROM oeuvres WHERE ID_OEUVRE=?');
+            $req->execute([$values['delete']]);
+            $delete = $req->fetchAll(PDO::FETCH_ASSOC);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 }
