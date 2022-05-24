@@ -15,11 +15,11 @@ function getOeuvre($idOeuvre)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 /* Fonction qui ajoute un commentaire en BDD */
-function addComment($oeuvreId, $comment)
+function addComment($idOeuvre, $comment)
 {
     require('./utils/db.php');
     $stmt = $pdo->prepare("INSERT INTO interagir (ID_OEUVRE, MESSAGE_UTILISATEUR, DATE_COMMENTAIRE) VALUES (?,?, NOW())");
-    $stmt->execute(array($oeuvreId, $comment));
+    $stmt->execute([$idOeuvre, $comment]);
 }
 /* Fonction qui récupère les commentaires d'un article */
 function getComments($idOeuvre)
