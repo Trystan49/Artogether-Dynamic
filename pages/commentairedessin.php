@@ -2,7 +2,7 @@
 include('./utils/db.php');
 include('./models/oeuvrescommentaire.php');
 
-$oeuvres = getOeuvresComments($pdo);
+$oeuvres = getDrawsComments($pdo);
 
 if (!isset($_SESSION['pseudo'])) {
     header('Location: index.php?page=authentif');
@@ -47,7 +47,7 @@ if (!isset($_SESSION['pseudo'])) {
         <tr>
             <td style="font-family: 'Reem Kufi', sans-serif;"><?= $oeuvre['TITRE_OEUVRE'] ?></td>
             <td><time style="font-family: 'Reem Kufi', sans-serif; font-weight: 'bold';"><?= $oeuvre['DATE_CREATION_EC'] ?></time></td>
-            <td><a style="font-family: 'Reem Kufi', sans-serif; font-weight: 'bold';" href="index.php?page=avisoeuvres&id=<?= $oeuvre['ID_OEUVRE'] ?>" class="btn btn-success">Lire la suite</a></td>
+            <td><a style="font-family: 'Reem Kufi', sans-serif; font-weight: 'bold';" href="index.php?page=avisdessin&id=<?= $oeuvre['ID_OEUVRE'] ?>" class="btn btn-success">Lire la suite</a></td>
         </tr>
     <?php endforeach; ?>
 </table>

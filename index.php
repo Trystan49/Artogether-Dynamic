@@ -8,7 +8,7 @@ include('./common/header.php');
 // Pages autorisées : whitelist
 include('./whitelist/web.php');
 // Pages sans navigation à gauche
-if ($page != 'preview' && $page != 'inscription' && $page != 'authentif' && $page != 'commentaire' && $page != 'avisoeuvres' && $page != 'forum' && $page != 'mdp1' && $page != 'mdp2' && $page != 'envoifichier' && $page != 'admin' && $page != 'game' && $page != 'profilUtilisateur' && $page != 'accesinterdit' && $page != 'error404' && $page != 'eventCalendar' && $page != 'pwdForget') {
+if ($page != 'preview' && $page != 'inscription' && $page != 'authentif' && $page != 'commentairedessin' && $page != 'commentairephoto' && $page != 'avisdessin' && $page != 'avisphoto' && $page != 'forum' && $page != 'mdp1' && $page != 'mdp2' && $page != 'envoifichier' && $page != 'admin' && $page != 'game' && $page != 'profilUtilisateur' && $page != 'accesinterdit' && $page != 'error404' && $page != 'eventCalendar' && $page != 'pwdForget') {
     //nav commune à tout le site
     include('./common/navlateral.php');
     include('./common/navhorizontal.php');
@@ -44,7 +44,7 @@ if (
 };
 
 // Non-affichage de la partie basse de votre site pour certaines pages
-if ($page != 'preview' && $page != 'inscription' && $page != 'authentif' && $page != 'commentaire' && $page != 'avisoeuvres' && $page != 'forum' && $page != 'mdp1' && $page != 'mdp2' && $page != 'envoifichier' && $page != 'admin' && $page != 'game' && $page != 'profilUtilisateur' && $page != 'accesinterdit' && $page != 'error404' && $page != 'eventCalendar' && $page != 'pwdForget')
+if ($page != 'preview' && $page != 'inscription' && $page != 'authentif' && $page != 'commentairedessin' && $page != 'commentairephoto' && $page != 'avisdessin' && $page != 'avisphoto' && $page != 'forum' && $page != 'mdp1' && $page != 'mdp2' && $page != 'envoifichier' && $page != 'admin' && $page != 'game' && $page != 'profilUtilisateur' && $page != 'accesinterdit' && $page != 'error404' && $page != 'eventCalendar' && $page != 'pwdForget')
 // Affichage de la partie basse de votre site, commun à l'ensemble de votre site. 
 include('./common/footer.php');
 

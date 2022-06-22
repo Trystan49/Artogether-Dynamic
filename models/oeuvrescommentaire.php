@@ -1,8 +1,15 @@
 <?php
-/* Fonction qui récupère tous les articles */
-function getOeuvresComments($pdo)
+/* Fonction qui récupère tous les dessins */
+function getDrawsComments($pdo)
 {
     $stmt = $pdo->prepare("SELECT ID_OEUVRE, TITRE_OEUVRE, DATE_CREATION_EC FROM oeuvres WHERE ID_TYPES_OEUVRES = 1 ORDER BY ID_OEUVRE ASC");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+/* Fonction qui récupère tous les art graphique */
+function getPhotosComments($pdo)
+{
+    $stmt = $pdo->prepare("SELECT ID_OEUVRE, TITRE_OEUVRE, DATE_CREATION_EC FROM oeuvres WHERE ID_TYPES_OEUVRES = 2 ORDER BY ID_OEUVRE ASC");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

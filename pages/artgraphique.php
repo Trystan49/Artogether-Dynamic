@@ -79,7 +79,7 @@ include('./models/oeuvres.php');
         ?>
         <!-- Accès à l'espace commentaire des oeuvres -->
         <div class="comment">
-            <a href="#">
+            <a href="index.php?page=commentairephoto" target="_blank">
                 <p class="commenText">Espace Commentaire</p>
                 <div class="commenTwo">
                     <p class="commenText2 glyphicon glyphicon-comment"></p>
